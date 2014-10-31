@@ -1,0 +1,22 @@
+.PDF_QT400 li label {
+    padding-left: 40px;
+}
+
+.PDF_QT400 input[type=checkbox] + label, .PDF_QT400 input[type=radio] + label {
+    background: transparent url(NotSelected.png) no-repeat 0 0;
+}
+
+input[type=checkbox]:checked + label, input[type=radio]:checked + label {
+    background: transparent url(IsSelected.png) no-repeat 0 0;
+}
+
+.PDF_QT400 ul li {
+    line-height: 32px;
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+.PDF_QT400 textarea, .PDF_QT400 input[type=text] {
+    font: 18px Helvetica,arial;
+}
+

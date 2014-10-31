@@ -1,0 +1,151 @@
+* {
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ -webkit-text-size-adjust: none;
+ -webkit-tap-highlight-color:rgba(0,0,0,0);
+ -webkit-highlight: none;
+}
+
+body {
+	font: 18px Helvetica,arial;
+	background-color: transparent;
+	color: #808080;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font: 32px 'American Typewriter';
+	color: #6c6c6c;
+	font-weight: bold;
+	margin-bottom: 5px
+}
+
+a img, img {
+	border: none;
+}
+
+
+/* Page header */
+body.page-header {
+ text-align: center
+}
+
+
+/* Quiz stuff */
+
+.quiz-question {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 4px 0;
+}
+
+.quiz-answer {
+	font-size: 16px;
+	margin: 4px 0;
+	float: left;
+	line-height: 20px;
+	padding: 0 0 0 10px;
+	width: 520px;
+}
+
+.quiz-status, .quiz-status-wrong, .quiz-status-correct, .quiz-status-tick {
+	float: left;
+	width: 30px;
+	height: 20px;
+	line-height: 20px;
+	margin: 4px 0;
+	font-size: 16px;
+	text-align: right;	
+}
+
+.quiz-status-wrong {
+	color: #B5150D;
+	font-weight: bold;			
+}
+
+.quiz-status-correct {
+	color: #4C8D3C;
+	font-weight: bold;			
+}
+
+.quiz-status-tick {
+	color: #4C8D3C;
+}
+
+.quiz-answer, .quiz-answer-wrong, .quiz-answer-correct, .quiz-answer-tick {
+	float: left;
+	line-height: 20px;
+	margin: 4px 0;
+	font-size: 16px;
+	padding: 0 0 0 10px;
+}
+
+.quiz-answer-tick {
+	height: 20px;
+}
+
+.quiz-answer-wrong {
+	color: #B5150D;
+	font-weight: bold;
+	float: left;
+}
+
+.quiz-answer-correct {
+	font-weight: bold;			
+}
+
+.quiz-answer-tick {
+}
+
+.clear {
+	clear: both;
+}
+
+span.mand {
+    color: red;
+}
+
+.PDF_QT400 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.PDF_QT400 ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.PDF_QT400 ul li:first-child {
+}
+
+.PDF_QT400 ul li:last-child {
+    border-bottom: none;
+}
+
+.PDF_QT400 ul.radio li:last-child {
+    padding-bottom: 0px;
+}
+
+.PDF_QT400 ul li img {
+    vertical-align: top;
+}
+
+.PDF_QT400 input[type=checkbox], .PDF_QT400 input[type=radio] {
+    display: none;
+}
+
+.PDF_QT400 textarea, .PDF_QT400 input[type=text] {
+    width: 99%;
+    -webkit-user-select: text;
+    color: #666;
+}
+
+.PDF_QT400 input.other {
+    margin-top: 0px;
+    width: 99%;
+}
+
+.PDF_QT400 .comments {
+    margin-top: 15px;
+}

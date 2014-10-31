@@ -1,0 +1,29 @@
+.quiz-answer {
+	width: 240px;
+}
+
+.PDF_QT400 li label {
+    padding-left: 25px;
+}
+
+.PDF_QT400 input[type=checkbox] + label, .PDF_QT400 input[type=radio] + label {
+    background: transparent url(NotSelected-iPhone.png) no-repeat 0 0;
+}
+
+input[type=checkbox]:checked + label, input[type=radio]:checked + label {
+    background: transparent url(IsSelected-iPhone.png) no-repeat 0 0;
+}
+
+.PDF_QT400 ul li {
+    line-height: 22px;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.PDF_QT400 textarea, .PDF_QT400 input[type=text] {
+    font: 14px Helvetica,arial;
+}
+
+.PDF_question {
+    font-size: 14px;
+}
