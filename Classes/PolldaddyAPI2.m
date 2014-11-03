@@ -18,6 +18,7 @@
 #import "NSString+XMLEntities.h"
 #import "Reachability.h"
 #import "PDURLConnection.h"
+#import "Configuration.h"
 
 // Async version
 @implementation PolldaddyAPI2
@@ -209,10 +210,10 @@ const unsigned int TAG_RESPONSE = 4;
                          "<pd:pdRequest xmlns:pd='http://api.polldaddy.com/pdapi.xsd' partnerGUID='%@'>"
                          "	<pd:userCode>%@</pd:userCode>"
                          "%@"
-                         " </pd:pdRequest>", PolldaddyAPIKey, [PolldaddyAPI getUserCode], data ];
+                         " </pd:pdRequest>", [Configuration sharedInstance].polldaddyAPIKey, [PolldaddyAPI getUserCode], data ];
     
 	// Create the request
-	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:PolldaddyAPIURL]];
+	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[Configuration sharedInstance].polldaddyUrl]];
 
 	[urlRequest setHTTPMethod:@"POST"];
 	[urlRequest setValue:@"text/xml; charset=UTF-8" forHTTPHeaderField:@"Content-type"];

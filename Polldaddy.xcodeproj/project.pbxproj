@@ -118,6 +118,9 @@
 		63D05F5B11B0090E003E3A24 /* UI_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D05F5A11B0090E003E3A24 /* UI_Address.m */; };
 		B8425EA911ABE3B700E0A0F1 /* PolldaddyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B8425EA811ABE3B700E0A0F1 /* PolldaddyAPI.m */; };
 		B8C55EF511B16300003207E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C55EF411B16300003207E2 /* SystemConfiguration.framework */; };
+		BE90EDF81A07DCC5009C54B7 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE90EDF71A07DCC5009C54B7 /* Configuration.m */; };
+		BE90EDFA1A07DE9A009C54B7 /* Configuration-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE90EDF91A07DE9A009C54B7 /* Configuration-sample.plist */; };
+		BE90EDFC1A07DF35009C54B7 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE90EDFB1A07DF35009C54B7 /* Configuration.plist */; };
 		DE1962A311B17B4E006DD671 /* question-panel-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1962A211B17B4E006DD671 /* question-panel-wide.png */; };
 		DE24D8AA11AB04CF00142C35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE24D8A911AB04CF00142C35 /* QuartzCore.framework */; };
 		DE24D9AA11AB33B000142C35 /* PDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE24D9A811AB33B000142C35 /* PDButton.m */; };
@@ -381,6 +384,10 @@
 		B8425EA811ABE3B700E0A0F1 /* PolldaddyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolldaddyAPI.m; sourceTree = "<group>"; };
 		B8425EAA11ABE3E900E0A0F1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = SOURCE_ROOT; };
 		B8C55EF411B16300003207E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BE90EDF61A07DCC5009C54B7 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		BE90EDF71A07DCC5009C54B7 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		BE90EDF91A07DE9A009C54B7 /* Configuration-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Configuration-sample.plist"; path = "Resources/Configuration-sample.plist"; sourceTree = "<group>"; };
+		BE90EDFB1A07DF35009C54B7 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = Resources/Configuration.plist; sourceTree = "<group>"; };
 		DE1962A211B17B4E006DD671 /* question-panel-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "question-panel-wide.png"; path = "Resources/question-panel-wide.png"; sourceTree = "<group>"; };
 		DE24D8A911AB04CF00142C35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE24D9A711AB33B000142C35 /* PDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDButton.h; sourceTree = "<group>"; };
@@ -477,6 +484,8 @@
 				DE55916B11A7964700C1C39D /* ViewControllers */,
 				1D3623240D0F684500981E51 /* PolldaddyAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PolldaddyAppDelegate.m */,
+				BE90EDF61A07DCC5009C54B7 /* Configuration.h */,
+				BE90EDF71A07DCC5009C54B7 /* Configuration.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -531,6 +540,8 @@
 				52DC29721486853B00BFF99D /* survey.js */,
 				52DC29751486875A00BFF99D /* jquery.js */,
 				52DC2978148791B400BFF99D /* jquery.mobile.js */,
+				BE90EDFB1A07DF35009C54B7 /* Configuration.plist */,
+				BE90EDF91A07DE9A009C54B7 /* Configuration-sample.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -972,6 +983,7 @@
 				DEE98ABF11AC3773008B9EF7 /* surveys-bg.png in Resources */,
 				DEE98BA911AC4D6C008B9EF7 /* RootViewController.xib in Resources */,
 				DEE98D5E11AC6F40008B9EF7 /* surveys-list.png in Resources */,
+				BE90EDFA1A07DE9A009C54B7 /* Configuration-sample.plist in Resources */,
 				DEE98DC911AC80C0008B9EF7 /* surveys-list-wide.png in Resources */,
 				63D0597E11AC3875003E3A24 /* polldaddy.sql in Resources */,
 				DECCF8A911AEC9CE00AA3A19 /* LiveSurveySelectionViewController.xib in Resources */,
@@ -999,6 +1011,7 @@
 				52D0BC8211F45A680073DF18 /* surveys-list-iPhone.png in Resources */,
 				52D0BC8311F45A680073DF18 /* surveys-list-wide-iPhone.png in Resources */,
 				52D0BF0711F47EE70073DF18 /* QuestionsViewController-iPhone.xib in Resources */,
+				BE90EDFC1A07DF35009C54B7 /* Configuration.plist in Resources */,
 				520CDC4511F727C7007AE34B /* ResponseViewController-iPhone.xib in Resources */,
 				DE5FFADE121AF29F00D6E2BC /* Icon-72.png in Resources */,
 				DE5FFADF121AF29F00D6E2BC /* Icon@2x.png in Resources */,
@@ -1127,6 +1140,7 @@
 				52FD2D0E12E889F5000E4E7F /* UI_FileUpload.m in Sources */,
 				52FD2D1512E88A6B000E4E7F /* AN_FileUpload.m in Sources */,
 				524EBB1112EDBC1100CBF6FA /* ProgressView.m in Sources */,
+				BE90EDF81A07DCC5009C54B7 /* Configuration.m in Sources */,
 				524EC27E12F061AD00CBF6FA /* UI_PhoneNumber.m in Sources */,
 				524EC28112F061B400CBF6FA /* UI_Number.m in Sources */,
 				524EC28412F061BF00CBF6FA /* AN_PhoneNumber.m in Sources */,

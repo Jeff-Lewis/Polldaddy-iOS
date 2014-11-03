@@ -16,6 +16,7 @@
 #import "NSString+XMLEntities.h"
 #import "Survey.h"
 #import "Constants.h"
+#import "Configuration.h"
 
 NSComparisonResult compareAZCell( MultiSelectCellController *element1, MultiSelectCellController *element2, void *context );
 
@@ -435,7 +436,7 @@ extern UIInterfaceOrientation gAppOrientation;
     if ( cellController ) { 
         UITableViewCell *cell = [self getCellForSurvey:surveyID];
 
-        if ( [url compare:[NSString stringWithString:PolldaddyAPIURL]] == NSOrderedSame ) {
+        if ( [url compare:[NSString stringWithString:[Configuration sharedInstance].polldaddyUrl]] == NSOrderedSame ) {
             // Fetching survey XML
             [cellController setStatus:[NSString stringWithFormat:@"Loading questions (%@)", [NSString stringPrettyBytes:bytes]] forCell:cell];
         }

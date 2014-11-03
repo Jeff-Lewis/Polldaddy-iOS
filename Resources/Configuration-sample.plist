@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PollDaddyAPI</key>
+	<dict>
+		<key>PolldaddyAPIKey</key>
+		<string>YOUR-API-KEY</string>
+		<key>PolldaddyUrl</key>
+		<string>https://api.polldaddy.com/</string>
+	</dict>
+</dict>
+</plist>

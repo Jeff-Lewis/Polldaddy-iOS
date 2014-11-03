@@ -16,6 +16,7 @@
 #import <netinet/in.h>
 #import "NSString+XMLEntities.h"
 #import "Reachability.h"
+#import "Configuration.h"
 
 @implementation PolldaddyAPI
 
@@ -49,7 +50,7 @@
 + (NSString *) makeRequest:(NSString *)requestBody {
 
 	UIApplication       *app = [UIApplication sharedApplication];
-	NSURL               *webServiceURL = [NSURL URLWithString:PolldaddyAPIURL];
+	NSURL               *webServiceURL = [NSURL URLWithString:[Configuration sharedInstance].polldaddyUrl];
 	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:webServiceURL];
 	
 	app.networkActivityIndicatorVisible = YES;
@@ -83,7 +84,7 @@
 					  "<pd:pdRequest xmlns:pd='http://api.polldaddy.com/pdapi.xsd' partnerGUID='%@'>"
 					  "	<pd:userCode>%@</pd:userCode>"
 					  "%@"
-					  " </pd:pdRequest>", PolldaddyAPIKey, polldaddyUserCode, demand ];
+					  " </pd:pdRequest>", [Configuration sharedInstance].polldaddyAPIKey, polldaddyUserCode, demand ];
 
 	return [PolldaddyAPI makeRequest:request];
 
@@ -474,7 +475,7 @@
 								  "<pd:pdInitiate partnerGUID='%@' partnerUserID='0' xmlns:pd='http://api.polldaddy.com/pdapi.xsd'>"
 								  "		<pd:Email>%@</pd:Email>"
 								  "		<pd:Password>%@</pd:Password>"
-								  "</pd:pdInitiate>", PolldaddyAPIKey, [email stringByEncodingHTMLEntities], [password stringByEncodingHTMLEntities] ];
+								  "</pd:pdInitiate>", [Configuration sharedInstance].polldaddyAPIKey, [email stringByEncodingHTMLEntities], [password stringByEncodingHTMLEntities] ];
 //		NSLog(@"%@", requestBody);
 		NSString * responseBody = [PolldaddyAPI makeRequest:requestBody];
 		
