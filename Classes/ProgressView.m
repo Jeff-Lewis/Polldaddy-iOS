@@ -31,7 +31,7 @@
 
 - (void)syncAllResponses {
 	PDDatabase  *database = [[PDDatabase alloc] init];
-	FMResultSet *set = [database get:[NSString stringWithFormat:@"SELECT responseId, responseXML, completed, startDate, endDate, surveyId FROM respondents", surveyID, lastResponseID]];
+	FMResultSet *set = [database get:[NSString stringWithFormat:@"SELECT responseId, responseXML, completed, startDate, endDate, surveyId FROM respondents" /*, surveyID, lastResponseID */]];  //Commented out arguments not used
     
     purgeList = [[NSMutableArray alloc] init];
 	api = [[PolldaddyAPI2 alloc] init];

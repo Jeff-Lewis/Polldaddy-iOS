@@ -100,7 +100,7 @@ extern UIInterfaceOrientation gAppOrientation;
     if ( [dataArray objectForKey:@"choice"] ) {
         if ( [question isRadio] ) {
             NSString *option = [dataArray objectForKey:@"choice"];
-            [options appendFormat:[dataArray objectForKey:@"choice"]];
+            [options appendString:[dataArray objectForKey:@"choice"]];
             [chosen addObject:[NSNumber numberWithLong:[option integerValue]]];
         }
         else if ( [[dataArray objectForKey:@"choice"] isKindOfClass:[NSArray class]] ) {
@@ -110,7 +110,7 @@ extern UIInterfaceOrientation gAppOrientation;
                 [chosen addObject:[NSNumber numberWithLong:[option integerValue]]];
             }
 
-            [options appendFormat:[(NSArray *)[dataArray objectForKey:@"choice"] componentsJoinedByString:@","]];
+            [options appendString:[(NSArray *)[dataArray objectForKey:@"choice"] componentsJoinedByString:@","]];
         }
     }
     
@@ -252,18 +252,18 @@ extern UIInterfaceOrientation gAppOrientation;
         [content appendString:@"<li>"];
         
         if ( [question isCheckbox] )
-            [content appendFormat:@"<input type='checkbox' name='q_%lu[choice][]' value='%d' id='q_%lu_%d'/>", question.questionId, answer.oID, question.questionId, answer.oID];
+            [content appendFormat:@"<input type='checkbox' name='q_%lu[choice][]' value='%lu' id='q_%lu_%lu'/>", question.questionId, answer.oID, question.questionId, answer.oID];
         else
-            [content appendFormat:@"<input type='radio' name='q_%lu[choice]' value='%d' id='q_%lu_%d'/>", question.questionId, answer.oID, question.questionId, answer.oID];
+            [content appendFormat:@"<input type='radio' name='q_%lu[choice]' value='%lu' id='q_%lu_%lu'/>", question.questionId, answer.oID, question.questionId, answer.oID];
 
         // Add text
-        [content appendFormat:@" <label for='q_%lu_%d'>%@</label>", question.questionId, answer.oID, answer.title];
+        [content appendFormat:@" <label for='q_%lu_%lu'>%@</label>", question.questionId, answer.oID, answer.title];
 
         // Add embedded media
         if ( answer.mediaUrl != nil ) {
             NSString *url = [question allocLocalizeString:[NSString stringWithFormat:@"<img src='%@'/>", answer.mediaUrl] andSurveyId:question.surveyId];
             
-            [content appendFormat:@"<label for='q_%lu_%d'>%@</label>", question.questionId, answer.oID, url];
+            [content appendFormat:@"<label for='q_%lu_%lu'>%@</label>", question.questionId, answer.oID, url];
         }
         
         [content appendString:@"</li>"];

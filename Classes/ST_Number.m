@@ -77,7 +77,7 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"%@\nLabel=%@ dp=%d min=%f max=%f default=%f slider=%@", [super description], label, decimalPlaces, minValue, maxValue, defaultValue, isSlider ? @"YES" : @"NO"];
+	return [NSString stringWithFormat:@"%@\nLabel=%@ dp=%lu min=%f max=%f default=%f slider=%@", [super description], label, decimalPlaces, minValue, maxValue, defaultValue, isSlider ? @"YES" : @"NO"];
 }
 
 - (BOOL) isWhole {
