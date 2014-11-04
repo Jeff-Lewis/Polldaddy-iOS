@@ -180,7 +180,7 @@
 	return [NSString stringWithCString:&aXMLElement->text[0] encoding:NSUTF8StringEncoding];
 }
 
-+ (int) elementInteger:(NSString *)element parentElement:(TBXMLElement*)node withDefault:(int)def {
++ (long) elementInteger:(NSString *)element parentElement:(TBXMLElement*)node withDefault:(int)def {
 	TBXMLElement *ele = [TBXML childElementNamed:element parentElement:node];
 	if ( ele )
 		return [[TBXML textForElement:ele] integerValue];

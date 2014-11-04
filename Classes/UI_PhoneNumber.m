@@ -125,7 +125,14 @@
 
 - (CGRect) getButtonRect {
 	CGSize maximumLabelSize  = CGSizeMake( [self getMaxFrameWidth], [self getMaxFrameHeight] );
-	CGSize expectedLabelSize = [[pickCountry titleForState:UIControlEventEditingDidEndOnExit] sizeWithFont:pickCountry.titleLabel.font constrainedToSize:maximumLabelSize lineBreakMode:pickCountry.titleLabel.lineBreakMode]; 
+    NSString * title = [pickCountry titleForState:UIControlEventEditingDidEndOnExit];
+	//CGSize expectedLabelSize = [title sizeWithFont:pickCountry.titleLabel.font constrainedToSize:maximumLabelSize lineBreakMode:pickCountry.titleLabel.lineBreakMode];
+    
+    CGRect expectedRect = [title boundingRectWithSize:maximumLabelSize
+                                                      options:NSStringDrawingTruncatesLastVisibleLine |
+                           NSStringDrawingUsesLineFragmentOrigin
+                                                   attributes:@{NSFontAttributeName:pickCountry.titleLabel.font} context:nil];
+    CGSize expectedLabelSize = expectedRect.size;
 
 	CGRect field = [self getFieldSize];
 	

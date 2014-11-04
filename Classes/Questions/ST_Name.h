@@ -9,7 +9,7 @@
 #import "Question.h"
 
 @interface ST_Name : Question {
-	int       nameType;
+	long       nameType;
 	NSString *titleName;
 	NSString *firstName;
 	NSString *lastName;
@@ -18,8 +18,8 @@
 
 @property (nonatomic, strong) NSString *titleName, *firstName, *lastName, *suffix;
 
-- (Question *) initWithXML:(TBXMLElement *)qnode andType:(int)qType andPage:(unsigned int)thePage;
+- (Question *) initWithXML:(TBXMLElement *)qnode andType:(long)qType andPage:(unsigned long)thePage;
 - (NSString *) description;
-- (int) getNameType;
+- (long) getNameType;
 
 @end

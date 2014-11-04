@@ -12,40 +12,40 @@
 	NSString *title;
     NSString *mediaUrl;
     
-	unsigned int oID;
+	unsigned long oID;
 }
 
 @property (nonatomic, copy) NSString *title, *mediaUrl;
-@property (nonatomic) unsigned int oID;
+@property (nonatomic) unsigned long oID;
 @end
 
 @interface ST_MultiChoice : Question {
 	boolean_t other;
-	int       order;
-	int       choiceType;
+	long       order;
+	long       choiceType;
 	NSString *commentText;
 	
-	unsigned int correctAnswer;
-    unsigned int minLimit;
-    unsigned int maxLimit;
+	unsigned long correctAnswer;
+    unsigned long minLimit;
+    unsigned long maxLimit;
 	
 	NSMutableArray *answers;
 }
 
 @property (nonatomic, strong) NSMutableArray *answers;
 @property (nonatomic, copy) NSString *commentText;
-@property (nonatomic, readonly) unsigned int correctAnswer, minLimit, maxLimit;
+@property (nonatomic, readonly) unsigned long correctAnswer, minLimit, maxLimit;
 
-- (Question *) initWithXML:(TBXMLElement *)qnode andType:(int)qType andPage:(unsigned int)thePage;
+- (Question *) initWithXML:(TBXMLElement *)qnode andType:(long)qType andPage:(unsigned long)thePage;
 - (NSString *) description;
 - (BOOL) isRadio;
 - (BOOL) isCheckbox;
 - (BOOL) isListboxOne;
 - (BOOL) isListboxMany;
 - (BOOL) hasOther;
-- (NSString *) choiceWithId:(unsigned int)oID;
-- (NSString *) choiceAtPosition:(unsigned int)pos;
-- (unsigned int) keyAtPosition:(unsigned int)pos;
+- (NSString *) choiceWithId:(unsigned long)oID;
+- (NSString *) choiceAtPosition:(unsigned long)pos;
+- (unsigned long) keyAtPosition:(unsigned long)pos;
 - (void) reorderAnswers;
 - (void)addResources:(RemoteResources *)resources;
 @end

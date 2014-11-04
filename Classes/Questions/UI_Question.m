@@ -209,13 +209,16 @@ extern UIInterfaceOrientation gAppOrientation;
 
 - (CGPoint) autoHeightLabel:(UILabel *)field withText:(NSString *)text atPoint:(CGPoint)last {
 	CGSize maximumLabelSize  = CGSizeMake( [self getMaxFrameWidth], [self getMaxFrameHeight] );
-	CGSize expectedLabelSize = [text sizeWithFont:field.font constrainedToSize:maximumLabelSize lineBreakMode:field.lineBreakMode]; 
+    CGRect rect = [text boundingRectWithSize:maximumLabelSize
+                                                 options:NSStringDrawingTruncatesLastVisibleLine |
+                   NSStringDrawingUsesLineFragmentOrigin
+                                              attributes:@{NSFontAttributeName:field.font} context:nil];
 	CGRect frame = field.frame;
 	
 	// Set the Y position and height of the label
 	frame.origin.y    = last.y;
 	frame.origin.x    = last.x;
-	frame.size.height = expectedLabelSize.height;
+	frame.size.height = rect.size.height;
 	frame.size.width  = [self getMaxFrameWidth];
 	
 	// Update the text and set the new frame details

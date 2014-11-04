@@ -14,7 +14,7 @@
 
 @synthesize title, oID, mediaUrl;
 
-- (id)initWithId:(unsigned int)theId andTitle:(NSString *)theTitle {
+- (id)initWithId:(unsigned long)theId andTitle:(NSString *)theTitle {
 	self = [super init];
 	
 	self.oID     = theId;
@@ -25,7 +25,7 @@
 
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"oID=%d title=%@ mediaUrl=%@", oID, title, mediaUrl];
+    return [NSString stringWithFormat:@"oID=%lu title=%@ mediaUrl=%@", oID, title, mediaUrl];
 }
 @end
 
@@ -60,7 +60,7 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 
 @synthesize answers, commentText, correctAnswer, minLimit, maxLimit;
 
-- (Question *) initWithXML:(TBXMLElement *)qnode andType:(int)qType andPage:(unsigned int)thePage {
+- (Question *) initWithXML:(TBXMLElement *)qnode andType:(long)qType andPage:(unsigned long)thePage {
 	self = [super initWithXML:qnode andType:qType andPage:thePage];
 	
 	other = FALSE;
@@ -101,7 +101,7 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 	if ( node ) {
 		TBXMLElement  *opt = [TBXML childElementNamed:@"option" parentElement:node];
 		ChoiceElement *element;
-		unsigned int  key;
+		unsigned long  key;
 		NSString      *choiceTitle;
 		
 		while ( opt ) {
@@ -122,7 +122,7 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 	node = [TBXML childElementNamed:@"media" parentElement:qnode];
 	if ( node ) {
 		TBXMLElement  *opt = [TBXML childElementNamed:@"mediaItem" parentElement:node];
-        unsigned int   oID;
+        unsigned long   oID;
 		
 		while ( opt ) {
 			oID = [[TBXML valueOfAttributeNamed:@"oID" forElement:opt] integerValue];
@@ -203,7 +203,7 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 	return NO;
 }
 
-- (NSString *) choiceWithId:(unsigned int)oID {
+- (NSString *) choiceWithId:(unsigned long)oID {
 	for ( ChoiceElement *choice in answers ) {
 		if ( choice.oID == oID )
 			return choice.title;
@@ -212,14 +212,14 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 	return nil;
 }
 
-- (NSString *) choiceAtPosition:(unsigned int)pos {
+- (NSString *) choiceAtPosition:(unsigned long)pos {
 	ChoiceElement *element = [answers objectAtIndex:pos];
 	if ( element )
 		return element.title;
 	return nil;
 }
 
-- (unsigned int) keyAtPosition:(unsigned int)pos {
+- (unsigned long) keyAtPosition:(unsigned long)pos {
 	ChoiceElement *element = [answers objectAtIndex:pos];
 	if ( element )
 		return element.oID;
@@ -243,11 +243,11 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 	NSMutableString *answerText = [[NSMutableString alloc] init];
 	
 	for (ChoiceElement *element in answers) {
-		[answerText appendFormat:@"\n%u=%@", element.oID, element.title];
+		[answerText appendFormat:@"\n%lu=%@", element.oID, element.title];
 	}
 	
 	NSString *text = [NSString stringWithString:answerText];
-	return [NSString stringWithFormat:@"%@\nOther=%@ order=%d, type=%d, comments=%@ %@", [super description], other ? @"true" : @"false", order, choiceType, commentText, text];
+	return [NSString stringWithFormat:@"%@\nOther=%@ order=%ld, type=%ld, comments=%@ %@", [super description], other ? @"true" : @"false", order, choiceType, commentText, text];
 }
 
 @end

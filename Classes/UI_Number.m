@@ -70,9 +70,14 @@
 
 	if ( [question hasLabel] ) {
 		CGSize maximumLabelSize = CGSizeMake( [self getMaxFrameWidth] / 2, [Constants textEditHeight] );
-		CGSize size = [[question label] sizeWithFont:label.font constrainedToSize:maximumLabelSize lineBreakMode:label.lineBreakMode]; 
+		//CGSize size = [[question label] sizeWithFont:label.font constrainedToSize:maximumLabelSize lineBreakMode:label.lineBreakMode];
 
-		label_width  = size.width;
+        CGRect rect = [[question label] boundingRectWithSize:maximumLabelSize
+                                                     options:NSStringDrawingTruncatesLastVisibleLine |
+                       NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:@{NSFontAttributeName:label.font} context:nil];
+
+		label_width  = rect.size.width;
 		input_width -= label_width;
 		
 		if ( [question labelBefore] ) {

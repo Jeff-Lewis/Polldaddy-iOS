@@ -43,9 +43,14 @@ extern UIInterfaceOrientation gAppOrientation;
 
 	// Calculate the heights and widths of various parts
 	for ( MatrixElement *element in question.columns ) {
-		CGSize expected = [element.title sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+		//CGSize expected = [element.title sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
 
-		// If the  height is bigger than our biggest height then just drop out
+        CGRect expectedRect = [element.title boundingRectWithSize:maxSize
+                                                     options:NSStringDrawingTruncatesLastVisibleLine |
+                       NSStringDrawingUsesLineFragmentOrigin
+                                                  attributes:@{NSFontAttributeName:label.font} context:nil];
+        CGSize expected = expectedRect.size;
+        // If the  height is bigger than our biggest height then just drop out
 		if ( expected.height > [Constants matrixMaxHeight] ) {
 			return NO;
 		}
@@ -88,7 +93,8 @@ extern UIInterfaceOrientation gAppOrientation;
 		// Will expanding the row labels have any effect? Look for a row label that is longer than the current row width
 		for ( MatrixElement *element in question.rows ) {
 			// Get the width without any multi-lining
-			expected = [element.title sizeWithFont:label.font];
+			//expected = [element.title sizeWithFont:label.font];
+            expected = [element.title sizeWithAttributes:@{NSFontAttributeName:label.font}];
 
 			if ( expected.width > biggest.width ) {
 				biggest = expected;
@@ -105,7 +111,14 @@ extern UIInterfaceOrientation gAppOrientation;
 			
 			// Recalculate the rowHeight
 			maxSize   = CGSizeMake( rowWidth, [Constants matrixMaxHeight] );
-			expected  = [bText sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+			//expected  = [bText sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+            
+            CGRect expectedRect = [bText boundingRectWithSize:maxSize
+                                                              options:NSStringDrawingTruncatesLastVisibleLine |
+                                   NSStringDrawingUsesLineFragmentOrigin
+                                                           attributes:@{NSFontAttributeName:label.font} context:nil];
+            expected = expectedRect.size;
+            
 			rowHeight = expected.height;
 		}
 		
@@ -123,7 +136,13 @@ extern UIInterfaceOrientation gAppOrientation;
 			// Now recalculate the height of the largest column
 			for ( MatrixElement *element in question.columns ) {
 				maxSize   = CGSizeMake( colWidth, [Constants matrixMaxHeight] );
-				expected  = [element.title sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+				//expected  = [element.title sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+                
+                CGRect expectedRect = [element.title boundingRectWithSize:maxSize
+                                                          options:NSStringDrawingTruncatesLastVisibleLine |
+                                       NSStringDrawingUsesLineFragmentOrigin
+                                                       attributes:@{NSFontAttributeName:label.font} context:nil];
+                expected = expectedRect.size;
 			
 				if ( expected.height > colHeight )
 					colHeight = expected.height;
@@ -148,7 +167,14 @@ extern UIInterfaceOrientation gAppOrientation;
 	
 	// Find the largest row size
 	for ( MatrixElement *element in question.rows ) {
-		CGSize expected = [element.title sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+		//CGSize expected = [element.title sizeWithFont:label.font constrainedToSize:maxSize lineBreakMode:label.lineBreakMode];
+        
+        
+        CGRect expectedRect = [element.title boundingRectWithSize:maxSize
+                                                          options:NSStringDrawingTruncatesLastVisibleLine |
+                               NSStringDrawingUsesLineFragmentOrigin
+                                                       attributes:@{NSFontAttributeName:label.font} context:nil];
+        CGSize expected = expectedRect.size;
 		
 		if ( expected.width > rowWidth )
 			rowWidth = expected.width;

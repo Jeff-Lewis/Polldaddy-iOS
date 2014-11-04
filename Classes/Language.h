@@ -12,11 +12,11 @@
 @class Survey;
 
 @interface Phrase : NSObject {
-    unsigned int  phraseId;
+    unsigned long  phraseId;
     NSString     *phrase;
 }
 
-@property (nonatomic) unsigned int phraseId;
+@property (nonatomic) unsigned long phraseId;
 @property (nonatomic,readonly,strong) NSString *phrase;
 
 - (Phrase *)initWithXML:(TBXMLElement *)xml;

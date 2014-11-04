@@ -120,7 +120,7 @@ typedef struct _TBXMLAttributeBuffer {
 + (NSString*) elementName:(TBXMLElement*)aXMLElement;
 + (NSString*) textForElement:(TBXMLElement*)aXMLElement;
 + (NSString*) valueOfAttributeNamed:(NSString *)aName forElement:(TBXMLElement*)aXMLElement;
-+ (int) elementInteger:(NSString *)element parentElement:(TBXMLElement*)node withDefault:(int)def;
++ (long) elementInteger:(NSString *)element parentElement:(TBXMLElement*)node withDefault:(int)def;
 + (float) elementFloat:(NSString *)element parentElement:(TBXMLElement*)node withDefault:(float)def;
 + (NSString*) elementText:(NSString *)element parentElement:(TBXMLElement*)node withDefault:(NSString *)def;
 

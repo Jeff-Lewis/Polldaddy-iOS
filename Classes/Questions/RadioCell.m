@@ -18,8 +18,7 @@
     return YES;
 }
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
-	
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	
 	if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
 		answer = [[UILabel alloc] init];
@@ -35,7 +34,7 @@
 			radioButton.image = [UIImage imageNamed:@"NotSelected-iPhone.png"];				
 		}
 		
-		answer.textAlignment = UITextAlignmentLeft;
+		answer.textAlignment = NSTextAlignmentLeft;
 		answer.textColor     = [UIColor PdTextColor];
 		
 		[self.contentView addSubview:radioButton];

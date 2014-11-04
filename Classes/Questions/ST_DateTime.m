@@ -26,7 +26,7 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"%@\nType=%d Day=%@ Month=%@ Year=%@ Hour=%@ Minute=%@", [super description], dateType, titleDay,
+	return [NSString stringWithFormat:@"%@\nType=%ld Day=%@ Month=%@ Year=%@ Hour=%@ Minute=%@", [super description], dateType, titleDay,
 					titleMonth, titleYear, titleHour, titleMinute];
 }
 
@@ -44,7 +44,7 @@
 	return @"";
 }
 
-- (int) getDateType {
+- (long) getDateType {
 	return dateType;
 }
 

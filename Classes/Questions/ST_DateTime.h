@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ST_DateTime : Question {
-	int       dateType;
+	long       dateType;
 	NSString *titleDay;
 	NSString *titleMonth;
 	NSString *titleYear;
@@ -20,7 +20,7 @@
 
 - (Question *) initWithXML:(TBXMLElement *)qnode andType:(int)qType andPage:(unsigned int)thePage;
 - (NSString *) description;
-- (int) getDateType;
+- (long) getDateType;
 - (NSString *)getFormatString;
 
 @end

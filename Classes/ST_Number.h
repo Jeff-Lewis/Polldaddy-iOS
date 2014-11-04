@@ -11,8 +11,8 @@
 @interface ST_Number : Question {
 	BOOL isSlider;
 
-	unsigned int decimalPlaces;
-	unsigned int labelPosition;
+	unsigned long decimalPlaces;
+	unsigned long labelPosition;
 	
 	float minValue;
 	float maxValue;

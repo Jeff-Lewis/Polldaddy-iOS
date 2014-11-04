@@ -15,7 +15,7 @@
 
 - (NSString *) summaryForQuestion:(Question *)question {
 	NSMutableArray *array = [[NSMutableArray alloc] init];
-	unsigned int type = [(ST_Name *)question getNameType];
+	unsigned long type = [(ST_Name *)question getNameType];
 	
 	if ( ( type == 0 || type == 1 ) && [title length] > 0 )
 		[array addObject:title];

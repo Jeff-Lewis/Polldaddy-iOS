@@ -24,7 +24,7 @@
 
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"Phrase (%d) = %@", phraseId, phrase];
+    return [NSString stringWithFormat:@"Phrase (%lu) = %@", phraseId, phrase];
 }
 
 @end
@@ -56,7 +56,7 @@
                 while ( phrase ) {
                     item = [[Phrase alloc] initWithXML:phrase];
                     
-                    [phrases setObject:item forKey:[NSNumber numberWithInt:item.phraseId]];
+                    [phrases setObject:item forKey:[NSNumber numberWithLong:item.phraseId]];
                     
                     phrase = [TBXML nextSiblingNamed:@"phrase" searchFromElement:phrase];
                 }

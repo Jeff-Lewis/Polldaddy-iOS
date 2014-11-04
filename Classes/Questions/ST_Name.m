@@ -14,7 +14,7 @@
 
 @synthesize titleName, firstName, lastName, suffix;
 
-- (Question *) initWithXML:(TBXMLElement *)qnode andType:(int)qType andPage:(unsigned int)thePage {
+- (Question *) initWithXML:(TBXMLElement *)qnode andType:(long)qType andPage:(unsigned long)thePage {
 	self = [super initWithXML:qnode andType:qType andPage:thePage];
 	
 	nameType  = [TBXML elementInteger:@"type" parentElement:qnode withDefault:0];
@@ -27,10 +27,10 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"%@\nType=%d Title=%@ First=%@ Last=%@ Suffix=%@", [super description], nameType, titleName, firstName, lastName, suffix];
+	return [NSString stringWithFormat:@"%@\nType=%ld Title=%@ First=%@ Last=%@ Suffix=%@", [super description], nameType, titleName, firstName, lastName, suffix];
 }
 
-- (int) getNameType {
+- (long) getNameType {
 	return nameType;
 }
 
