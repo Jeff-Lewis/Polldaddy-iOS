@@ -13,32 +13,36 @@
 
 @synthesize offlineResponses, surveyName;
 
-- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	
 	if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
 		// Initialization code
-		surveyName       = [[UILabel alloc] init];
+		surveyName = [[UILabel alloc] init];
+        surveyName.backgroundColor = [UIColor clearColor];
 		offlineResponses = [[UILabel alloc] init];
+        offlineResponses.backgroundColor = [UIColor clearColor];
+        
+        self.backgroundColor = [UIColor clearColor];
 
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			[offlineResponses setFont:[UIFont systemFontOfSize:16]];
 			[surveyName setFont:[UIFont fontWithName:@"American Typewriter" size:36]];
-			[surveyName setBounds:CGRectMake(-20, 0, 2*(frame.size.width/3), frame.size.height)];	
-			[offlineResponses setBounds:CGRectMake(0, 0, frame.size.width/3, frame.size.height)]; 
+            [surveyName setBounds:CGRectMake(-20, 0, 2*(self.frame.size.width/3), self.frame.size.height)];
+			[offlineResponses setBounds:CGRectMake(0, 0, self.frame.size.width/3, self.frame.size.height)];
 		}
 		else {
 			[offlineResponses setFont:[UIFont systemFontOfSize:12]];
 			[surveyName setFont:[UIFont fontWithName:@"American Typewriter" size:16]];
-			[surveyName setBounds:CGRectMake( 0, 0, 2 * ( frame.size.width / 3 ), frame.size.height)];	
-			[offlineResponses setBounds:CGRectMake( 0, 0, frame.size.width / 3, frame.size.height)]; 
+			[surveyName setBounds:CGRectMake( 0, 0, 2 * ( self.frame.size.width / 3 ), self.frame.size.height)];
+			[offlineResponses setBounds:CGRectMake( 0, 0, self.frame.size.width / 3, self.frame.size.height)];
 		}
 		
-		[surveyName setTextAlignment:UITextAlignmentLeft];
+		[surveyName setTextAlignment:NSTextAlignmentLeft];
 		[surveyName setTextColor:UIColorFromRGB(0x0182a8)];
 		[surveyName setHighlightedTextColor:[UIColor whiteColor]];
-		[surveyName setLineBreakMode:UILineBreakModeWordWrap];
+		[surveyName setLineBreakMode:NSLineBreakByWordWrapping];
 		
-		[offlineResponses setTextAlignment:UITextAlignmentLeft];	
+		[offlineResponses setTextAlignment:NSTextAlignmentLeft];
 		[offlineResponses setTextColor:UIColorFromRGB(0x999999)];
 		
 		[self.contentView addSubview:surveyName];
