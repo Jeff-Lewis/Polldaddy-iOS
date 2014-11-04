@@ -16,7 +16,7 @@ extern UIInterfaceOrientation gAppOrientation;
 
 @synthesize datePicker, delegate;
 
-- (id)initWithType:(unsigned int)type {
+- (id)initWithType:(unsigned long)type {
 	self = [super init];
 	
 	dateType = type;
@@ -115,9 +115,12 @@ extern UIInterfaceOrientation gAppOrientation;
   [delegate datePickerController:self didPickDate:datePicker.date andType:dateType];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Overriden to allow any orientation.
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {

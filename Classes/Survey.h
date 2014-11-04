@@ -13,14 +13,14 @@
 @class TBXML, Question;
 
 @interface Survey : NSObject {
-	unsigned int surveyId;
-	unsigned int formType;
-	unsigned int responses;
-    unsigned int packId;
-    unsigned int styleId;
+	unsigned long surveyId;
+	unsigned long formType;
+	unsigned long responses;
+    unsigned long packId;
+    unsigned long styleId;
 	
-	unsigned int quizResultsView;
-	unsigned int passThreshold;
+	unsigned long quizResultsView;
+	unsigned long passThreshold;
     
     boolean_t firstIsFake;
 	
@@ -32,21 +32,21 @@
 	NSArray  *questions;
 }
 
-@property (nonatomic, readonly) unsigned int surveyId, passThreshold, packId, styleId;
+@property (nonatomic, readonly) unsigned long surveyId, passThreshold, packId, styleId;
 @property (nonatomic, readonly) boolean_t firstIsFake;
 @property (nonatomic, strong) NSString *title, *startMessage, *endMessage, *endMessageFail;
 @property (nonatomic, strong) NSArray *questions;
 
 - (Survey *) initWithXML: (NSString *)xml;
 - (Survey *) initWithTBXML: (TBXML *)tbxml;
-- (Survey *) initWithId: (unsigned int) surveyId andTitle: (NSString *)title;
-- (Question *) getQuestionForPosition:(unsigned int)position;
-- (Question *) getFirstQuestionForPage:(unsigned int)page;
-- (Question *) getQuestionForId:(unsigned int)qID;
+- (Survey *) initWithId:(unsigned long)surveyId andTitle: (NSString *)title;
+- (Question *) getQuestionForPosition:(unsigned long)position;
+- (Question *) getFirstQuestionForPage:(unsigned long)page;
+- (Question *) getQuestionForId:(unsigned long)qID;
 - (NSString *) description;
-- (unsigned int) getResponses;
-- (unsigned int) realQuestionCount;
-- (boolean_t) hasNextQuestion:(unsigned int)qNum;
+- (unsigned long) getResponses;
+- (unsigned long) realQuestionCount;
+- (boolean_t) hasNextQuestion:(unsigned long)qNum;
 - (BOOL) isSurvey;
 - (BOOL) isQuiz;
 

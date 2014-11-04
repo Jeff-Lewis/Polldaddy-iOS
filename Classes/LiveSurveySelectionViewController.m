@@ -92,9 +92,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	[UIView commitAnimations];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Override to allow orientations other than the default portrait orientation.
+-(BOOL)shouldAutorotate {
     return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
@@ -293,7 +296,7 @@ extern UIInterfaceOrientation gAppOrientation;
     }
 }
 
--(MultiSelectCellController *)getCellControllerForSurvey:(unsigned int)surveyID {
+-(MultiSelectCellController *)getCellControllerForSurvey:(unsigned long)surveyID {
     for ( MultiSelectCellController *item in surveys ) {
         if ( item.surveyId == surveyID ) {
             return item;
@@ -309,7 +312,7 @@ extern UIInterfaceOrientation gAppOrientation;
     return nil;
 }
 
--(UITableViewCell *)getCellForSurvey:(unsigned int)surveyID {
+-(UITableViewCell *)getCellForSurvey:(unsigned long)surveyID {
     unsigned int count = 0;
     
     for ( MultiSelectCellController *item in surveys ) {
@@ -332,8 +335,8 @@ extern UIInterfaceOrientation gAppOrientation;
     return nil;
 }
 
--(void)finishedLanguage:(unsigned int)surveyID withData:(NSData *)data {
-    RemoteResources *res = [resources objectForKey:[NSNumber numberWithInt:surveyID]];
+-(void)finishedLanguage:(unsigned long)surveyID withData:(NSData *)data {
+    RemoteResources *res = [resources objectForKey:[NSNumber numberWithLong:surveyID]];
     
     if ( res ) {
         [res.survey storeLanguage:data];
@@ -343,8 +346,8 @@ extern UIInterfaceOrientation gAppOrientation;
     }
 }
 
--(void)finishedStyle:(unsigned int)surveyID withData:(NSData *)data {
-    RemoteResources *res = [resources objectForKey:[NSNumber numberWithInt:surveyID]];
+-(void)finishedStyle:(unsigned long)surveyID withData:(NSData *)data {
+    RemoteResources *res = [resources objectForKey:[NSNumber numberWithLong:surveyID]];
     
     if ( res ) {
         [res.survey storeStyle:data];
@@ -354,8 +357,8 @@ extern UIInterfaceOrientation gAppOrientation;
     }
 }
 
--(void)finishedResource:(unsigned int)surveyId withData:(NSData *)data andFilename:(NSString *)filename {
-    RemoteResources *remote = [resources objectForKey:[NSNumber numberWithInt:surveyId]];
+-(void)finishedResource:(unsigned long)surveyId withData:(NSData *)data andFilename:(NSString *)filename {
+    RemoteResources *remote = [resources objectForKey:[NSNumber numberWithLong:surveyId]];
     
     if ( remote ) {
         // Pass the resource on to the survey to deal with
@@ -388,12 +391,12 @@ extern UIInterfaceOrientation gAppOrientation;
             }
             
             // Remove the remoteresources object
-            [resources removeObjectForKey:[NSNumber numberWithInt:surveyId]];
+            [resources removeObjectForKey:[NSNumber numberWithLong:surveyId]];
         }
     }
 }
 
--(void)finished:(unsigned int)surveyID success:(bool)success withSurvey:(Survey *)survey {
+-(void)finished:(unsigned long)surveyID success:(bool)success withSurvey:(Survey *)survey {
     MultiSelectCellController *cellController = [self getCellControllerForSurvey:surveyID];
 
     if ( cellController ) {
@@ -410,7 +413,7 @@ extern UIInterfaceOrientation gAppOrientation;
             RemoteResources *res = [[RemoteResources alloc] initWithSurvey:survey];
             
             // Add the list of resources into our dictionary
-            [resources setObject:res forKey:[NSNumber numberWithInt:surveyID]];
+            [resources setObject:res forKey:[NSNumber numberWithLong:surveyID]];
             
             // Start this off
             [res nextInQueue:api delegate:self];
@@ -429,7 +432,7 @@ extern UIInterfaceOrientation gAppOrientation;
     }
 }
 
--(void)fetchingURL:(unsigned int)surveyID withURL:(NSString *)url withBytes:(unsigned int)bytes {
+-(void)fetchingURL:(unsigned long)surveyID withURL:(NSString *)url withBytes:(unsigned long)bytes {
     // Find the row for the surveyID
     MultiSelectCellController *cellController = [self getCellControllerForSurvey:surveyID];
 
@@ -450,13 +453,13 @@ extern UIInterfaceOrientation gAppOrientation;
         }
         else {
             // Some resource
-            RemoteResources *res = [resources objectForKey:[NSNumber numberWithInt:surveyID]];
+            RemoteResources *res = [resources objectForKey:[NSNumber numberWithLong:surveyID]];
             
             if ( res ) {
                 if ( res.content.count == 1 )
                     [cellController setStatus:[NSString stringWithFormat:@"Retrieving resource (%@)", [NSString stringPrettyBytes:bytes]] forCell:cell];
                 else
-                    [cellController setStatus:[NSString stringWithFormat:@"Retrieving resource %d of %d (%@)", ( res.current + 1 ), ( res.content.count + 1 ), [NSString stringPrettyBytes:bytes]] forCell:cell];
+                    [cellController setStatus:[NSString stringWithFormat:@"Retrieving resource %u of %u (%@)", ( res.current + 1 ), ( res.content.count + 1 ), [NSString stringPrettyBytes:bytes]] forCell:cell];
             }
         }
         
@@ -527,27 +530,27 @@ extern UIInterfaceOrientation gAppOrientation;
 		headerLabel.font            = [UIFont fontWithName:@"Helvetica" size:14];
 		if ( [surveys count] > 0 && [quizzes count] > 0 ) {
 			if ( section == 0 )
-				headerLabel.text = [NSString stringWithString:@"SELECT SURVEYS TO MAKE AVAILABLE OFFLINE"];
+				headerLabel.text = @"SELECT SURVEYS TO MAKE AVAILABLE OFFLINE";
 			else
-				headerLabel.text = [NSString stringWithString:@"SELECT QUIZZES TO MAKE AVAILABLE OFFLINE"];
+				headerLabel.text = @"SELECT QUIZZES TO MAKE AVAILABLE OFFLINE";
 		}
 		else if ( [surveys count] > 0 )
-			headerLabel.text = [NSString stringWithString:@"SELECT SURVEYS TO MAKE AVAILABLE OFFLINE"];
+			headerLabel.text = @"SELECT SURVEYS TO MAKE AVAILABLE OFFLINE";
 		else
-			headerLabel.text = [NSString stringWithString:@"SELECT QUIZZES TO MAKE AVAILABLE OFFLINE"];
+			headerLabel.text = @"SELECT QUIZZES TO MAKE AVAILABLE OFFLINE";
 	}
 	else{
 		headerLabel.font            = [UIFont fontWithName:@"Helvetica" size:12];
 		if ( [surveys count] > 0 && [quizzes count] > 0 ) {
 			if ( section == 0 )
-				headerLabel.text = [NSString stringWithString:@"SELECT SURVEYS FOR OFFLINE USE"];
+				headerLabel.text = @"SELECT SURVEYS FOR OFFLINE USE";
 			else
-				headerLabel.text = [NSString stringWithString:@"SELECT QUIZZES FOR OFFLINE USE"];
+				headerLabel.text = @"SELECT QUIZZES FOR OFFLINE USE";
 		}
 		else if ( [surveys count] > 0 )
-			headerLabel.text = [NSString stringWithString:@"SELECT SURVEYS FOR OFFLINE USE"];
+			headerLabel.text = @"SELECT SURVEYS FOR OFFLINE USE";
 		else
-			headerLabel.text = [NSString stringWithString:@"SELECT QUIZZES FOR OFFLINE USE"];
+			headerLabel.text = @"SELECT QUIZZES FOR OFFLINE USE";
 	}
 	
 	[customView addSubview:headerLabel];

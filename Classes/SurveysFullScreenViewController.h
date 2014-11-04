@@ -31,7 +31,7 @@
 	bool         isFlipped;
 	bool         isDoingSomething;
 	bool         lastAction;
-	unsigned int clickedSurvey;
+	unsigned long clickedSurvey;
 	
 	NSMutableArray *listOfSurveys;
     NSOperationQueue *threader;

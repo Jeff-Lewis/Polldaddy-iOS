@@ -12,11 +12,11 @@
 @class Question;
 
 @interface AN_DateTime : Answer {
-	unsigned int month;
-	unsigned int day;
-	unsigned int year;
-	unsigned int hour;
-	unsigned int minute;
+	unsigned long month;
+	unsigned long day;
+	unsigned long year;
+	unsigned long hour;
+	unsigned long minute;
 }
 
 - (Answer *) initWithXML:(TBXMLElement *)node;

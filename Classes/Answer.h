@@ -12,11 +12,11 @@
 @class Question;
 
 @interface Answer : NSObject {
-	unsigned int questionType;
-	unsigned int questionId;
+	unsigned long questionType;
+	unsigned long questionId;
 }
 
-@property (nonatomic) unsigned int questionType, questionId;
+@property (nonatomic) unsigned long questionType, questionId;
 
 + (NSMutableArray *)allocAnswersFromXML:(NSString *)xml;
 - (Answer *) initWithXML:(TBXMLElement *)node;

@@ -29,7 +29,7 @@
 	NSMutableArray *answers = [[NSMutableArray alloc] init];
 	
 	if ( root ) {
-		unsigned int  answerType = 0;
+		unsigned long  answerType = 0;
 		TBXMLElement *answer = [TBXML childElementNamed:@"answer" parentElement:root];
 		Answer       *obj;
 		
@@ -101,7 +101,7 @@
 }
 
 - (NSString *) description {
-	return [NSString stringWithFormat:@"%@: %d", [self class], questionId ];
+	return [NSString stringWithFormat:@"%@: %lu", [self class], questionId ];
 }
 
 

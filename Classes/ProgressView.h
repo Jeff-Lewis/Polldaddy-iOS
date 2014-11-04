@@ -11,7 +11,7 @@
 
 @protocol SyncStatus
 @optional
-- (void)syncFinished:(unsigned int)total;
+- (void)syncFinished:(unsigned long)total;
 @end
 
 @class PolldaddyAPI2;
@@ -26,22 +26,22 @@
 	
 	UIView *grouper;
 	
-	unsigned int total;
-	unsigned int surveyID;
-	unsigned int lastResponseID;
+	unsigned long total;
+	unsigned long surveyID;
+	unsigned long lastResponseID;
 	BOOL finished;
 	
 	PolldaddyAPI2 *api;
 	
-	unsigned int responsesProcessed;
-	unsigned int responsesSent;
+	unsigned long responsesProcessed;
+	unsigned long responsesSent;
 	
 	NSMutableArray *purgeList;
 	
 	id <SyncStatus> delegate;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil andSurvey:(unsigned int)survey;
+- (id)initWithNibName:(NSString *)nibNameOrNil andSurvey:(unsigned long)survey;
 - (IBAction) buttonPressed:(id) sender;
 - (void)syncAllResponses;
 

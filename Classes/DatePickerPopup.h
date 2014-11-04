@@ -12,7 +12,7 @@
 @class DatePickerController;
 
 @protocol DatePickerControllerDelegate
-- (void) datePickerController:(DatePickerController *)controller didPickDate:(NSDate *)date andType:(unsigned int)type;
+- (void) datePickerController:(DatePickerController *)controller didPickDate:(NSDate *)date andType:(unsigned long)type;
 @end
 
 @interface DatePickerController : UIViewController {
@@ -22,12 +22,12 @@
 	UIView       *background;
 	UIToolbar    *toolBar;
 	
-	unsigned int dateType;
+	unsigned long dateType;
 }
 
 - (IBAction)done:(id)sender;
 - (IBAction)cancel:(id)sender;
-- (id)initWithType:(unsigned int)type;
+- (id)initWithType:(unsigned long)type;
 
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, unsafe_unretained) NSObject <DatePickerControllerDelegate> *delegate;

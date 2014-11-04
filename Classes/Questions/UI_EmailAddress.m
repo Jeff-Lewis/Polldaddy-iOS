@@ -118,7 +118,7 @@
 	// Create label
 	label                 = [[UILabel alloc] init];
 	label.frame           = [self getLabelSize];
-	label.textAlignment   = UITextAlignmentLeft;
+	label.textAlignment   = NSTextAlignmentLeft;
 	label.text            = question.example;
 	label.backgroundColor = [UIColor clearColor];
 	label.textColor       = [UIColor PdTextColor];
@@ -136,9 +136,12 @@
 	[sender resignFirstResponder];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Overriden to allow any orientation.
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{

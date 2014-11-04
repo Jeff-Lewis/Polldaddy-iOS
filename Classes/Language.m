@@ -37,7 +37,7 @@
     phrases  = [[NSMutableDictionary alloc] init];
     
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-    NSString *packFile = [NSString stringWithFormat:@"%@/%d/pack.xml", [paths objectAtIndex:0], survey.surveyId];
+    NSString *packFile = [NSString stringWithFormat:@"%@/%lu/pack.xml", [paths objectAtIndex:0], survey.surveyId];
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     

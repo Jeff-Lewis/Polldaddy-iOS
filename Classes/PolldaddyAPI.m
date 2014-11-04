@@ -93,12 +93,12 @@
 
 // getSurvey: returns local copy of survey in Survey object.
 
-+ (Survey*) allocGetSurvey:(unsigned int)surveyID {
++ (Survey*) allocGetSurvey:(unsigned long)surveyID {
 	
 	PDDatabase *database = [[PDDatabase alloc] init];	
 	NSString *formXML = @"";
 	
-	FMResultSet *rs = [database get:[NSString stringWithFormat:@"SELECT formXML FROM surveys WHERE surveyId = %d", surveyID]];
+	FMResultSet *rs = [database get:[NSString stringWithFormat:@"SELECT formXML FROM surveys WHERE surveyId = %lu", surveyID]];
 
 	while ([rs next])
 		formXML = [rs stringForColumn:@"formXML"];
@@ -111,11 +111,11 @@
 	return FALSE;
 }
 
-+ (Survey*) allocSurveyFromAPI:(unsigned int)surveyID andFormXML:(NSString**)formXML {
++ (Survey*) allocSurveyFromAPI:(unsigned long)surveyID andFormXML:(NSString**)formXML {
 		
 	NSString * demand =	[NSString stringWithFormat:@"<pd:demands>"
 						"	<pd:demand id='getsurvey'>"
-						"		<pd:survey id='%d' />"
+						"		<pd:survey id='%lu' />"
 						"	</pd:demand>"
 						"</pd:demands>", surveyID];
 	
@@ -229,7 +229,7 @@
 					while ( surveyNode ) {
 						TBXMLElement *nameNode = [TBXML childElementNamed:@"pd:title" parentElement:surveyNode];
 						
-						surveyID   = [NSNumber numberWithInt:[[TBXML valueOfAttributeNamed:@"id" forElement:surveyNode] integerValue]];
+						surveyID   = [NSNumber numberWithLong:[[TBXML valueOfAttributeNamed:@"id" forElement:surveyNode] integerValue]];
 						surveyName = [[TBXML textForElement:nameNode] stringByDecodingHTMLEntities];
 						
 						[surveys setObject:surveyName forKey:surveyID];
@@ -292,7 +292,7 @@
 					while ( surveyNode ) {
 						TBXMLElement *nameNode = [TBXML childElementNamed:@"pd:title" parentElement:surveyNode];
 						
-						surveyID   = [NSNumber numberWithInt:[[TBXML valueOfAttributeNamed:@"id" forElement:surveyNode] integerValue]];
+						surveyID   = [NSNumber numberWithLong:[[TBXML valueOfAttributeNamed:@"id" forElement:surveyNode] integerValue]];
 						surveyName = [[TBXML textForElement:nameNode] stringByDecodingHTMLEntities];
 						
 						[surveys setObject:surveyName forKey:surveyID];
@@ -319,7 +319,7 @@
 
 // purgeSurvey: deletes a local survey.
 
-+ (boolean_t) purgeSurvey: (int)surveyID {
++ (boolean_t) purgeSurvey: (long)surveyID {
     // First we get the survey from the DB
     Survey *survey = [PolldaddyAPI allocGetSurvey:surveyID];
     
@@ -328,19 +328,19 @@
     
     // Now we delete it from the DB
 	PDDatabase *database = [[PDDatabase alloc] init];	
-	NSArray    *listOfParams = [NSArray arrayWithObjects:[NSNumber numberWithInt:surveyID], nil];
+	NSArray    *listOfParams = [NSArray arrayWithObjects:[NSNumber numberWithLong:surveyID], nil];
 	
 	[database set:@"DELETE FROM surveys WHERE surveyId = ?" withArgumentsInArray:listOfParams];	
 	
 	return TRUE;
 }
 
-+ (boolean_t) purgeSurveyResponses: (int)surveyID {
++ (boolean_t) purgeSurveyResponses: (long)surveyID {
 	
 	PDDatabase *database = [[PDDatabase alloc] init];	
 	
 	NSArray *listOfParams = [NSArray arrayWithObjects:
-													 [NSNumber numberWithInt:surveyID],
+													 [NSNumber numberWithLong:surveyID],
 													 nil];
 	
 	[database set:@"DELETE FROM respondents WHERE surveyId = ?" withArgumentsInArray:listOfParams];	
@@ -350,7 +350,7 @@
 
 // cacheSurvey takes a copy of the survey from the API and stores it locally.
 
-+ (boolean_t) cacheSurvey: (int)surveyID {
++ (boolean_t) cacheSurvey: (long)surveyID {
 	
 	NSString *formXML;
 	Survey   *survey = [PolldaddyAPI allocSurveyFromAPI:surveyID andFormXML:&formXML];
@@ -364,7 +364,7 @@
 		PDDatabase *database = [[PDDatabase alloc] init];	
 			
 		NSArray *listOfParams = [NSArray arrayWithObjects:
-								 [NSNumber numberWithInt:[survey surveyId]],
+								 [NSNumber numberWithLong:[survey surveyId]],
 								 [NSString stringWithString:[survey title]],
 								 [NSString stringWithString:[survey title]],
 								 [NSNumber numberWithInt:0],
@@ -382,7 +382,7 @@
 
 // getTotalOfflineResponses: Returns the number of offline responses for a survey
 
-+ (unsigned int) getTotalOfflineResponses: (int)surveyID {
++ (unsigned long) getTotalOfflineResponses: (long)surveyID {
 
 	int totalResponses = 0;
 	
@@ -392,7 +392,7 @@
     if ( surveyID == 0 )
         rs = [database get:[NSString stringWithFormat:@"SELECT count(*) AS 'total' FROM respondents"]];
     else
-        rs = [database get:[NSString stringWithFormat:@"SELECT count(*) AS 'total' FROM respondents WHERE surveyId = %d", surveyID]];
+        rs = [database get:[NSString stringWithFormat:@"SELECT count(*) AS 'total' FROM respondents WHERE surveyId = %lu", surveyID]];
 	
 	while ([rs next]) {
 		
@@ -404,9 +404,9 @@
 	return totalResponses;
 }
 
-+ (Response *) allocGetResponse: (unsigned int)responsePosition forSurvey:(Survey *)survey {
++ (Response *) allocGetResponse: (unsigned long)responsePosition forSurvey:(Survey *)survey {
 	PDDatabase *database = [[PDDatabase alloc] init];	
-	FMResultSet *rs = [database get:[NSString stringWithFormat:@"SELECT * FROM respondents WHERE surveyId = %d ORDER BY responseId DESC LIMIT %d,1", survey.surveyId, responsePosition]];
+	FMResultSet *rs = [database get:[NSString stringWithFormat:@"SELECT * FROM respondents WHERE surveyId = %lu ORDER BY responseId DESC LIMIT %lu,1", survey.surveyId, responsePosition]];
 
 	Response *response = NULL;
 	
@@ -439,7 +439,7 @@
 
 // submitResponse: stores a response locally.
 
-+ (boolean_t) submitResponse: (int)surveyID andResponseXML:(NSString*)responseString andCompleted:(bool)isCompleted {
++ (boolean_t) submitResponse: (long)surveyID andResponseXML:(NSString*)responseString andCompleted:(bool)isCompleted {
 
 	NSString * userID;
 	
@@ -448,7 +448,7 @@
 	PDDatabase *database = [[PDDatabase alloc] init];	
 	
 	NSArray *listOfParams = [NSArray arrayWithObjects:
-							 [NSNumber numberWithInt:surveyID],
+							 [NSNumber numberWithLong:surveyID],
 							 responseString,
 							 [NSDate date],
 							 [NSDate date],
@@ -513,7 +513,7 @@
 				
 				if ( userCodeNode ) {
 					userCode = [TBXML textForElement:userCodeNode];
-					userID = [NSNumber numberWithInt:[[TBXML valueOfAttributeNamed:@"partnerUserID" forElement:root] integerValue]];
+					userID = [NSNumber numberWithLong:[[TBXML valueOfAttributeNamed:@"partnerUserID" forElement:root] integerValue]];
 					
 					[PolldaddyAPI setUserCode:userCode withUserID:userID];
 					

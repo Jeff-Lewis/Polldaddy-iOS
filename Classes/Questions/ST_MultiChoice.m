@@ -25,7 +25,7 @@
 
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"oID=%d title=%@ mediaUrl=%d", oID, title, mediaUrl];
+    return [NSString stringWithFormat:@"oID=%d title=%@ mediaUrl=%@", oID, title, mediaUrl];
 }
 @end
 
@@ -243,7 +243,7 @@ NSComparisonResult compareRandom( ChoiceElement *element1, ChoiceElement *elemen
 	NSMutableString *answerText = [[NSMutableString alloc] init];
 	
 	for (ChoiceElement *element in answers) {
-		[answerText appendFormat:@"\n%@=%@", element.oID, element.title];
+		[answerText appendFormat:@"\n%u=%@", element.oID, element.title];
 	}
 	
 	NSString *text = [NSString stringWithString:answerText];

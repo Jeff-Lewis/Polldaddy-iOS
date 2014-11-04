@@ -28,8 +28,8 @@
 
 @synthesize title, surveyId, questionType, questionNumber, questionId, note, rules, page, realQnum;
 
-+ (Question *) allocQuestion: (TBXMLElement *)qnode onPage:(unsigned int)page {
-	int       questionType;
++ (Question *) allocQuestion: (TBXMLElement *)qnode onPage:(unsigned long)page {
+	NSUInteger       questionType;
 	Question *obj;
 	
 	// Basic question info
@@ -85,7 +85,7 @@
 	return [obj initWithXML:qnode andType:questionType andPage:page];
 }
 
-- (Question *)initWithXML:(TBXMLElement *)qnode andType:(unsigned int)qType andPage:(unsigned int)thePage {
+- (Question *)initWithXML:(TBXMLElement *)qnode andType:(unsigned long)qType andPage:(unsigned long)thePage {
 	self = [super init];
 
 	rules = [[NSMutableArray alloc] init];
@@ -113,7 +113,7 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"%@: %d, title=%@, note=%@, mand=%@, page=%d, rules=%d", [self class], questionId, title, note, [self isMandatory] ? @"true" : @"false", page, [rules count] ];
+	return [NSString stringWithFormat:@"%@: %lu, title=%@, note=%@, mand=%@, page=%lu, rules=%lu", [self class], questionId, title, note, [self isMandatory] ? @"true" : @"false", page, (unsigned long)[rules count] ];
 }
 
 - (boolean_t) isMandatory {
@@ -135,13 +135,13 @@
 	}
 }
 
-- (NSString *)getResourcePath:(unsigned int)surveyID {
+- (NSString *)getResourcePath:(unsigned long)surveyID {
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
     
-    return [NSString stringWithFormat:@"%@/%d/", [paths objectAtIndex:0], surveyID ];
+    return [NSString stringWithFormat:@"%@/%lu/", [paths objectAtIndex:0], surveyID ];
 }
 
-- (NSString *)allocLocalizeString:(NSString *)str andSurveyId:(unsigned int)theSurveyId {
+- (NSString *)allocLocalizeString:(NSString *)str andSurveyId:(unsigned long)theSurveyId {
     // Localize the note
     NSError             *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"src=[\"'](.*?)[\"']" options:NSRegularExpressionCaseInsensitive error:&error];
@@ -182,7 +182,7 @@
     return new_str;
 }
 
-- (void)localize:(unsigned int)theSurveyId {
+- (void)localize:(unsigned long)theSurveyId {
     if ( note == nil )
         return;
 

@@ -44,12 +44,12 @@ extern UIInterfaceOrientation gAppOrientation;
 @interface SurveyListObject : NSObject
 {
 	NSString     *title;
-	unsigned int  surveyId;
-	unsigned int  responseCount;
+	unsigned long  surveyId;
+	unsigned long  responseCount;
 }
 
 @property (readonly,nonatomic,strong) NSString *title;
-@property (readonly,nonatomic) unsigned int surveyId, responseCount;
+@property (readonly,nonatomic) unsigned long surveyId, responseCount;
 
 @end
 
@@ -57,7 +57,7 @@ extern UIInterfaceOrientation gAppOrientation;
 
 @synthesize title, surveyId, responseCount;
 
-- (id)initWithTitle:(NSString *)theTitle andId:(unsigned int)theId andCount:(unsigned int)theCount {
+- (id)initWithTitle:(NSString *)theTitle andId:(unsigned long)theId andCount:(unsigned long)theCount {
 	self = [super init];
 	
 	surveyId      = theId;
@@ -116,7 +116,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 
 - (void)newResponseReceived:(NSNotification *)notif {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    unsigned int auto_sync = [defaults integerForKey:@"survey_auto_sync"] ? [defaults integerForKey:@"survey_auto_sync"] : 0;
+    unsigned long auto_sync = [defaults integerForKey:@"survey_auto_sync"] ? [defaults integerForKey:@"survey_auto_sync"] : 0;
 
     if ( auto_sync == 1 ) {
         NSLog( @"Auto syncing" );
@@ -137,7 +137,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 - (void)defaultsChanged:(NSNotification *)notification {
     // Auto-sync setting has changed. If now enabled, fire off a 'new response' message so any remaining responses are synced
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    unsigned int auto_sync = [defaults integerForKey:@"survey_auto_sync"] ? [defaults integerForKey:@"survey_auto_sync"] : 0;
+    unsigned long auto_sync = [defaults integerForKey:@"survey_auto_sync"] ? [defaults integerForKey:@"survey_auto_sync"] : 0;
     
     if ( auto_sync == 1 ) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"polldaddy new response" object:self];
@@ -185,13 +185,13 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 	SurveyListObject    *survey;
 	
 	// Add surveys to the list
-    unsigned int total = 0, count = 0;
+    unsigned long total = 0, count = 0;
 	for ( NSNumber *key in surveysDictionary ) {
-        count = [PolldaddyAPI getTotalOfflineResponses:key.unsignedIntValue];
+        count = [PolldaddyAPI getTotalOfflineResponses:key.unsignedLongValue];
         total += count;
 
 		// Allocate surveyobject
-		survey = [[SurveyListObject alloc] initWithTitle:[surveysDictionary objectForKey:key] andId:key.unsignedIntValue andCount:count];
+		survey = [[SurveyListObject alloc] initWithTitle:[surveysDictionary objectForKey:key] andId:key.unsignedLongValue andCount:count];
 
 		// Add to array
 		[listOfSurveys addObject:survey];
@@ -494,9 +494,12 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 	[UIView commitAnimations];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
+-(BOOL)shouldAutorotate {
     return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (IBAction) logOutNow {
@@ -675,7 +678,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 			progressView = [[ProgressView alloc] initWithNibName:@"ProgressView" andSurvey:clickedSurvey];
 		
 		progressView.delegate = self;
-		[delegate.rootViewController presentModalViewController:progressView animated:YES];
+        [delegate.rootViewController presentViewController:progressView animated:YES completion:nil];
 	}
 	else {
 		NSLog(@"no connection");
@@ -692,16 +695,12 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
     // Release any cached data, images, etc that aren't in use.
 }
 
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    
+-(void)dealloc
+{
     // Remove notification
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"polldaddy new response" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"polldaddy response synced" object:nil];
 }
-
-
 
 
 @end

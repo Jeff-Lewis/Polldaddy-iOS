@@ -69,7 +69,7 @@ static const short _base64DecodingTable[256] = {
 	char * strResult;
 	
 	// Get the Raw Data length and ensure we actually have data
-	int intLength = [objData length];
+	long intLength = [objData length];
 	if (intLength == 0) return nil;
 	
 	// Setup the String-based Result placeholder and pointer within that placeholder
@@ -126,7 +126,7 @@ static const short _base64DecodingTable[256] = {
 			
 			data = UIImageJPEGRepresentation( viewImage, 0.9 );
 
-			dataFileName = [NSString stringWithFormat:@"fileupload-%lu.jpg", [[NSDate date] timeIntervalSince1970]];
+			dataFileName = [NSString stringWithFormat:@"fileupload-%f.jpg", [[NSDate date] timeIntervalSince1970]];
 		}
 		else {
 			// Load image from disk
@@ -241,9 +241,9 @@ static const short _base64DecodingTable[256] = {
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
-	[picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 	
-	dataFileName = [NSString stringWithFormat:@"fileupload-%lu.jpg", [[NSDate date] timeIntervalSince1970]];
+	dataFileName = [NSString stringWithFormat:@"fileupload-%f.jpg", [[NSDate date] timeIntervalSince1970]];
 	
 	// Now, we have to find the documents directory so we can save it
 	NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -289,7 +289,7 @@ static const short _base64DecodingTable[256] = {
 	imagePicker.allowsEditing = NO;
 
 	// Show image picker
-	[delegate.rootViewController presentModalViewController:imagePicker animated:YES];
+    [delegate.rootViewController presentViewController:imagePicker animated:YES completion:nil];
 	
 }
 
@@ -377,8 +377,12 @@ static const short _base64DecodingTable[256] = {
 	}
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{

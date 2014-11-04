@@ -18,7 +18,7 @@
 @synthesize progress, loading, outOf, size, grouper, button, syncTitle, delegate;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil andSurvey:(unsigned int)survey {
+- (id)initWithNibName:(NSString *)nibNameOrNil andSurvey:(unsigned long)survey {
 	self = [super initWithNibName:nibNameOrNil bundle:nil];
 
 	if ( self ) {
@@ -60,7 +60,7 @@
 }
 
 - (void)updateProgress {
-	[outOf setText:[NSString stringWithFormat:@"%d out of %d", responsesProcessed, total]];
+	[outOf setText:[NSString stringWithFormat:@"%lu out of %lu", responsesProcessed, total]];
 	progress.progress = (float)responsesProcessed / (float)total;
 }
 
@@ -71,7 +71,7 @@
 	[PolldaddyAPI purgeResponse:purgeList];
 
 	// Let the user know
-	[outOf setText:[NSString stringWithFormat:@"%d synced, %d failed", responsesSent, responsesProcessed - responsesSent]];
+	[outOf setText:[NSString stringWithFormat:@"%lu synced, %lu failed", responsesSent, responsesProcessed - responsesSent]];
 	[syncTitle setText:@"Finished!"];
 	[button setTitle:@"OK" forState:UIControlStateNormal];
 	[loading stopAnimating];
@@ -83,7 +83,7 @@
 
 	// Setup database and connection
 	PDDatabase  *database = [[PDDatabase alloc] init];
-	FMResultSet *set = [database get:[NSString stringWithFormat:@"SELECT responseId, responseXML, completed, startDate, endDate FROM respondents WHERE surveyId = %d AND responseId > %d LIMIT 1", surveyID, lastResponseID]];
+	FMResultSet *set = [database get:[NSString stringWithFormat:@"SELECT responseId, responseXML, completed, startDate, endDate FROM respondents WHERE surveyId = %lu AND responseId > %lu LIMIT 1", surveyID, lastResponseID]];
 	
 	if ( [set next] ) {
 		Response *response = [[Response alloc] initWithResultSet:set];
@@ -114,7 +114,7 @@
 	
 	unsigned int response = [api responseWasAccepted:data];
 	if ( response > 0 ) {
-		[purgeList addObject:[NSNumber numberWithInt:lastResponseID]];
+		[purgeList addObject:[NSNumber numberWithLong:lastResponseID]];
 		responsesSent++;
 	}
 	
@@ -128,14 +128,14 @@
 	else if ( totalSent > 1024 )
 		[size setText:[NSString stringWithFormat:@"%2.2f KB", (float)totalSent / (float)1024]];
 	else
-		[size setText:[NSString stringWithFormat:@"%d bytes", totalSent]];
+		[size setText:[NSString stringWithFormat:@"%ld bytes", (long)totalSent]];
 }
 
 - (void)buttonPressed:(id)sender {
 	if ( finished ) {
 		[delegate syncFinished:responsesProcessed];
-		
-		[self dismissModalViewControllerAnimated:YES];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
 	}
 	else {
 		[api stopEverything];
@@ -182,12 +182,6 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 

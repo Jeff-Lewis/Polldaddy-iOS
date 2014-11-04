@@ -41,9 +41,9 @@
 @property (nonatomic,readonly) NSInteger lastButton;
 @property (nonatomic, strong) NSMutableArray *displayedViewControllers;
 
-- (void) startSurvey: (unsigned int)surveyId;
-- (void) reviewSurvey: (unsigned int)surveyId;
-- (void) didSelectSurvey: (unsigned int)surveyId;
+- (void) startSurvey: (unsigned long)surveyId;
+- (void) reviewSurvey: (unsigned long)surveyId;
+- (void) didSelectSurvey: (unsigned long)surveyId;
 - (void) showSurveys;
 - (void) showSignInAfterLogOut;
 

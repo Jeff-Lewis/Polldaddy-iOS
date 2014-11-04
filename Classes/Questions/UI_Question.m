@@ -181,7 +181,7 @@ extern UIInterfaceOrientation gAppOrientation;
 	view.hidden = YES;
 	view.frame  = CGRectMake( view.frame.origin.x, view.frame.origin.y, [self getMaxFrameWidth], 10 );
 
-	unsigned int height = [[view stringByEvaluatingJavaScriptFromString:@"document.documentElement.clientHeight;"] integerValue];
+	unsigned long height = [[view stringByEvaluatingJavaScriptFromString:@"document.documentElement.clientHeight;"] integerValue];
 	
 	// Adjust iPhone height according to scale factor
 	if ( [Constants isIphone] )
@@ -268,9 +268,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	}
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
+-(BOOL)shouldAutorotate {
     return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 
@@ -280,15 +283,5 @@ extern UIInterfaceOrientation gAppOrientation;
     
     // Release any cached data, images, etc that aren't in use.
 }
-
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-
-
 
 @end

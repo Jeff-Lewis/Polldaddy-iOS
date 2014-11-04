@@ -27,7 +27,7 @@
 	
 	// What is currently being displayed
 	UI_Question *currentField;
-	int         currentQnum;
+	unsigned long currentQnum;
 	
 	// Those all-important answers - stored as dictionary of qID => answer XML
 	NSMutableDictionary *answers;
@@ -47,8 +47,8 @@
 
 - (void)hideEverything:(BOOL)hideOrShow;
 - (IBAction) buttonPressed: (id) sender;
-- (void) displayQuestion:(int)qNum withNewField:(boolean_t)newField;
-- (void) loadSurvey:(unsigned int) surveyId;
+- (void) displayQuestion:(long)qNum withNewField:(boolean_t)newField;
+- (void) loadSurvey:(unsigned long) surveyId;
 - (void)questionFirstLoaded:(NSNotification *)notification;
 - (void)questionLoaded:(BOOL)drawQuestion;
 - (void)heartbeat;

@@ -19,7 +19,7 @@
 
 @synthesize title, surveyId, questions, startMessage, endMessage, endMessageFail, passThreshold, packId, styleId, firstIsFake;
 
-- (Survey *) initWithId: (unsigned int) theId andTitle: (NSString *)andTitle {
+- (Survey *) initWithId: (unsigned long) theId andTitle: (NSString *)andTitle {
 	self = [super init];
 	
 	self.title        = andTitle;
@@ -70,7 +70,7 @@
 			hasEnd = YES;
 
 		TBXMLElement *page = [TBXML childElementNamed:@"page" parentElement:root];
-		int           qnum = 0, pnum, realQ = 1;
+		long           qnum = 0, pnum, realQ = 1;
 
 		// Go through the pages
 		while ( page ) {
@@ -183,13 +183,13 @@
 	return NO;	
 }
 
-- (boolean_t) hasNextQuestion:(unsigned int)qNum {
+- (boolean_t) hasNextQuestion:(unsigned long)qNum {
 	if ( qNum + 1 < [questions count] )
 		return TRUE;
 	return FALSE;
 }
 
-- (unsigned int) realQuestionCount {
+- (unsigned long) realQuestionCount {
 	unsigned int count = 0;
 	
 	for ( Question *question in questions ) {
@@ -200,7 +200,7 @@
 	return count;
 }
 
-- (Question *) getQuestionForId:(unsigned int)qID {
+- (Question *) getQuestionForId:(unsigned long)qID {
 	for ( Question *question in questions ) {
 		if ( question.questionId == qID )
 			return question;
@@ -209,7 +209,7 @@
 	return FALSE;
 }
 
-- (Question *) getQuestionForPosition:(unsigned int)position {
+- (Question *) getQuestionForPosition:(unsigned long)position {
 	if ( position < [questions count] ) {
 		return [questions objectAtIndex:position];
 	}
@@ -217,7 +217,7 @@
 	return nil;
 }
 
-- (Question *) getFirstQuestionForPage:(unsigned int)page {
+- (Question *) getFirstQuestionForPage:(unsigned long)page {
 	for ( Question *question in questions ) {
 		if ( question.page == page )
 			return question;
@@ -226,22 +226,22 @@
 	return FALSE;
 }
 
-- (unsigned int) getResponses {
+- (unsigned long) getResponses {
 	return responses;
 }
 
 - (NSString *) description {
 	if ( [self isSurvey] )
-		return [NSString stringWithFormat:@"Survey %d, %d questions", surveyId, [questions count]];
+		return [NSString stringWithFormat:@"Survey %lu, %lu questions", surveyId, (unsigned long)[questions count]];
 	else
-		return [NSString stringWithFormat:@"Quiz %d, %d questions", surveyId, [questions count]];
+		return [NSString stringWithFormat:@"Quiz %lu, %lu questions", surveyId, (unsigned long)[questions count]];
 }
 
 
 - (NSString *)getResourcePath {
     NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
     
-    return [NSString stringWithFormat:@"%@/%d/", [paths objectAtIndex:0], surveyId ];
+    return [NSString stringWithFormat:@"%@/%lu/", [paths objectAtIndex:0], surveyId ];
 }
 
 - (BOOL)clearResources {

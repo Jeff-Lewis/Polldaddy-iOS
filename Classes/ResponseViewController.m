@@ -52,7 +52,7 @@ extern UIInterfaceOrientation gAppOrientation;
 	
 	// Get response
 	currentResponse = [PolldaddyAPI allocGetResponse:currentResponsePos forSurvey:survey];
-	unsigned int total = [PolldaddyAPI getTotalOfflineResponses:survey.surveyId];
+	unsigned long total = [PolldaddyAPI getTotalOfflineResponses:survey.surveyId];
 	
 	if ( currentResponse ) {
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -147,12 +147,12 @@ extern UIInterfaceOrientation gAppOrientation;
 				else
 					title.font = [UIFont boldSystemFontOfSize:15];
 				
-				title.lineBreakMode   = UILineBreakModeWordWrap;
+				title.lineBreakMode   = NSLineBreakByWordWrapping;
 				title.numberOfLines   = 0;
 				
 				ansText.backgroundColor = [UIColor clearColor];
 				ansText.textColor       = [UIColor PdTextColor];
-				ansText.lineBreakMode   = UILineBreakModeWordWrap;
+				ansText.lineBreakMode   = NSLineBreakByWordWrapping;
 				ansText.numberOfLines   = 0;
 				
 				if ( [Constants isIphone] )
@@ -170,7 +170,7 @@ extern UIInterfaceOrientation gAppOrientation;
 				}
 				
 				offset.x = 0;
-				offset   = [ui autoHeightLabel:title withText:[NSString stringWithFormat:@"%d) %@", question.questionNumber, question.title] atPoint:offset];
+				offset   = [ui autoHeightLabel:title withText:[NSString stringWithFormat:@"%lu) %@", question.questionNumber, question.title] atPoint:offset];
 				
 				offset.x = [Constants innerFrameXOffset];
 				offset   = [ui autoHeightLabel:ansText withText:summaryText atPoint:offset];
@@ -228,12 +228,14 @@ extern UIInterfaceOrientation gAppOrientation;
 	
 }
 
-- (void)loadSurvey:(unsigned int) surveyId {
+- (void)loadSurvey:(unsigned long) surveyId {
 	survey = [PolldaddyAPI allocGetSurvey:surveyId];
 }
 
 - (void)viewDidLoad {
-	if ( survey ) {
+    [super viewDidLoad];
+    
+    if ( survey ) {
 		weirdOffset = 0;
 		
 		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight ) {
@@ -284,9 +286,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	}
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
+-(BOOL)shouldAutorotate {
     return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
@@ -302,13 +307,6 @@ extern UIInterfaceOrientation gAppOrientation;
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
-}
-
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 

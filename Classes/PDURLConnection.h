@@ -25,8 +25,8 @@
     
     bool inError;
     
-    unsigned int tag;
-    unsigned int itemID;
+    unsigned long tag;
+    unsigned long itemID;
     
     id <PDURLConnectionStatus> delegate;
     id otherDelegate;
@@ -38,7 +38,7 @@
 
 @property(nonatomic,strong) id<PDURLConnectionStatus> delegate;
 @property(nonatomic,strong) id otherDelegate;
-@property(nonatomic) unsigned int tag, itemID;
+@property(nonatomic) unsigned long tag, itemID;
 @property(nonatomic) bool inError;
 
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id <PDURLConnectionStatus>)delegate;

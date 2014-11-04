@@ -28,7 +28,7 @@ extern UIInterfaceOrientation gAppOrientation;
 
 	label.backgroundColor = [UIColor clearColor];
 	label.textColor       = [UIColor grayColor];
-	label.lineBreakMode   = UILineBreakModeWordWrap;
+	label.lineBreakMode   = NSLineBreakByWordWrapping;
 	label.numberOfLines   = 0;
 	
 	return label;
@@ -290,13 +290,13 @@ extern UIInterfaceOrientation gAppOrientation;
 
 -(void)buttonEvent:(id)sender {
 	UIButton     *button = (UIButton *) sender;
-	unsigned int  row, col;
+	unsigned long  row, col;
 	
 	// Calculate the row and column picked
 	row = floor( ( button.tag - 1 ) / [question.columns count] );
 	col = ( button.tag - 1 ) % [question.columns count];
 
-	NSMutableArray *rowArray = [selectedItems objectForKey:[NSNumber numberWithInt:row]];
+	NSMutableArray *rowArray = [selectedItems objectForKey:[NSNumber numberWithLong:row]];
 	
 	if ( rowArray ) {
 		// If this a single choice matrix then we're only allowed 1 choice per row
@@ -306,7 +306,7 @@ extern UIInterfaceOrientation gAppOrientation;
 			
 			// Unselect all the buttons for this row
 			UIButton *but;
-			for ( unsigned int tag = 1 + ( row * [question.columns count] ); tag < 1 + ( row + 1 ) * [question.columns count]; tag++ ) {
+			for ( unsigned long tag = 1 + ( row * [question.columns count] ); tag < 1 + ( row + 1 ) * [question.columns count]; tag++ ) {
 				but = (UIButton *)[self.view viewWithTag:tag];
 				if ( but )
 					but.selected = NO;
@@ -319,10 +319,10 @@ extern UIInterfaceOrientation gAppOrientation;
 	}
 
 	// Add the choice
-	[rowArray addObject:[NSNumber numberWithInt:col]];
+	[rowArray addObject:[NSNumber numberWithLong:col]];
 	
 	// Push back into the dictionary
-	[selectedItems setObject:rowArray forKey:[NSNumber numberWithInt:row]];
+	[selectedItems setObject:rowArray forKey:[NSNumber numberWithLong:row]];
 
 
 	// Toggle the button selected state of the button just pressed
@@ -359,7 +359,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		// Column label
 		label               = [self allocEmptyLabel];
 		label.text          = element.title;
-		label.textAlignment = UITextAlignmentCenter;
+		label.textAlignment = NSTextAlignmentCenter;
 		label.frame         = col;
 		label.tag           = tag++;
 		
@@ -390,6 +390,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		// Row buttons
 		for ( NSString *key in question.columns ) {
 			// Column label
+            NSLog(@"key: %@", key);
 			button = [[UIButton alloc] initWithFrame:col];
 			
 			// Set the tag so we know which row+col this button is for
@@ -428,9 +429,12 @@ extern UIInterfaceOrientation gAppOrientation;
     [self willAnimateRotationToInterfaceOrientation:gAppOrientation duration:0.1];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Overriden to allow any orientation.
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
@@ -447,7 +451,9 @@ extern UIInterfaceOrientation gAppOrientation;
 	
 	// Move column titles
 	for ( NSString *key in question.columns ) {
-		// Get column label using tag
+		NSLog(@"key: %@", key);
+        
+        // Get column label using tag
 		label = (UILabel *)[self.view viewWithTag:tag++];
 		
 		if ( label ) {

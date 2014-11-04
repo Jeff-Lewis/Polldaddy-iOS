@@ -12,21 +12,21 @@
 @class Question, UI_Question;
 
 @interface Rule : NSObject {
-	unsigned int ruleId;
-	unsigned int questionId;
-	unsigned int responseType;
-	unsigned int responseId;
-	unsigned int actionType;
-	unsigned int actionId;
+	unsigned long ruleId;
+	unsigned long questionId;
+	unsigned long responseType;
+	unsigned long responseId;
+	unsigned long actionType;
+	unsigned long actionId;
 }
 
-@property unsigned int questionId;
+@property unsigned long questionId;
 
 - (Rule *) initWithRule: (TBXMLElement *)rule;
 - (BOOL) isEnd;
 - (BOOL) isJump;
 - (BOOL) isSkip;
-- (unsigned int) getTargetPage;
+- (unsigned long) getTargetPage;
 - (BOOL) applyWithQuestion:(Question *)question withAnswer:(UI_Question *)answer;
 
 @end

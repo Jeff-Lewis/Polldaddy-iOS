@@ -290,13 +290,13 @@
 	
 }
 
-+ (NSString *)stringPrettyBytes:(unsigned int)bytes {
++ (NSString *)stringPrettyBytes:(unsigned long)bytes {
     if ( bytes > 1024 * 1024 * 1024 )
 		return [NSString stringWithFormat:@"%.2f MB", (float)((float)bytes / (float)( 1024 * 1024 ))];
 	else if ( bytes > 1024 )
 		return [NSString stringWithFormat:@"%.2f KB", (float)((float)bytes / (float)1024)];
     
-	return [NSString stringWithFormat:@"%d bytes", bytes];
+	return [NSString stringWithFormat:@"%lu bytes", bytes];
 }
 
 @end

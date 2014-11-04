@@ -43,7 +43,7 @@ UIInterfaceOrientation gAppOrientation;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-	if ( keyPath == @"loggedIn" ) {
+	if ( [keyPath  isEqual: @"loggedIn"] ) {
 		[signInView removeObserver:self forKeyPath:@"loggedIn"];
 		[self showSurveys];		
 	}
@@ -164,10 +164,10 @@ UIInterfaceOrientation gAppOrientation;
 }
 
 
-- (void) didSelectSurvey: (unsigned int)surveyId{
+- (void) didSelectSurvey: (unsigned long)surveyId{
 	UIActionSheet *actionSheet;
 
-	int totalResponses = [PolldaddyAPI getTotalOfflineResponses:surveyId];
+	long totalResponses = [PolldaddyAPI getTotalOfflineResponses:surveyId];
 	
 	if ( totalResponses == 0 ) {
 		lastButton = 0;
@@ -188,7 +188,7 @@ UIInterfaceOrientation gAppOrientation;
 	}
 }
 
-- (void) reviewSurvey: (unsigned int)surveyId {
+- (void) reviewSurvey: (unsigned long)surveyId {
 	background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"survey-question-bg.png"]];
 	[background setAlpha:0.0];
 	[[self view] addSubview:background];
@@ -241,7 +241,7 @@ UIInterfaceOrientation gAppOrientation;
 	}
 }
 
-- (void) startSurvey: (unsigned int)surveyId {
+- (void) startSurvey: (unsigned long)surveyId {
 	background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"survey-question-bg.png"]];
 	[background setAlpha:0.0];
 	[[self view] addSubview:background];
@@ -344,12 +344,6 @@ UIInterfaceOrientation gAppOrientation;
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 

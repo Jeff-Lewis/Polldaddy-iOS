@@ -12,12 +12,12 @@
 @class UI_Question, RemoteResources;
 
 @interface Question : NSObject {
-	unsigned int surveyId;
-	unsigned int questionType;
-	unsigned int questionNumber;    // The question number shown to users, taking into account that page headings and HTML don't count
-	unsigned int realQnum;          // The actual question number
-	unsigned int questionId;
-	unsigned int page;
+	unsigned long surveyId;
+	unsigned long questionType;
+	unsigned long questionNumber;    // The question number shown to users, taking into account that page headings and HTML don't count
+	unsigned long realQnum;          // The actual question number
+	unsigned long questionId;
+	unsigned long page;
 	
 	boolean_t isMandatory;
 
@@ -27,19 +27,19 @@
 	NSMutableArray *rules;
 }
 
-@property unsigned int surveyId, questionType, questionNumber, questionId, page, realQnum;
+@property unsigned long surveyId, questionType, questionNumber, questionId, page, realQnum;
 
 @property (nonatomic, copy) NSString         *title, *note;
 @property (nonatomic, strong) NSMutableArray *rules;
 
-+ (Question *) allocQuestion: (TBXMLElement *)qnode onPage:(unsigned int)page;
-- (Question *) initWithXML:(TBXMLElement *)qnode andType:(unsigned int)qType andPage:(unsigned int)page;
++ (Question *) allocQuestion: (TBXMLElement *)qnode onPage:(unsigned long)page;
+- (Question *) initWithXML:(TBXMLElement *)qnode andType:(unsigned long)qType andPage:(unsigned long)page;
 - (NSString *) description;
 - (boolean_t) isMandatory;
 - (boolean_t) isQuestion;
 - (boolean_t) hasNote;
 - (void)applyRules:(NSMutableArray *)actions withAnswer:(UI_Question *)answer;
-- (void)localize:(unsigned int)theSurveyId;
-- (NSString *)allocLocalizeString:(NSString *)str andSurveyId:(unsigned int)theSurveyId;
+- (void)localize:(unsigned long)theSurveyId;
+- (NSString *)allocLocalizeString:(NSString *)str andSurveyId:(unsigned long)theSurveyId;
 - (void)addResources:(RemoteResources *)resources;
 @end

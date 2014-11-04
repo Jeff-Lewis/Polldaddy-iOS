@@ -34,7 +34,7 @@
 			total++;
 			
 			// Get the answer for this question
-			answerStr = [answers objectForKey:[NSNumber numberWithInt:question.questionId]];
+			answerStr = [answers objectForKey:[NSNumber numberWithLong:question.questionId]];
 			if ( answerStr ) {
 				// Convert it to an answer
 				TBXML          *tbxml = [TBXML tbxmlWithXMLString:answerStr];
@@ -46,7 +46,7 @@
 				answer = (AN_MultiChoice *)[answer initWithXML:root];
 				answer.questionType = 400;
 				
-				[full appendFormat:@"<div class=\"quiz-question\">Q%d. %@</div>", mquestion.questionNumber, mquestion.title];
+				[full appendFormat:@"<div class=\"quiz-question\">Q%lu. %@</div>", mquestion.questionNumber, mquestion.title];
 				
 				for ( ChoiceElement *option in mquestion.answers ) {
 					if ( [answer wasSelected:option.oID] && option.oID == mquestion.correctAnswer ) {
@@ -136,7 +136,7 @@
 	view.hidden = YES;
 	view.frame  = CGRectMake( view.frame.origin.x, view.frame.origin.y, [self getMaxFrameWidth], 10 );
 	
-	unsigned int height = [[view stringByEvaluatingJavaScriptFromString:@"document.documentElement.clientHeight;"] integerValue];
+	unsigned long height = [[view stringByEvaluatingJavaScriptFromString:@"document.documentElement.clientHeight;"] integerValue];
 	
 	if ( height > [self getMaxFrameHeight] ) {
 		height = [self getMaxFrameHeight];
@@ -165,9 +165,12 @@
 	//	self.view.hidden = YES;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Overriden to allow any orientation.
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 

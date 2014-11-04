@@ -20,11 +20,11 @@
 @end
 
 @protocol API_Survey <NSObject>
--(void)fetchingURL:(unsigned int)surveyID withURL:(NSString *)url withBytes:(unsigned int)bytes;
--(void)finished:(unsigned int)surveyID success:(bool)success withSurvey:(Survey *)survey;
--(void)finishedResource:(unsigned int)surveyID withData:(NSData *)data andFilename:(NSString *)filename;
--(void)finishedLanguage:(unsigned int)surveyID withData:(NSData *)data;
--(void)finishedStyle:(unsigned int)surveyID withData:(NSData *)data;
+-(void)fetchingURL:(unsigned long)surveyID withURL:(NSString *)url withBytes:(unsigned long)bytes;
+-(void)finished:(unsigned long)surveyID success:(bool)success withSurvey:(Survey *)survey;
+-(void)finishedResource:(unsigned long)surveyID withData:(NSData *)data andFilename:(NSString *)filename;
+-(void)finishedLanguage:(unsigned long)surveyID withData:(NSData *)data;
+-(void)finishedStyle:(unsigned long)surveyID withData:(NSData *)data;
 @end
 
 @interface PolldaddyAPI2 : NSObject <PDURLConnectionStatus> {
@@ -36,10 +36,10 @@
 @property (nonatomic, strong) id <PolldaddyApiStatus> delegate;
 
 - (void)stopEverything;
-- (BOOL)submitResponse:(unsigned int)surveyID andResponse:(Response *)response withDelegate:(id <PolldaddyApiStatus>)del;
+- (BOOL)submitResponse:(unsigned long)surveyID andResponse:(Response *)response withDelegate:(id <PolldaddyApiStatus>)del;
 - (unsigned int)responseWasAccepted:(NSData *)data;
 
-- (void)getRemoteSurvey:(unsigned int)surveyID delegate:(id <API_Survey>)del;
+- (void)getRemoteSurvey:(unsigned long)surveyID delegate:(id <API_Survey>)del;
 - (void)getResources:(RemoteResources *)resources delegate:(id <API_Survey>)del;
 - (void)getLanguage:(Survey *)survey delegate:(id <API_Survey>)del;
 - (void)getStyle:(Survey *)survey delegate:(id <API_Survey>)del;

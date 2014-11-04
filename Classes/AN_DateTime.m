@@ -26,14 +26,14 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"%@ %02d/%02d/%04d %02d:%02d", [super description], day, month, year, hour, minute];
+	return [NSString stringWithFormat:@"%@ %02lu/%02lu/%04lu %02lu:%02lu", [super description], day, month, year, hour, minute];
 }
 
 - (NSString *) summaryForQuestion:(Question *)question {
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
 	// Set response info
-	NSString *date = [NSString stringWithFormat:@"%04d-%02d-%02d %02d:%02d:00", year, month, day, hour, minute];
+	NSString *date = [NSString stringWithFormat:@"%04lu-%02lu-%02lu %02lu:%02lu:00", year, month, day, hour, minute];
 
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:SS"];
 

@@ -253,7 +253,7 @@
 			//Create label
 			labelFirstName                 = [[UILabel alloc] init];
 			labelFirstName.frame           = [self getLabelSize:0];
-			labelFirstName.textAlignment   = UITextAlignmentLeft;
+			labelFirstName.textAlignment   = NSTextAlignmentLeft;
 			labelFirstName.text            = question.firstName;
 			labelFirstName.backgroundColor = [UIColor clearColor];
 			labelFirstName.textColor       = [UIColor PdTextColor];
@@ -282,7 +282,7 @@
 			//Create label
 			labelLastName                 = [[UILabel alloc] init];
 			labelLastName.frame           = [self getLabelSize:1];
-			labelLastName.textAlignment   = UITextAlignmentLeft;
+			labelLastName.textAlignment   = NSTextAlignmentLeft;
 			labelLastName.text            = question.lastName;
 			labelLastName.backgroundColor = [UIColor clearColor];
 			labelLastName.textColor       = [UIColor PdTextColor];
@@ -312,7 +312,7 @@
 			//Create label
 			labelTitleName                 = [[UILabel alloc] init];
 			labelTitleName.frame           = [self getLabelSize:0];
-			labelTitleName.textAlignment   = UITextAlignmentLeft;
+			labelTitleName.textAlignment   = NSTextAlignmentLeft;
 			labelTitleName.text            = question.titleName;
 			labelTitleName.backgroundColor = [UIColor clearColor];
 			labelTitleName.textColor       = [UIColor PdTextColor];
@@ -337,7 +337,7 @@
 			//Create label
 			labelFirstName                 = [[UILabel alloc] init];
 			labelFirstName.frame           = [self getLabelSize:1];
-			labelFirstName.textAlignment   = UITextAlignmentLeft;
+			labelFirstName.textAlignment   = NSTextAlignmentLeft;
 			labelFirstName.text            = question.firstName;
 			labelFirstName.backgroundColor = [UIColor clearColor];
 			labelFirstName.textColor       = [UIColor PdTextColor];
@@ -362,7 +362,7 @@
 			//Create label
 			labelLastName                 = [[UILabel alloc] init];
 			labelLastName.frame           = [self getLabelSize:2];
-			labelLastName.textAlignment   = UITextAlignmentLeft;
+			labelLastName.textAlignment   = NSTextAlignmentLeft;
 			labelLastName.text            = question.lastName;
 			labelLastName.backgroundColor = [UIColor clearColor];
 			labelLastName.textColor       = [UIColor PdTextColor];
@@ -392,7 +392,7 @@
 			//Create label
 			labelTitleName                 = [[UILabel alloc] init];
 			labelTitleName.frame           = [self getLabelSize:0];
-			labelTitleName.textAlignment   = UITextAlignmentLeft;
+			labelTitleName.textAlignment   = NSTextAlignmentLeft;
 			labelTitleName.text            = question.titleName;
 			labelTitleName.backgroundColor = [UIColor clearColor];
 			labelTitleName.textColor       = [UIColor PdTextColor];
@@ -417,7 +417,7 @@
 			//Create label
 			labelFirstName                 = [[UILabel alloc] init];
 			labelFirstName.frame           = [self getLabelSize:1];
-			labelFirstName.textAlignment   = UITextAlignmentLeft;
+			labelFirstName.textAlignment   = NSTextAlignmentLeft;
 			labelFirstName.text            = question.firstName;
 			labelFirstName.backgroundColor = [UIColor clearColor];
 			labelFirstName.textColor       = [UIColor PdTextColor];
@@ -442,7 +442,7 @@
 			//Create label
 			labelLastName                 = [[UILabel alloc] init];
 			labelLastName.frame           = [self getLabelSize:2];
-			labelLastName.textAlignment   = UITextAlignmentLeft;
+			labelLastName.textAlignment   = NSTextAlignmentLeft;
 			labelLastName.text            = question.lastName;
 			labelLastName.backgroundColor = [UIColor clearColor];
 			labelLastName.textColor       = [UIColor PdTextColor];
@@ -467,7 +467,7 @@
 			//Create label
 			labelSuffix                 = [[UILabel alloc] init];
 			labelSuffix.frame           = [self getLabelSize:3];
-			labelSuffix.textAlignment   = UITextAlignmentLeft;
+			labelSuffix.textAlignment   = NSTextAlignmentLeft;
 			labelSuffix.text            = question.suffix;
 			labelSuffix.backgroundColor = [UIColor clearColor];
 			labelSuffix.textColor       = [UIColor PdTextColor];
@@ -496,9 +496,12 @@
 	[sender resignFirstResponder];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Overriden to allow any orientation.
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{

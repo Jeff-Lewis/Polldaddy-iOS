@@ -200,7 +200,7 @@ extern UIInterfaceOrientation gAppOrientation;
         //Create label
         labelAddress1                 = [[UILabel alloc] init];
         labelAddress1.frame           = [self getLabelSize:position];
-        labelAddress1.textAlignment   = UITextAlignmentLeft;
+        labelAddress1.textAlignment   = NSTextAlignmentLeft;
         labelAddress1.text            = question.address1;
         labelAddress1.backgroundColor = [UIColor clearColor];
         labelAddress1.textColor       = [UIColor PdTextColor];
@@ -227,7 +227,7 @@ extern UIInterfaceOrientation gAppOrientation;
         //Create label
         labelAddress2					        = [[UILabel alloc] init];
         labelAddress2.frame				    = [self getLabelSize:position];
-        labelAddress2.textAlignment		= UITextAlignmentLeft;
+        labelAddress2.textAlignment		= NSTextAlignmentLeft;
         labelAddress2.text				    = question.address2;
         labelAddress2.backgroundColor	= [UIColor clearColor];
         labelAddress2.textColor       = [UIColor PdTextColor];
@@ -255,7 +255,7 @@ extern UIInterfaceOrientation gAppOrientation;
         //Create label
         labelCity					        = [[UILabel alloc] init];
         labelCity.frame				    = [self getLabelSize:position];
-        labelCity.textAlignment		= UITextAlignmentLeft;
+        labelCity.textAlignment		= NSTextAlignmentLeft;
         labelCity.text				    = question.city;
         labelCity.textColor       = [UIColor PdTextColor];
         labelCity.backgroundColor	= [UIColor clearColor];
@@ -283,7 +283,7 @@ extern UIInterfaceOrientation gAppOrientation;
         //Create label
         labelState					        = [[UILabel alloc] init];
         labelState.frame			      = [self getLabelSize:position];
-        labelState.textAlignment  	= UITextAlignmentLeft;
+        labelState.textAlignment  	= NSTextAlignmentLeft;
         labelState.text			       	= question.state;
         labelState.backgroundColor	= [UIColor clearColor];
         labelState.textColor        = [UIColor PdTextColor];
@@ -311,7 +311,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		//Create label
 		labelZip					        = [[UILabel alloc] init];
 		labelZip.frame				    = [self getLabelSize:position];
-		labelZip.textAlignment		= UITextAlignmentLeft;
+		labelZip.textAlignment		= NSTextAlignmentLeft;
 		labelZip.text				      = question.zip;
 		labelZip.backgroundColor	= [UIColor clearColor];
 		labelZip.textColor        = [UIColor PdTextColor];
@@ -339,7 +339,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		//Create label
 		labelCountry				         	= [[UILabel alloc] init];
 		labelCountry.frame		    		= [self getLabelSize:position];
-		labelCountry.textAlignment		= UITextAlignmentLeft;
+		labelCountry.textAlignment		= NSTextAlignmentLeft;
 		labelCountry.text				      = question.country;
 		labelCountry.backgroundColor	= [UIColor clearColor];
 		labelCountry.textColor        = [UIColor PdTextColor];
@@ -364,9 +364,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	}
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Overriden to allow any orientation.
-	return YES;
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{

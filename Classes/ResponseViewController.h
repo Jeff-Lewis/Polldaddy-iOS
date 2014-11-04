@@ -38,7 +38,7 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scroller;
 
 - (id)initWithController:(RootViewController *)root;
-- (void) loadSurvey:(unsigned int) surveyId;
+- (void) loadSurvey:(unsigned long) surveyId;
 
 - (IBAction) exitButton: (id) sender;
 - (IBAction) nextResponse: (id) sender;

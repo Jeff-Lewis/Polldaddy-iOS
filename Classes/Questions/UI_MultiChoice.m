@@ -35,8 +35,8 @@ extern UIInterfaceOrientation gAppOrientation;
 }
 
 - (NSString *) getError {
-    NSDictionary *dataArray = [self getFormValues:web restrictTo:[NSString stringWithFormat:@"q_%d", question.questionId]];
-    unsigned int chosencount = 0;
+    NSDictionary *dataArray = [self getFormValues:web restrictTo:[NSString stringWithFormat:@"q_%lu", question.questionId]];
+    unsigned long chosencount = 0;
     
     if ( [dataArray objectForKey:@"choice"] ) {
         if ( [question isRadio] )
@@ -62,8 +62,8 @@ extern UIInterfaceOrientation gAppOrientation;
 }
 
 - (boolean_t) isCompleted {
-    NSDictionary *dataArray = [self getFormValues:web restrictTo:[NSString stringWithFormat:@"q_%d", question.questionId]];
-    unsigned int chosencount = 0;
+    NSDictionary *dataArray = [self getFormValues:web restrictTo:[NSString stringWithFormat:@"q_%lu", question.questionId]];
+    unsigned long chosencount = 0;
     
     if ( [dataArray objectForKey:@"choice"] ) {
         if ( [question isRadio] )
@@ -94,20 +94,20 @@ extern UIInterfaceOrientation gAppOrientation;
 	NSMutableString *data    = [NSMutableString stringWithString:@"<options>"];
 	NSMutableString *options = [[NSMutableString alloc] init];
 
-    NSDictionary *dataArray = [self getFormValues:web restrictTo:[NSString stringWithFormat:@"q_%d", question.questionId]];
+    NSDictionary *dataArray = [self getFormValues:web restrictTo:[NSString stringWithFormat:@"q_%lu", question.questionId]];
     
     [chosen removeAllObjects];
     if ( [dataArray objectForKey:@"choice"] ) {
         if ( [question isRadio] ) {
             NSString *option = [dataArray objectForKey:@"choice"];
             [options appendFormat:[dataArray objectForKey:@"choice"]];
-            [chosen addObject:[NSNumber numberWithInt:[option integerValue]]];
+            [chosen addObject:[NSNumber numberWithLong:[option integerValue]]];
         }
         else if ( [[dataArray objectForKey:@"choice"] isKindOfClass:[NSArray class]] ) {
             NSArray *parts = (NSArray *)[dataArray objectForKey:@"choice"];
             
             for (NSString *option in parts) {
-                [chosen addObject:[NSNumber numberWithInt:[option integerValue]]];
+                [chosen addObject:[NSNumber numberWithLong:[option integerValue]]];
             }
 
             [options appendFormat:[(NSArray *)[dataArray objectForKey:@"choice"] componentsJoinedByString:@","]];
@@ -252,18 +252,18 @@ extern UIInterfaceOrientation gAppOrientation;
         [content appendString:@"<li>"];
         
         if ( [question isCheckbox] )
-            [content appendFormat:@"<input type='checkbox' name='q_%d[choice][]' value='%d' id='q_%d_%d'/>", question.questionId, answer.oID, question.questionId, answer.oID];
+            [content appendFormat:@"<input type='checkbox' name='q_%lu[choice][]' value='%d' id='q_%lu_%d'/>", question.questionId, answer.oID, question.questionId, answer.oID];
         else
-            [content appendFormat:@"<input type='radio' name='q_%d[choice]' value='%d' id='q_%d_%d'/>", question.questionId, answer.oID, question.questionId, answer.oID];
+            [content appendFormat:@"<input type='radio' name='q_%lu[choice]' value='%d' id='q_%lu_%d'/>", question.questionId, answer.oID, question.questionId, answer.oID];
 
         // Add text
-        [content appendFormat:@" <label for='q_%d_%d'>%@</label>", question.questionId, answer.oID, answer.title];
+        [content appendFormat:@" <label for='q_%lu_%d'>%@</label>", question.questionId, answer.oID, answer.title];
 
         // Add embedded media
         if ( answer.mediaUrl != nil ) {
             NSString *url = [question allocLocalizeString:[NSString stringWithFormat:@"<img src='%@'/>", answer.mediaUrl] andSurveyId:question.surveyId];
             
-            [content appendFormat:@"<label for='q_%d_%d'>%@</label>", question.questionId, answer.oID, url];
+            [content appendFormat:@"<label for='q_%lu_%d'>%@</label>", question.questionId, answer.oID, url];
         }
         
         [content appendString:@"</li>"];
@@ -271,16 +271,16 @@ extern UIInterfaceOrientation gAppOrientation;
     
 	if ( [question hasOther] ) {
         if ( [question isCheckbox] == NO )
-            [content appendFormat:@"<li><input type='radio' name='q_%d[choice]' id='q_%d_other' value='other'/></li>", question.questionId, question.questionId];
+            [content appendFormat:@"<li><input type='radio' name='q_%lu[choice]' id='q_%lu_other' value='other'/></li>", question.questionId, question.questionId];
 
         [content appendString:@"</ul>"];
-        [content appendFormat:@"<div class='other'><label for='q_%d_other'>%@</label> <input type='text' class='other' name='q_%d[other]' data-for='q_%d_other'/></div>", question.questionId, [pack getPhrase:PHRASE_OTHER], question.questionId, question.questionId];
+        [content appendFormat:@"<div class='other'><label for='q_%lu_other'>%@</label> <input type='text' class='other' name='q_%lu[other]' data-for='q_%lu_other'/></div>", question.questionId, [pack getPhrase:PHRASE_OTHER], question.questionId, question.questionId];
     }
     else
         [content appendString:@"</ul>"];
 
     if ( [question.commentText length] > 0 ) {
-        [content appendFormat:@"<div class='comments'>%@<br/><form><textarea cols='80' rows='4' name='q_%d[comments]'></textarea></div>", question.commentText, question.questionId];
+        [content appendFormat:@"<div class='comments'>%@<br/><form><textarea cols='80' rows='4' name='q_%lu[comments]'></textarea></div>", question.commentText, question.questionId];
     }
     
     [content appendString:@"</div></div></div></form>"];
@@ -347,9 +347,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	return NO;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
+-(BOOL)shouldAutorotate {
     return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
@@ -366,13 +369,6 @@ extern UIInterfaceOrientation gAppOrientation;
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
-}
-
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)dealloc {

@@ -74,7 +74,7 @@ const unsigned int TAG_RESPONSE = 4;
                                     PDDatabase *database = [[PDDatabase alloc] init];	
                                     
                                     NSArray *listOfParams = [NSArray arrayWithObjects:
-                                                             [NSNumber numberWithInt:[survey surveyId]],
+                                                             [NSNumber numberWithLong:[survey surveyId]],
                                                              [NSString stringWithString:[survey title]],
                                                              [NSString stringWithString:[survey title]],
                                                              [NSNumber numberWithInt:0],
@@ -251,11 +251,11 @@ const unsigned int TAG_RESPONSE = 4;
     }
 }
 
-- (BOOL)submitResponse:(unsigned int)surveyID andResponse:(Response *)response withDelegate:(id <PolldaddyApiStatus>)del {
+- (BOOL)submitResponse:(unsigned long)surveyID andResponse:(Response *)response withDelegate:(id <PolldaddyApiStatus>)del {
     // Get survey XML
 	NSString *request = [NSString stringWithFormat:@"<pd:demands>"
                         "<pd:demand id='submitsurveyresponse'>"
-                        "<pd:survey_response survey_id='%d'>"
+                        "<pd:survey_response survey_id='%lu'>"
                         "%@"
                         "<pd:tags>"
                         "<pd:tag><pd:name>source</pd:name><pd:value>%@</pd:value></pd:tag>"
@@ -319,7 +319,7 @@ const unsigned int TAG_RESPONSE = 4;
 					TBXMLElement *surveyResponseNode = [TBXML childElementNamed:@"pd:survey_response" parentElement:demandNode];
 					
 					if ( surveyResponseNode ) {
-						return (unsigned int) [NSNumber numberWithInt:[[TBXML valueOfAttributeNamed:@"id" forElement:surveyResponseNode] integerValue]];
+						return (unsigned int) [NSNumber numberWithLong:[[TBXML valueOfAttributeNamed:@"id" forElement:surveyResponseNode] integerValue]];
 					}
 					
 					demandNode = [TBXML nextSiblingNamed:@"pd:demand" searchFromElement:demandsNode];
@@ -336,12 +336,12 @@ const unsigned int TAG_RESPONSE = 4;
 	return 0;	
 }
 
-- (void)getRemoteSurvey:(unsigned int)surveyID delegate:(id <API_Survey>)del {
+- (void)getRemoteSurvey:(unsigned long)surveyID delegate:(id <API_Survey>)del {
 	// Clear the old survey out
 	[PolldaddyAPI purgeSurvey:surveyID];
 	
     // Get survey XML
-    NSString *request = [NSString stringWithFormat:@"<pd:demands><pd:demand id='getsurvey'><pd:survey id='%d' /></pd:demand></pd:demands>", surveyID];
+    NSString *request = [NSString stringWithFormat:@"<pd:demands><pd:demand id='getsurvey'><pd:survey id='%lu' /></pd:demand></pd:demands>", surveyID];
 	
     PDURLConnection *connection = [self allocConnection:request];
 
@@ -371,7 +371,7 @@ const unsigned int TAG_RESPONSE = 4;
 }
 
 - (void)getStyle:(Survey *)survey delegate:(id <API_Survey>)del {
-    NSString *request = [NSString stringWithFormat:@"<pd:demands><pd:demand id='getstyle'><pd:style id='%d' /></pd:demand></pd:demands>", survey.styleId];
+    NSString *request = [NSString stringWithFormat:@"<pd:demands><pd:demand id='getstyle'><pd:style id='%lu' /></pd:demand></pd:demands>", survey.styleId];
 	
     PDURLConnection *connection = [self allocConnection:request];
     
@@ -384,7 +384,7 @@ const unsigned int TAG_RESPONSE = 4;
 }
 
 - (void)getLanguage:(Survey *)survey delegate:(id <API_Survey>)del {
-    NSString *request = [NSString stringWithFormat:@"<pd:demands><pd:demand id='getpack'><pd:languagepack id='%d' /></pd:demand></pd:demands>", survey.packId];
+    NSString *request = [NSString stringWithFormat:@"<pd:demands><pd:demand id='getpack'><pd:languagepack id='%lu' /></pd:demand></pd:demands>", survey.packId];
 	
     PDURLConnection *connection = [self allocConnection:request];
     

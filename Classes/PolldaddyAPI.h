@@ -23,27 +23,27 @@
 
 + (NSString*) pdRequest:(NSString*)demand;
 
-+ (Survey *)allocGetSurvey:(unsigned int)surveyID;
++ (Survey *)allocGetSurvey:(unsigned long)surveyID;
 
-+ (Survey *) allocSurveyFromAPI:(unsigned int)surveyID andFormXML:(NSString**)formXML;
++ (Survey *) allocSurveyFromAPI:(unsigned long)surveyID andFormXML:(NSString**)formXML;
 
-+ (boolean_t) purgeSurvey: (int)surveyID;
++ (boolean_t) purgeSurvey: (long)surveyID;
 
-+ (boolean_t) cacheSurvey: (int)surveyID;
++ (boolean_t) cacheSurvey: (long)surveyID;
 
 + (NSMutableDictionary *) allocSurveys;
 
 + (NSMutableDictionary *) allocSurveysFromAPI;
 + (NSMutableDictionary *) allocQuizzesFromAPI;
 
-+ (Response *) allocGetResponse: (unsigned int)responsePosition forSurvey:(Survey *)survey;
++ (Response *) allocGetResponse: (unsigned long)responsePosition forSurvey:(Survey *)survey;
 
-+ (unsigned int) getTotalOfflineResponses: (int)surveyID;
++ (unsigned long) getTotalOfflineResponses: (long)surveyID;
 
 + (boolean_t) purgeResponse: (NSMutableArray*)purgeList;
-+ (boolean_t) purgeSurveyResponses: (int)surveyID;
++ (boolean_t) purgeSurveyResponses: (long)surveyID;
 
-+ (int)submitResponse:(int)surveyID andResponseXML:(NSString*)responseString andCompleted:(bool)isCompleted;
++ (boolean_t)submitResponse:(long)surveyID andResponseXML:(NSString*)responseString andCompleted:(bool)isCompleted;
 
 + (boolean_t)accountLogin:(NSString*)email andPassword: (NSString*)password;
 

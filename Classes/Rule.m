@@ -47,7 +47,7 @@
 	return NO;
 }
 
-- (unsigned int) getTargetPage {
+- (unsigned long) getTargetPage {
 	return actionId;
 }
 
@@ -82,7 +82,7 @@
 	
 	// Special case for multi-choice - we check if a particular option has been chosen or not
 	if ( [question isKindOfClass:[ST_MultiChoice class]] && [answer isKindOfClass:[UI_MultiChoice class]] ) {
-		BOOL is_chosen = [(UI_MultiChoice *)answer isChosen:[NSNumber numberWithUnsignedInt:responseId]];
+		BOOL is_chosen = [(UI_MultiChoice *)answer isChosen:[NSNumber numberWithUnsignedLong:responseId]];
 
 		if ( [(UI_MultiChoice *)answer hasOther] && responseId == 0 )
 			is_chosen = YES;
@@ -95,7 +95,7 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"Rule: id=%d questionId=%d responseType=%d responseId=%d actionType=%d actionId=%d", ruleId, questionId, responseType, responseId, actionType, actionId ];
+	return [NSString stringWithFormat:@"Rule: id=%lu questionId=%lu responseType=%lu responseId=%lu actionType=%lu actionId=%lu", ruleId, questionId, responseType, responseId, actionType, actionId ];
 }
 
 @end

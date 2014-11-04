@@ -39,7 +39,7 @@
 - (NSString *)stringByEncodingHTMLEntities;
 - (NSString *)stringWithNewLinesAsBRs;
 - (NSString *)stringByRemovingNewLinesAndWhitespace;
-+ (NSString *)stringPrettyBytes:(unsigned int)bytes;
++ (NSString *)stringPrettyBytes:(unsigned long)bytes;
 // DEPRECIATED - Please use NSString stringByConvertingHTMLToPlainText
 - (NSString *)stringByStrippingTags; 
 

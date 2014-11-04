@@ -94,11 +94,12 @@
 	[super viewDidLoad];
 }
 
+-(BOOL)shouldAutorotate {
+    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    return YES;
-	return NO;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 
@@ -116,6 +117,8 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
     if ( animated ) {
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:0.25];
@@ -144,17 +147,13 @@
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
 	// Hook up data entry
 	[username addTarget:self action:@selector(readField:) forControlEvents:UIControlEventEditingDidEndOnExit];     
 	[password addTarget:self action:@selector(readField:) forControlEvents:UIControlEventEditingDidEndOnExit];     
 
     [activtyIndicator stopAnimating];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 @end

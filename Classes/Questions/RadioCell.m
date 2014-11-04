@@ -18,8 +18,6 @@
     return YES;
 }
 
-
-
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
 	
 	

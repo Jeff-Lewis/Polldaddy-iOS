@@ -87,7 +87,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		NSLog(@"completed=%@", completed ? @"YES" : @"NO");
 		
 		// Cancel the survey - save whatever responses we have
-		NSMutableString *answer = [NSMutableString stringWithFormat:@"<answers pCompleted=\"%d\">", [answers count]];
+		NSMutableString *answer = [NSMutableString stringWithFormat:@"<answers pCompleted=\"%lu\">", (unsigned long)[answers count]];
 		
 		// Add each answer
 		for ( NSString *key in answers ) {
@@ -141,10 +141,10 @@ extern UIInterfaceOrientation gAppOrientation;
 
 	// Collect data for this question
 	if ( question && currentField ) {
-		NSMutableString *answer = [NSMutableString stringWithFormat:@"<answer qID=\"%d\" qType=\"%d\">%@</answer>", question.questionId, question.questionType, [currentField collectData]];
+		NSMutableString *answer = [NSMutableString stringWithFormat:@"<answer qID=\"%lu\" qType=\"%lu\">%@</answer>", question.questionId, question.questionType, [currentField collectData]];
 		
 		if ( [question isQuestion] )
-			[answers setObject:answer forKey:[NSNumber numberWithInt:question.questionId]];
+			[answers setObject:answer forKey:[NSNumber numberWithLong:question.questionId]];
 		
 		NSLog(@"Answer = %@", answer);
 	}
@@ -186,7 +186,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		
 		if ( moveOn ) {
 			BOOL         done = NO;
-			unsigned int jump_to = 0;
+			unsigned long jump_to = 0;
 
 			if ( [question isQuestion] ) {
 				// Apply any rule processing
@@ -204,7 +204,7 @@ extern UIInterfaceOrientation gAppOrientation;
                             jump_to--;
                     }
 					else if ( [rule isSkip] )
-						[skipped addObject:[NSNumber numberWithUnsignedInt:[rule getTargetPage]]];
+						[skipped addObject:[NSNumber numberWithUnsignedLong:[rule getTargetPage]]];
 				}
 				
 			}
@@ -233,14 +233,14 @@ extern UIInterfaceOrientation gAppOrientation;
 
 - (void)startTimer {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    unsigned int timer_amount = [defaults integerForKey:@"survey_timeout"] ? [defaults integerForKey:@"survey_timeout"] : 0;
+    unsigned long timer_amount = [defaults integerForKey:@"survey_timeout"] ? [defaults integerForKey:@"survey_timeout"] : 0;
 
     timer_amount *= 60;
 
     [timeout invalidate];
 
     if ( timer_amount > 0 && currentQnum != 0 ) {
-        NSLog(@"Timer started for %d", timer_amount);
+        NSLog(@"Timer started for %lu", timer_amount);
         timeout = [NSTimer scheduledTimerWithTimeInterval:timer_amount target:self selector:@selector(timedOut:) userInfo:nil repeats:NO];
     }
 }
@@ -250,7 +250,7 @@ extern UIInterfaceOrientation gAppOrientation;
     [self startTimer];
 }
 
-- (void)displayQuestion:(int)qNum withNewField:(boolean_t)newField {
+- (void)displayQuestion:(long)qNum withNewField:(boolean_t)newField {
 	// Remove any field currently being displayed
 	if ( currentField && newField == YES ) {
 		[currentField.view removeFromSuperview];
@@ -261,12 +261,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	Question *question = [survey getQuestionForPosition: qNum];
 	
 	if ( question ) {
-		NSLog( @"Question %d - %d (page %d)", qNum, question.questionType, ( question.page + 1 ) );
+		NSLog( @"Question %lu - %lu (page %lu)", qNum, question.questionType, ( question.page + 1 ) );
 		
 		if ( newField == YES ) {
 			// Is this question on a skipped page?
-			while ( [skipped containsObject:[NSNumber numberWithUnsignedInt:( question.page )]] ) {
-				NSLog(@"Skipping %d", currentQnum);
+			while ( [skipped containsObject:[NSNumber numberWithUnsignedLong:( question.page )]] ) {
+				NSLog(@"Skipping %lu", currentQnum);
 				question = [survey getQuestionForPosition:++currentQnum];
 			}
 			
@@ -449,7 +449,7 @@ extern UIInterfaceOrientation gAppOrientation;
 	[self questionLoaded:YES];
 }
 
-- (void)loadSurvey:(unsigned int) surveyId {
+- (void)loadSurvey:(unsigned long) surveyId {
 	survey = [PolldaddyAPI allocGetSurvey:surveyId];
 	
 	if ( survey ) {
@@ -483,9 +483,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	questionDetails.scalesPageToFit = YES;
 }
 
+-(BOOL)shouldAutorotate {
+    return YES;
+}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
@@ -509,11 +512,6 @@ extern UIInterfaceOrientation gAppOrientation;
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
 	[super didReceiveMemoryWarning];
-}
-
-
-- (void)viewDidUnload {
-	[super viewDidUnload];
 }
 
 
