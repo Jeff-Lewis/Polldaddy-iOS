@@ -39,8 +39,8 @@
     ST_MultiChoice *question = [[ST_MultiChoice alloc] initWithXML:qXML andType:400 andPage:1];
     UI_MultiChoice *multi = [[UI_MultiChoice alloc] initWithQuestion:question andPack:nil];
     
-    STAssertFalse( [multi hasOther], nil );
-    STAssertEquals( question.questionType, (unsigned int)400, nil );
+    XCTAssertFalse( [multi hasOther]);
+    XCTAssertEqual( question.questionType, (unsigned long)400);
     
     // Test limits
 }

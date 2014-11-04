@@ -15,7 +15,6 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		520CD1DD11F59DF3007AE34B /* DatePickerPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD1DC11F59DF3007AE34B /* DatePickerPopup.m */; };
 		520CDC4511F727C7007AE34B /* ResponseViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CDC4411F727C7007AE34B /* ResponseViewController-iPhone.xib */; };
-		5217A40914C87F9300927D26 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5217A40814C87F9300927D26 /* SenTestingKit.framework */; };
 		5217A40A14C87F9300927D26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		5217A40B14C87F9300927D26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5217A41114C87F9300927D26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5217A40F14C87F9300927D26 /* InfoPlist.strings */; };
@@ -210,8 +209,7 @@
 		520CD1DB11F59DF3007AE34B /* DatePickerPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerPopup.h; sourceTree = "<group>"; };
 		520CD1DC11F59DF3007AE34B /* DatePickerPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerPopup.m; sourceTree = "<group>"; };
 		520CDC4411F727C7007AE34B /* ResponseViewController-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ResponseViewController-iPhone.xib"; path = "Classes/ResponseViewController-iPhone.xib"; sourceTree = "<group>"; };
-		5217A40714C87F9300927D26 /* Polldaddy Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polldaddy Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5217A40814C87F9300927D26 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5217A40714C87F9300927D26 /* Polldaddy Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polldaddy Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5217A40E14C87F9300927D26 /* Polldaddy Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Polldaddy Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		5217A41014C87F9300927D26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5217A41214C87F9300927D26 /* Polldaddy_Unit_Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Polldaddy_Unit_Tests.h; sourceTree = "<group>"; };
@@ -464,7 +462,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5217A40914C87F9300927D26 /* SenTestingKit.framework in Frameworks */,
 				5217A40A14C87F9300927D26 /* UIKit.framework in Frameworks */,
 				5217A40B14C87F9300927D26 /* Foundation.framework in Frameworks */,
 			);
@@ -494,7 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* Polldaddy.app */,
-				5217A40714C87F9300927D26 /* Polldaddy Unit Tests.octest */,
+				5217A40714C87F9300927D26 /* Polldaddy Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -557,7 +554,6 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				6324996F11AC080900F625DE /* libsqlite3.0.dylib */,
 				B8C55EF411B16300003207E2 /* SystemConfiguration.framework */,
-				5217A40814C87F9300927D26 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -923,8 +919,8 @@
 			);
 			name = "Polldaddy Unit Tests";
 			productName = "Polldaddy Unit Tests";
-			productReference = 5217A40714C87F9300927D26 /* Polldaddy Unit Tests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 5217A40714C87F9300927D26 /* Polldaddy Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1294,7 +1290,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1312,7 +1308,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1325,7 +1320,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1337,7 +1332,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Distribution;
 		};
@@ -1350,7 +1344,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1362,7 +1356,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -1375,7 +1368,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1456,7 +1449,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1468,7 +1461,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = "Ad Hoc";
 		};
