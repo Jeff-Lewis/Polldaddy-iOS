@@ -17,8 +17,8 @@
 
 	rootViewController = [[RootViewController alloc] init];
 	
-	[window addSubview:rootViewController.view];
-	[window makeKeyAndVisible];	
+    [self.window setRootViewController:rootViewController];
+    [self.window makeKeyAndVisible];
 
   return YES;
 }

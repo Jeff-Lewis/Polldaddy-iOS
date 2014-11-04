@@ -51,16 +51,21 @@ UIInterfaceOrientation gAppOrientation;
 
 #pragma mark -
 #pragma mark autorotation and transition methods
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	gAppOrientation = interfaceOrientation;
 
-  // Overriden to allow any orientation.
-	if ( signInView != nil ) {
-		if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-			return NO;
-	}
+-(BOOL)shouldAutorotate {
+    BOOL shouldAutorotate = YES;
+    
+    if ( signInView != nil ) {
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+            shouldAutorotate = NO;
+        }
+    }
+    
+    return shouldAutorotate;
+}
 
-  return YES;
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)setBackgroundImages {
