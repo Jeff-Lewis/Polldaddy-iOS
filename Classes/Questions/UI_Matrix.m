@@ -494,7 +494,7 @@ extern UIInterfaceOrientation gAppOrientation;
 	tag = 20000;
 	
 	// Move rows
-	for ( MatrixElement *element in question.rows ) {
+    for(NSUInteger i = 0; i < question.rows.count; ++i) {
 		// Row label
 		label = (UILabel *)[self.view viewWithTag:tag++];
 		if ( label ) {
@@ -504,7 +504,7 @@ extern UIInterfaceOrientation gAppOrientation;
 			col = CGRectMake(rowWidth, row.origin.y, colWidth, rowHeight);
 			
 			// Row buttons
-			for ( MatrixElement *column in question.columns ) {
+            for(NSUInteger j = 0; j < question.columns.count; ++j) {
 				// Column label
 				button = (UIButton *)[self.view viewWithTag:buttonCount++];
 				button.frame = col;
