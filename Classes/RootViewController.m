@@ -49,6 +49,10 @@ UIInterfaceOrientation gAppOrientation;
 	}
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark -
 #pragma mark autorotation and transition methods
 
