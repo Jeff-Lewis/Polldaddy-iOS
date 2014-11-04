@@ -10,29 +10,11 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		520CDC4511F727C7007AE34B /* ResponseViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CDC4411F727C7007AE34B /* ResponseViewController-iPhone.xib */; };
 		5217A40A14C87F9300927D26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		5217A40B14C87F9300927D26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5217A41114C87F9300927D26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5217A40F14C87F9300927D26 /* InfoPlist.strings */; };
 		5217A41414C87F9300927D26 /* Polldaddy_Unit_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5217A41314C87F9300927D26 /* Polldaddy_Unit_Tests.m */; };
-		524EBB1212EDBC1100CBF6FA /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524EBB1012EDBC1100CBF6FA /* ProgressView.xib */; };
-		524EC11712F03D2600CBF6FA /* ProgressViewIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524EC11612F03D2600CBF6FA /* ProgressViewIpad.xib */; };
-		528D496A11E4D4670086D60A /* ResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D496811E4D4670086D60A /* ResponseViewController.xib */; };
 		52C7DADD11ABA8EE009F519C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C7DADC11ABA8EE009F519C /* libz.dylib */; };
-		52C7DB1811ABB2F3009F519C /* SurveyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C7DB1711ABB2F3009F519C /* SurveyInfoViewController.xib */; };
-		52D0BA8C11F0ACD80073DF18 /* SignInViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BA8B11F0ACD80073DF18 /* SignInViewController-iPhone.xib */; };
-		52D0BAAC11F0B4A30073DF18 /* SurveysFullScreenView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BAAB11F0B4A30073DF18 /* SurveysFullScreenView-iPhone.xib */; };
-		52D0BADF11F43E310073DF18 /* LiveSurveySelectionViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BADE11F43E310073DF18 /* LiveSurveySelectionViewController-iPhone.xib */; };
-		52D0BB5611F445CA0073DF18 /* IsSelected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BB5411F445CA0073DF18 /* IsSelected-iPhone.png */; };
-		52D0BB5711F445CA0073DF18 /* NotSelected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BB5511F445CA0073DF18 /* NotSelected-iPhone.png */; };
-		52D0BBEE11F44C930073DF18 /* log-out-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BBEC11F44C930073DF18 /* log-out-iPhone.png */; };
-		52D0BBEF11F44C930073DF18 /* log-out-selected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BBED11F44C930073DF18 /* log-out-selected-iPhone.png */; };
-		52D0BBF611F44DD50073DF18 /* online-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BBF411F44DD50073DF18 /* online-iPhone.png */; };
-		52D0BBF711F44DD50073DF18 /* online-selected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BBF511F44DD50073DF18 /* online-selected-iPhone.png */; };
-		52D0BC8211F45A680073DF18 /* surveys-list-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BC8011F45A680073DF18 /* surveys-list-iPhone.png */; };
-		52D0BC8311F45A680073DF18 /* surveys-list-wide-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BC8111F45A680073DF18 /* surveys-list-wide-iPhone.png */; };
-		52D0BF0711F47EE70073DF18 /* QuestionsViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D0BF0611F47EE70073DF18 /* QuestionsViewController-iPhone.xib */; };
 		52FD2D9012E8904E000E4E7F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FD2D8F12E8904E000E4E7F /* OpenGLES.framework */; };
 		6324997011AC080900F625DE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6324996F11AC080900F625DE /* libsqlite3.0.dylib */; };
 		B8C55EF511B16300003207E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C55EF411B16300003207E2 /* SystemConfiguration.framework */; };
@@ -42,7 +24,6 @@
 		BE1633321A09767600A234C8 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1632931A09767600A234C8 /* Configuration.m */; };
 		BE1633331A09767600A234C8 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1632941A09767600A234C8 /* Constants.m */; };
 		BE16337A1A09767600A234C8 /* SurveyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1633181A09767600A234C8 /* SurveyInfoViewController.xib */; };
-		BE1633B21A0976A500A234C8 /* Polldaddy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE1633841A0976A500A234C8 /* Polldaddy-Info.plist */; };
 		BE1633B31A0976A500A234C8 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633861A0976A500A234C8 /* button.png */; };
 		BE1633B41A0976A500A234C8 /* clear-20.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633871A0976A500A234C8 /* clear-20.png */; };
 		BE1633B51A0976A500A234C8 /* clear-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633881A0976A500A234C8 /* clear-32.png */; };
@@ -80,15 +61,15 @@
 		BE1633D71A0976A500A234C8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE1633AA1A0976A500A234C8 /* Settings.bundle */; };
 		BE1633DA1A0976A500A234C8 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633AF1A0976A500A234C8 /* NSDataAdditions.m */; };
 		BE1633DB1A0976A500A234C8 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633B11A0976A500A234C8 /* TBXML.m */; };
-		BE1633E61A09770C00A234C8 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633DF1A09770C00A234C8 /* GTMNSString+HTML.m */; };
-		BE1633E71A09770C00A234C8 /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E11A09770C00A234C8 /* GTMNSString+XML.m */; };
+		BE1633E61A09770C00A234C8 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633DF1A09770C00A234C8 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BE1633E71A09770C00A234C8 /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E11A09770C00A234C8 /* GTMNSString+XML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BE1633E81A09770C00A234C8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E31A09770C00A234C8 /* NSString+HTML.m */; };
 		BE1633E91A09770C00A234C8 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E51A09770C00A234C8 /* NSString+XMLEntities.m */; };
 		BE1633F31A0977B400A234C8 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633EC1A0977B400A234C8 /* FMDatabase.m */; };
 		BE1633F41A0977B400A234C8 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633EE1A0977B400A234C8 /* FMDatabaseAdditions.m */; };
 		BE1633F51A0977B400A234C8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633F01A0977B400A234C8 /* FMResultSet.m */; };
 		BE1633F61A0977B400A234C8 /* PDDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633F21A0977B400A234C8 /* PDDatabase.m */; };
-		BE1633F91A09781300A234C8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633F81A09781300A234C8 /* Reachability.m */; };
+		BE1633F91A09781300A234C8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633F81A09781300A234C8 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BE16340B1A09794E00A234C8 /* MultiSelectCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633FE1A09794E00A234C8 /* MultiSelectCellController.m */; };
 		BE16340C1A09794E00A234C8 /* MultiSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634001A09794E00A234C8 /* MultiSelectTableViewCell.m */; };
 		BE16340D1A09794E00A234C8 /* PDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634021A09794E00A234C8 /* PDButton.m */; };
@@ -181,40 +162,7 @@
 		BE1634FA1A0980A800A234C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE1634F81A0980A800A234C8 /* Localizable.strings */; };
 		BE1634FD1A09813F00A234C8 /* Configuration-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE1634FB1A09813F00A234C8 /* Configuration-sample.plist */; };
 		BE1634FE1A09813F00A234C8 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE1634FC1A09813F00A234C8 /* Configuration.plist */; };
-		BE90EDFA1A07DE9A009C54B7 /* Configuration-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE90EDF91A07DE9A009C54B7 /* Configuration-sample.plist */; };
-		BE90EDFC1A07DF35009C54B7 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE90EDFB1A07DF35009C54B7 /* Configuration.plist */; };
-		DE1962A311B17B4E006DD671 /* question-panel-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1962A211B17B4E006DD671 /* question-panel-wide.png */; };
 		DE24D8AA11AB04CF00142C35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE24D8A911AB04CF00142C35 /* QuartzCore.framework */; };
-		DE24D9AB11AB33B000142C35 /* PDButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE24D9A911AB33B000142C35 /* PDButton.xib */; };
-		DE24DAA211AB35DD00142C35 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DA9B11AB35DD00142C35 /* button.png */; };
-		DE24DAA311AB35DD00142C35 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DA9C11AB35DD00142C35 /* Default-Portrait.png */; };
-		DE24DAA411AB35DD00142C35 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DA9D11AB35DD00142C35 /* Default-Landscape.png */; };
-		DE24DAA511AB35DD00142C35 /* sign-in-supergraphic.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DA9E11AB35DD00142C35 /* sign-in-supergraphic.png */; };
-		DE24DAA611AB35DD00142C35 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DA9F11AB35DD00142C35 /* logo.png */; };
-		DE24DAA711AB35DD00142C35 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DAA011AB35DD00142C35 /* Icon.png */; };
-		DE24DAA811AB35DD00142C35 /* login-panel.png in Resources */ = {isa = PBXBuildFile; fileRef = DE24DAA111AB35DD00142C35 /* login-panel.png */; };
-		DE5FFADE121AF29F00D6E2BC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5FFADC121AF29F00D6E2BC /* Icon-72.png */; };
-		DE5FFADF121AF29F00D6E2BC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5FFADD121AF29F00D6E2BC /* Icon@2x.png */; };
-		DE8111E8130437BA0065D1FF /* clear-20.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8111E4130437BA0065D1FF /* clear-20.png */; };
-		DE8111E9130437BA0065D1FF /* clear-32.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8111E5130437BA0065D1FF /* clear-32.png */; };
-		DE8111EA130437BA0065D1FF /* photo-20.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8111E6130437BA0065D1FF /* photo-20.png */; };
-		DE8111EB130437BA0065D1FF /* photo-32.png in Resources */ = {isa = PBXBuildFile; fileRef = DE8111E7130437BA0065D1FF /* photo-32.png */; };
-		DE82E51811A79FAF0063C216 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE82E51611A79FAF0063C216 /* SignInViewController.xib */; };
-		DECCF8A911AEC9CE00AA3A19 /* LiveSurveySelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECCF8A711AEC9CE00AA3A19 /* LiveSurveySelectionViewController.xib */; };
-		DECCF97011AEDEC900AA3A19 /* IsSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = DECCF96E11AEDEC900AA3A19 /* IsSelected.png */; };
-		DECCF97111AEDEC900AA3A19 /* NotSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = DECCF96F11AEDEC900AA3A19 /* NotSelected.png */; };
-		DECCF9A111AF0EB300AA3A19 /* survey-question-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DECCF9A011AF0EB300AA3A19 /* survey-question-bg.png */; };
-		DECCF9C611AF160C00AA3A19 /* question-panel-tall.png in Resources */ = {isa = PBXBuildFile; fileRef = DECCF9C511AF160C00AA3A19 /* question-panel-tall.png */; };
-		DED2290811B08B6500B82FDF /* log-out.png in Resources */ = {isa = PBXBuildFile; fileRef = DED2290511B08B6500B82FDF /* log-out.png */; };
-		DED2290911B08B6500B82FDF /* online-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DED2290611B08B6500B82FDF /* online-selected.png */; };
-		DED2290A11B08B6500B82FDF /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = DED2290711B08B6500B82FDF /* online.png */; };
-		DED2292211B08E7500B82FDF /* log-out-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = DED2292111B08E7500B82FDF /* log-out-selected.png */; };
-		DEE98AB311AC3581008B9EF7 /* SurveysFullScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE98AB111AC3581008B9EF7 /* SurveysFullScreenViewController.xib */; };
-		DEE98ABF11AC3773008B9EF7 /* surveys-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE98ABE11AC3773008B9EF7 /* surveys-bg.png */; };
-		DEE98BA911AC4D6C008B9EF7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE98BA711AC4D6C008B9EF7 /* RootViewController.xib */; };
-		DEE98D5E11AC6F40008B9EF7 /* surveys-list.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE98D5D11AC6F40008B9EF7 /* surveys-list.png */; };
-		DEE98DC911AC80C0008B9EF7 /* surveys-list-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE98DC811AC80C0008B9EF7 /* surveys-list-wide.png */; };
-		DEFF757A11A79DE800DF167C /* QuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFF757811A79DE800DF167C /* QuestionsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,31 +201,13 @@
 		1D6058910D05DD3D006BFB54 /* Polldaddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Polldaddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		520CDC4411F727C7007AE34B /* ResponseViewController-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ResponseViewController-iPhone.xib"; path = "Classes/ResponseViewController-iPhone.xib"; sourceTree = "<group>"; };
 		5217A40714C87F9300927D26 /* Polldaddy Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polldaddy Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5217A40E14C87F9300927D26 /* Polldaddy Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Polldaddy Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		5217A41014C87F9300927D26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5217A41214C87F9300927D26 /* Polldaddy_Unit_Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Polldaddy_Unit_Tests.h; sourceTree = "<group>"; };
 		5217A41314C87F9300927D26 /* Polldaddy_Unit_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Polldaddy_Unit_Tests.m; sourceTree = "<group>"; };
 		5217A41514C87F9300927D26 /* Polldaddy Unit Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Polldaddy Unit Tests-Prefix.pch"; sourceTree = "<group>"; };
-		524EBB1012EDBC1100CBF6FA /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressView.xib; path = Classes/ProgressView.xib; sourceTree = "<group>"; };
-		524EC11612F03D2600CBF6FA /* ProgressViewIpad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressViewIpad.xib; path = Classes/ProgressViewIpad.xib; sourceTree = "<group>"; };
-		528D496811E4D4670086D60A /* ResponseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ResponseViewController.xib; path = Classes/ResponseViewController.xib; sourceTree = "<group>"; };
 		52C7DADC11ABA8EE009F519C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		52C7DB1711ABB2F3009F519C /* SurveyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SurveyInfoViewController.xib; path = Classes/SurveyInfoViewController.xib; sourceTree = "<group>"; };
-		52D0BA8B11F0ACD80073DF18 /* SignInViewController-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "SignInViewController-iPhone.xib"; path = "Classes/SignInViewController-iPhone.xib"; sourceTree = "<group>"; };
-		52D0BAAB11F0B4A30073DF18 /* SurveysFullScreenView-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "SurveysFullScreenView-iPhone.xib"; path = "Classes/SurveysFullScreenView-iPhone.xib"; sourceTree = "<group>"; };
-		52D0BADE11F43E310073DF18 /* LiveSurveySelectionViewController-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "LiveSurveySelectionViewController-iPhone.xib"; path = "Classes/LiveSurveySelectionViewController-iPhone.xib"; sourceTree = "<group>"; };
-		52D0BB5411F445CA0073DF18 /* IsSelected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "IsSelected-iPhone.png"; path = "Resources/IsSelected-iPhone.png"; sourceTree = "<group>"; };
-		52D0BB5511F445CA0073DF18 /* NotSelected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NotSelected-iPhone.png"; path = "Resources/NotSelected-iPhone.png"; sourceTree = "<group>"; };
-		52D0BBEC11F44C930073DF18 /* log-out-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "log-out-iPhone.png"; path = "Resources/log-out-iPhone.png"; sourceTree = "<group>"; };
-		52D0BBED11F44C930073DF18 /* log-out-selected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "log-out-selected-iPhone.png"; path = "Resources/log-out-selected-iPhone.png"; sourceTree = "<group>"; };
-		52D0BBF411F44DD50073DF18 /* online-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "online-iPhone.png"; path = "Resources/online-iPhone.png"; sourceTree = "<group>"; };
-		52D0BBF511F44DD50073DF18 /* online-selected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "online-selected-iPhone.png"; path = "Resources/online-selected-iPhone.png"; sourceTree = "<group>"; };
-		52D0BC8011F45A680073DF18 /* surveys-list-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveys-list-iPhone.png"; path = "Resources/surveys-list-iPhone.png"; sourceTree = "<group>"; };
-		52D0BC8111F45A680073DF18 /* surveys-list-wide-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveys-list-wide-iPhone.png"; path = "Resources/surveys-list-wide-iPhone.png"; sourceTree = "<group>"; };
-		52D0BF0611F47EE70073DF18 /* QuestionsViewController-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "QuestionsViewController-iPhone.xib"; path = "Classes/QuestionsViewController-iPhone.xib"; sourceTree = "<group>"; };
 		52FD2D8F12E8904E000E4E7F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6324996F11AC080900F625DE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B8C55EF411B16300003207E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -509,40 +439,7 @@
 		BE1634F91A0980A800A234C8 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE1634FB1A09813F00A234C8 /* Configuration-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Configuration-sample.plist"; sourceTree = "<group>"; };
 		BE1634FC1A09813F00A234C8 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
-		BE90EDF91A07DE9A009C54B7 /* Configuration-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Configuration-sample.plist"; path = "Resources/Configuration-sample.plist"; sourceTree = "<group>"; };
-		BE90EDFB1A07DF35009C54B7 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = Resources/Configuration.plist; sourceTree = "<group>"; };
-		DE1962A211B17B4E006DD671 /* question-panel-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "question-panel-wide.png"; path = "Resources/question-panel-wide.png"; sourceTree = "<group>"; };
 		DE24D8A911AB04CF00142C35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DE24D9A911AB33B000142C35 /* PDButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PDButton.xib; path = Classes/PDButton.xib; sourceTree = "<group>"; };
-		DE24DA9B11AB35DD00142C35 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = Resources/button.png; sourceTree = "<group>"; };
-		DE24DA9C11AB35DD00142C35 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Resources/Default-Portrait.png"; sourceTree = "<group>"; };
-		DE24DA9D11AB35DD00142C35 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Resources/Default-Landscape.png"; sourceTree = "<group>"; };
-		DE24DA9E11AB35DD00142C35 /* sign-in-supergraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sign-in-supergraphic.png"; path = "Resources/sign-in-supergraphic.png"; sourceTree = "<group>"; };
-		DE24DA9F11AB35DD00142C35 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
-		DE24DAA011AB35DD00142C35 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		DE24DAA111AB35DD00142C35 /* login-panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-panel.png"; path = "Resources/login-panel.png"; sourceTree = "<group>"; };
-		DE5FFADC121AF29F00D6E2BC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
-		DE5FFADD121AF29F00D6E2BC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
-		DE8111E4130437BA0065D1FF /* clear-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clear-20.png"; path = "Resources/clear-20.png"; sourceTree = "<group>"; };
-		DE8111E5130437BA0065D1FF /* clear-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clear-32.png"; path = "Resources/clear-32.png"; sourceTree = "<group>"; };
-		DE8111E6130437BA0065D1FF /* photo-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photo-20.png"; path = "Resources/photo-20.png"; sourceTree = "<group>"; };
-		DE8111E7130437BA0065D1FF /* photo-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photo-32.png"; path = "Resources/photo-32.png"; sourceTree = "<group>"; };
-		DE82E51611A79FAF0063C216 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SignInViewController.xib; path = Classes/SignInViewController.xib; sourceTree = "<group>"; };
-		DECCF8A711AEC9CE00AA3A19 /* LiveSurveySelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LiveSurveySelectionViewController.xib; path = Classes/LiveSurveySelectionViewController.xib; sourceTree = "<group>"; };
-		DECCF96E11AEDEC900AA3A19 /* IsSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IsSelected.png; path = Resources/IsSelected.png; sourceTree = "<group>"; };
-		DECCF96F11AEDEC900AA3A19 /* NotSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NotSelected.png; path = Resources/NotSelected.png; sourceTree = "<group>"; };
-		DECCF9A011AF0EB300AA3A19 /* survey-question-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "survey-question-bg.png"; path = "Resources/survey-question-bg.png"; sourceTree = "<group>"; };
-		DECCF9C511AF160C00AA3A19 /* question-panel-tall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "question-panel-tall.png"; path = "Resources/question-panel-tall.png"; sourceTree = "<group>"; };
-		DED2290511B08B6500B82FDF /* log-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "log-out.png"; path = "Resources/log-out.png"; sourceTree = "<group>"; };
-		DED2290611B08B6500B82FDF /* online-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "online-selected.png"; path = "Resources/online-selected.png"; sourceTree = "<group>"; };
-		DED2290711B08B6500B82FDF /* online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = online.png; path = Resources/online.png; sourceTree = "<group>"; };
-		DED2292111B08E7500B82FDF /* log-out-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "log-out-selected.png"; path = "Resources/log-out-selected.png"; sourceTree = "<group>"; };
-		DEE98AB111AC3581008B9EF7 /* SurveysFullScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SurveysFullScreenViewController.xib; path = Classes/SurveysFullScreenViewController.xib; sourceTree = "<group>"; };
-		DEE98ABE11AC3773008B9EF7 /* surveys-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveys-bg.png"; path = "Resources/surveys-bg.png"; sourceTree = "<group>"; };
-		DEE98BA711AC4D6C008B9EF7 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Classes/RootViewController.xib; sourceTree = "<group>"; };
-		DEE98D5D11AC6F40008B9EF7 /* surveys-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveys-list.png"; path = "Resources/surveys-list.png"; sourceTree = "<group>"; };
-		DEE98DC811AC80C0008B9EF7 /* surveys-list-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "surveys-list-wide.png"; path = "Resources/surveys-list-wide.png"; sourceTree = "<group>"; };
-		DEFF757811A79DE800DF167C /* QuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuestionsViewController.xib; path = Classes/QuestionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,24 +483,11 @@
 			isa = PBXGroup;
 			children = (
 				BE1632621A09757400A234C8 /* Polldaddy */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				5217A40C14C87F9300927D26 /* Polldaddy Unit Tests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = CustomTemplate;
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DE82E4FA11A79F170063C216 /* images */,
-				52D0BA8D11F0ACE50073DF18 /* Views iPhone */,
-				DE55917711A7986700C1C39D /* Views */,
-				BE90EDFB1A07DF35009C54B7 /* Configuration.plist */,
-				BE90EDF91A07DE9A009C54B7 /* Configuration-sample.plist */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -639,18 +523,6 @@
 				5217A41514C87F9300927D26 /* Polldaddy Unit Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		52D0BA8D11F0ACE50073DF18 /* Views iPhone */ = {
-			isa = PBXGroup;
-			children = (
-				520CDC4411F727C7007AE34B /* ResponseViewController-iPhone.xib */,
-				52D0BF0611F47EE70073DF18 /* QuestionsViewController-iPhone.xib */,
-				52D0BADE11F43E310073DF18 /* LiveSurveySelectionViewController-iPhone.xib */,
-				52D0BAAB11F0B4A30073DF18 /* SurveysFullScreenView-iPhone.xib */,
-				52D0BA8B11F0ACD80073DF18 /* SignInViewController-iPhone.xib */,
-			);
-			name = "Views iPhone";
 			sourceTree = "<group>";
 		};
 		BE1632621A09757400A234C8 /* Polldaddy */ = {
@@ -984,64 +856,6 @@
 			path = html;
 			sourceTree = "<group>";
 		};
-		DE55917711A7986700C1C39D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				524EC11612F03D2600CBF6FA /* ProgressViewIpad.xib */,
-				524EBB1012EDBC1100CBF6FA /* ProgressView.xib */,
-				528D496811E4D4670086D60A /* ResponseViewController.xib */,
-				DECCF8A711AEC9CE00AA3A19 /* LiveSurveySelectionViewController.xib */,
-				DEE98BA711AC4D6C008B9EF7 /* RootViewController.xib */,
-				DEE98AB111AC3581008B9EF7 /* SurveysFullScreenViewController.xib */,
-				52C7DB1711ABB2F3009F519C /* SurveyInfoViewController.xib */,
-				DE24D9A911AB33B000142C35 /* PDButton.xib */,
-				DE82E51611A79FAF0063C216 /* SignInViewController.xib */,
-				DEFF757811A79DE800DF167C /* QuestionsViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		DE82E4FA11A79F170063C216 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				DE8111E4130437BA0065D1FF /* clear-20.png */,
-				DE8111E5130437BA0065D1FF /* clear-32.png */,
-				DE8111E6130437BA0065D1FF /* photo-20.png */,
-				DE8111E7130437BA0065D1FF /* photo-32.png */,
-				DE5FFADC121AF29F00D6E2BC /* Icon-72.png */,
-				DE5FFADD121AF29F00D6E2BC /* Icon@2x.png */,
-				52D0BC8011F45A680073DF18 /* surveys-list-iPhone.png */,
-				52D0BC8111F45A680073DF18 /* surveys-list-wide-iPhone.png */,
-				52D0BBF411F44DD50073DF18 /* online-iPhone.png */,
-				52D0BBF511F44DD50073DF18 /* online-selected-iPhone.png */,
-				52D0BBEC11F44C930073DF18 /* log-out-iPhone.png */,
-				52D0BBED11F44C930073DF18 /* log-out-selected-iPhone.png */,
-				52D0BB5411F445CA0073DF18 /* IsSelected-iPhone.png */,
-				52D0BB5511F445CA0073DF18 /* NotSelected-iPhone.png */,
-				DE1962A211B17B4E006DD671 /* question-panel-wide.png */,
-				DED2292111B08E7500B82FDF /* log-out-selected.png */,
-				DED2290511B08B6500B82FDF /* log-out.png */,
-				DED2290611B08B6500B82FDF /* online-selected.png */,
-				DED2290711B08B6500B82FDF /* online.png */,
-				DECCF9C511AF160C00AA3A19 /* question-panel-tall.png */,
-				DECCF9A011AF0EB300AA3A19 /* survey-question-bg.png */,
-				DECCF96E11AEDEC900AA3A19 /* IsSelected.png */,
-				DECCF96F11AEDEC900AA3A19 /* NotSelected.png */,
-				DEE98DC811AC80C0008B9EF7 /* surveys-list-wide.png */,
-				DEE98D5D11AC6F40008B9EF7 /* surveys-list.png */,
-				DEE98ABE11AC3773008B9EF7 /* surveys-bg.png */,
-				DE24DA9B11AB35DD00142C35 /* button.png */,
-				DE24DA9C11AB35DD00142C35 /* Default-Portrait.png */,
-				DE24DA9D11AB35DD00142C35 /* Default-Landscape.png */,
-				DE24DA9E11AB35DD00142C35 /* sign-in-supergraphic.png */,
-				DE24DA9F11AB35DD00142C35 /* logo.png */,
-				DE24DAA011AB35DD00142C35 /* Icon.png */,
-				DE24DAA111AB35DD00142C35 /* login-panel.png */,
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1134,39 +948,20 @@
 				BE1633D01A0976A500A234C8 /* sign-in-supergraphic.png in Resources */,
 				BE1633C41A0976A500A234C8 /* logo.png in Resources */,
 				BE1633D61A0976A500A234C8 /* surveys-list.png in Resources */,
-				BE1633B21A0976A500A234C8 /* Polldaddy-Info.plist in Resources */,
 				BE16337A1A09767600A234C8 /* SurveyInfoViewController.xib in Resources */,
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				DEFF757A11A79DE800DF167C /* QuestionsViewController.xib in Resources */,
 				BE16340E1A09794E00A234C8 /* PDButton.xib in Resources */,
-				DE82E51811A79FAF0063C216 /* SignInViewController.xib in Resources */,
-				DE24D9AB11AB33B000142C35 /* PDButton.xib in Resources */,
-				DE24DAA211AB35DD00142C35 /* button.png in Resources */,
 				BE1634FE1A09813F00A234C8 /* Configuration.plist in Resources */,
 				BE1633CB1A0976A500A234C8 /* photo-20.png in Resources */,
-				DE24DAA311AB35DD00142C35 /* Default-Portrait.png in Resources */,
-				DE24DAA411AB35DD00142C35 /* Default-Landscape.png in Resources */,
 				BE1634111A09794E00A234C8 /* ProgressView.xib in Resources */,
-				DE24DAA511AB35DD00142C35 /* sign-in-supergraphic.png in Resources */,
-				DE24DAA611AB35DD00142C35 /* logo.png in Resources */,
-				DE24DAA711AB35DD00142C35 /* Icon.png in Resources */,
-				DE24DAA811AB35DD00142C35 /* login-panel.png in Resources */,
-				52C7DB1811ABB2F3009F519C /* SurveyInfoViewController.xib in Resources */,
 				BE1633D31A0976A500A234C8 /* surveys-list-iPhone.png in Resources */,
 				BE1633D41A0976A500A234C8 /* surveys-list-wide-iPhone.png in Resources */,
-				DEE98AB311AC3581008B9EF7 /* SurveysFullScreenViewController.xib in Resources */,
-				DEE98ABF11AC3773008B9EF7 /* surveys-bg.png in Resources */,
-				DEE98BA911AC4D6C008B9EF7 /* RootViewController.xib in Resources */,
 				BE1633BA1A0976A500A234C8 /* Icon-72.png in Resources */,
-				DEE98D5E11AC6F40008B9EF7 /* surveys-list.png in Resources */,
 				BE1634F01A097F8C00A234C8 /* jquery.mobile.js in Resources */,
 				BE1633D21A0976A500A234C8 /* surveys-bg.png in Resources */,
 				BE1634BE1A097DC300A234C8 /* RootViewController.xib in Resources */,
 				BE1633C01A0976A500A234C8 /* log-out-selected-iPhone.png in Resources */,
 				BE1633CE1A0976A500A234C8 /* question-panel-tall.png in Resources */,
-				BE90EDFA1A07DE9A009C54B7 /* Configuration-sample.plist in Resources */,
 				BE1634BF1A097DC300A234C8 /* SignInViewController-iPhone.xib in Resources */,
-				DEE98DC911AC80C0008B9EF7 /* surveys-list-wide.png in Resources */,
 				BE1633BB1A0976A500A234C8 /* Icon.png in Resources */,
 				BE1633B31A0976A500A234C8 /* button.png in Resources */,
 				BE1634EE1A097F8C00A234C8 /* iphone.css in Resources */,
@@ -1174,67 +969,34 @@
 				BE1633BD1A0976A500A234C8 /* IsSelected-iPhone.png in Resources */,
 				BE1633C91A0976A500A234C8 /* online-selected.png in Resources */,
 				BE1633D71A0976A500A234C8 /* Settings.bundle in Resources */,
-				DECCF8A911AEC9CE00AA3A19 /* LiveSurveySelectionViewController.xib in Resources */,
-				DECCF97011AEDEC900AA3A19 /* IsSelected.png in Resources */,
-				DECCF97111AEDEC900AA3A19 /* NotSelected.png in Resources */,
 				BE1634B61A097DC300A234C8 /* LiveSurveySelectionViewController.xib in Resources */,
 				BE1634C41A097DC300A234C8 /* SurveysFullScreenViewController.xib in Resources */,
-				DECCF9A111AF0EB300AA3A19 /* survey-question-bg.png in Resources */,
 				BE1633D11A0976A500A234C8 /* survey-question-bg.png in Resources */,
 				BE1634F11A097F8C00A234C8 /* phone-lib.js in Resources */,
 				BE1634B41A097DC300A234C8 /* LiveSurveySelectionViewController-iPhone.xib in Resources */,
-				DECCF9C611AF160C00AA3A19 /* question-panel-tall.png in Resources */,
-				DED2290811B08B6500B82FDF /* log-out.png in Resources */,
 				BE1634ED1A097F8C00A234C8 /* ipad.css in Resources */,
 				BE1634C21A097DC300A234C8 /* SurveysFullScreenView-iPhone.xib in Resources */,
-				DED2290911B08B6500B82FDF /* online-selected.png in Resources */,
-				DED2290A11B08B6500B82FDF /* online.png in Resources */,
-				DED2292211B08E7500B82FDF /* log-out-selected.png in Resources */,
-				DE1962A311B17B4E006DD671 /* question-panel-wide.png in Resources */,
 				BE1633C81A0976A500A234C8 /* online-selected-iPhone.png in Resources */,
 				BE1634EF1A097F8C00A234C8 /* jquery.js in Resources */,
 				BE1633B41A0976A500A234C8 /* clear-20.png in Resources */,
 				BE1633BE1A0976A500A234C8 /* IsSelected.png in Resources */,
-				528D496A11E4D4670086D60A /* ResponseViewController.xib in Resources */,
-				52D0BA8C11F0ACD80073DF18 /* SignInViewController-iPhone.xib in Resources */,
-				52D0BAAC11F0B4A30073DF18 /* SurveysFullScreenView-iPhone.xib in Resources */,
-				52D0BADF11F43E310073DF18 /* LiveSurveySelectionViewController-iPhone.xib in Resources */,
 				BE1633B81A0976A500A234C8 /* Default-Landscape.png in Resources */,
-				52D0BB5611F445CA0073DF18 /* IsSelected-iPhone.png in Resources */,
-				52D0BB5711F445CA0073DF18 /* NotSelected-iPhone.png in Resources */,
-				52D0BBEE11F44C930073DF18 /* log-out-iPhone.png in Resources */,
 				BE1633C21A0976A500A234C8 /* log-out.png in Resources */,
 				BE1633CA1A0976A500A234C8 /* online.png in Resources */,
 				BE1633B91A0976A500A234C8 /* Default-Portrait.png in Resources */,
-				52D0BBEF11F44C930073DF18 /* log-out-selected-iPhone.png in Resources */,
 				BE1634BA1A097DC300A234C8 /* ResponseViewController-iPhone.xib in Resources */,
-				52D0BBF611F44DD50073DF18 /* online-iPhone.png in Resources */,
 				BE1634BC1A097DC300A234C8 /* ResponseViewController.xib in Resources */,
-				52D0BBF711F44DD50073DF18 /* online-selected-iPhone.png in Resources */,
-				52D0BC8211F45A680073DF18 /* surveys-list-iPhone.png in Resources */,
 				BE1633BF1A0976A500A234C8 /* log-out-iPhone.png in Resources */,
 				BE1634121A09794E00A234C8 /* ProgressViewIpad.xib in Resources */,
 				BE1634F21A097F8C00A234C8 /* phone.js in Resources */,
 				BE1634FD1A09813F00A234C8 /* Configuration-sample.plist in Resources */,
 				BE1632741A09757400A234C8 /* MainWindow.xib in Resources */,
-				52D0BC8311F45A680073DF18 /* surveys-list-wide-iPhone.png in Resources */,
-				52D0BF0711F47EE70073DF18 /* QuestionsViewController-iPhone.xib in Resources */,
-				BE90EDFC1A07DF35009C54B7 /* Configuration.plist in Resources */,
-				520CDC4511F727C7007AE34B /* ResponseViewController-iPhone.xib in Resources */,
 				BE1633D51A0976A500A234C8 /* surveys-list-wide.png in Resources */,
-				DE5FFADE121AF29F00D6E2BC /* Icon-72.png in Resources */,
 				BE1633CC1A0976A500A234C8 /* photo-32.png in Resources */,
 				BE1634FA1A0980A800A234C8 /* Localizable.strings in Resources */,
-				DE5FFADF121AF29F00D6E2BC /* Icon@2x.png in Resources */,
-				524EBB1212EDBC1100CBF6FA /* ProgressView.xib in Resources */,
 				BE1633CF1A0976A500A234C8 /* question-panel-wide.png in Resources */,
 				BE1634B71A097DC300A234C8 /* QuestionsViewController-iPhone.xib in Resources */,
-				524EC11712F03D2600CBF6FA /* ProgressViewIpad.xib in Resources */,
-				DE8111E8130437BA0065D1FF /* clear-20.png in Resources */,
-				DE8111E9130437BA0065D1FF /* clear-32.png in Resources */,
 				BE1633C11A0976A500A234C8 /* log-out-selected.png in Resources */,
-				DE8111EA130437BA0065D1FF /* photo-20.png in Resources */,
-				DE8111EB130437BA0065D1FF /* photo-32.png in Resources */,
 				BE1633C51A0976A500A234C8 /* NotSelected-iPhone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1275,7 +1037,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Polldaddy-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" Polldaddy-Info.plist";
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Polldaddy/Polldaddy-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" Polldaddy/Polldaddy-Info.plist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1421,7 +1183,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Polldaddy_Prefix.pch;
+				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1432,7 +1194,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "Polldaddy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Polldaddy/Polldaddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Polldaddy;
 				PROVISIONING_PROFILE = "AC99E2D7-C281-43E6-B872-FC6ED3335E8A";
@@ -1454,7 +1216,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Automattic, Inc.";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Polldaddy_Prefix.pch;
+				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1465,7 +1227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "Polldaddy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Polldaddy/Polldaddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Polldaddy;
@@ -1633,7 +1395,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Automattic, Inc.";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Polldaddy_Prefix.pch;
+				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1644,7 +1406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "Polldaddy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Polldaddy/Polldaddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Polldaddy;
@@ -1771,7 +1533,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Polldaddy_Prefix.pch;
+				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1782,7 +1544,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
-				INFOPLIST_FILE = "Polldaddy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Polldaddy/Polldaddy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = Polldaddy;
 				PROVISIONING_PROFILE = "AC99E2D7-C281-43E6-B872-FC6ED3335E8A";
