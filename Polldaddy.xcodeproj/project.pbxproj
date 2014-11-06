@@ -59,12 +59,12 @@
 		BE1633D51A0976A500A234C8 /* surveys-list-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633A81A0976A500A234C8 /* surveys-list-wide.png */; };
 		BE1633D61A0976A500A234C8 /* surveys-list.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633A91A0976A500A234C8 /* surveys-list.png */; };
 		BE1633D71A0976A500A234C8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE1633AA1A0976A500A234C8 /* Settings.bundle */; };
-		BE1633DA1A0976A500A234C8 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633AF1A0976A500A234C8 /* NSDataAdditions.m */; };
-		BE1633DB1A0976A500A234C8 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633B11A0976A500A234C8 /* TBXML.m */; };
+		BE1633DA1A0976A500A234C8 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633AF1A0976A500A234C8 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		BE1633DB1A0976A500A234C8 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633B11A0976A500A234C8 /* TBXML.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		BE1633E61A09770C00A234C8 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633DF1A09770C00A234C8 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BE1633E71A09770C00A234C8 /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E11A09770C00A234C8 /* GTMNSString+XML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BE1633E81A09770C00A234C8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E31A09770C00A234C8 /* NSString+HTML.m */; };
-		BE1633E91A09770C00A234C8 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E51A09770C00A234C8 /* NSString+XMLEntities.m */; };
+		BE1633E91A09770C00A234C8 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E51A09770C00A234C8 /* NSString+XMLEntities.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		BE1633F31A0977B400A234C8 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633EC1A0977B400A234C8 /* FMDatabase.m */; };
 		BE1633F41A0977B400A234C8 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633EE1A0977B400A234C8 /* FMDatabaseAdditions.m */; };
 		BE1633F51A0977B400A234C8 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633F01A0977B400A234C8 /* FMResultSet.m */; };
