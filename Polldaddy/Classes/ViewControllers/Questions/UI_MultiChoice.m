@@ -47,7 +47,7 @@ extern UIInterfaceOrientation gAppOrientation;
         }
     }
     
-    if ( [[dataArray objectForKey:@"other"] length] > 0 )
+    if ( [(NSString*)[dataArray objectForKey:@"other"] length] > 0 )
         chosencount++;
     
     if ( [question isCheckbox] && ( [question minLimit] > 0 || [question maxLimit] > 0 ) ) {
@@ -74,7 +74,7 @@ extern UIInterfaceOrientation gAppOrientation;
         }
     }
 
-    if ( [[dataArray objectForKey:@"other"] length] > 0 )
+    if ( [(NSString*)[dataArray objectForKey:@"other"] length] > 0 )
         chosencount++;
     
     if ( [question isCheckbox] && ( [question minLimit] > 0 || [question maxLimit] > 0 ) ) {
@@ -114,10 +114,10 @@ extern UIInterfaceOrientation gAppOrientation;
         }
     }
     
-	if ( [[dataArray objectForKey:@"other"] length] > 0 )
+	if ( [(NSString*)[dataArray objectForKey:@"other"] length] > 0 )
 		[data appendFormat:@"<otherText>%@</otherText>", [[dataArray objectForKey:@"other"] gtm_stringBySanitizingAndEscapingForXML]];
 
-	if ( [[dataArray objectForKey:@"comments"] length] > 0 )
+	if ( [(NSString*)[dataArray objectForKey:@"comments"] length] > 0 )
 		[data appendFormat:@"<commentText>%@</commentText>", [[dataArray objectForKey:@"comments"] gtm_stringBySanitizingAndEscapingForXML]];
 
 	if ( [options length] > 0 )
