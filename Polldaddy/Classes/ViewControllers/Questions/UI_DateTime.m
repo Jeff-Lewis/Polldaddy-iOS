@@ -183,9 +183,12 @@ extern UIInterfaceOrientation gAppOrientation;
 	[self setButtonPositions];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
+-(BOOL)shouldAutorotate {
     return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (IBAction)changeDateInLabel:(id)sender{

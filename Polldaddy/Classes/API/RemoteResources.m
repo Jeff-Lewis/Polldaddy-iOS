@@ -22,7 +22,7 @@ const unsigned int STAGE_RESOURCES = 2;
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     
     // Convert NSString into C-string and generate MD5 Hash
-    CC_MD5([input UTF8String], [input length], result);
+    CC_MD5([input UTF8String], (CC_LONG)[input length], result);
     
     // Convert C-string (the hash) into NSString
     NSMutableString *hash = [NSMutableString string];

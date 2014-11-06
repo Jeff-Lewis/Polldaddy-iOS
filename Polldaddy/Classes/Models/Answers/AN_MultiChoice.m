@@ -64,7 +64,7 @@
 	return choiceText;
 }
 
-- (BOOL) wasSelected:(unsigned int)oID {
+- (BOOL) wasSelected:(unsigned long)oID {
 	for ( NSString *option in options ) {
 		if ( oID == (unsigned int)[option integerValue] )
 			return YES;

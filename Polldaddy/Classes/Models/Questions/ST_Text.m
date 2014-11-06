@@ -25,7 +25,7 @@
 }
 
 -(NSString *) description {
-	return [NSString stringWithFormat:@"%@\nSize=%d Type=%d", [super description], size, fieldType];
+	return [NSString stringWithFormat:@"%@\nSize=%ld Type=%ld", [super description], size, fieldType];
 }
 
 - (boolean_t) isPassword {

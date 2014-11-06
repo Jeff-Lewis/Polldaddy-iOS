@@ -459,7 +459,7 @@ extern UIInterfaceOrientation gAppOrientation;
                 if ( res.content.count == 1 )
                     [cellController setStatus:[NSString stringWithFormat:@"Retrieving resource (%@)", [NSString stringPrettyBytes:bytes]] forCell:cell];
                 else
-                    [cellController setStatus:[NSString stringWithFormat:@"Retrieving resource %u of %u (%@)", ( res.current + 1 ), ( res.content.count + 1 ), [NSString stringPrettyBytes:bytes]] forCell:cell];
+                    [cellController setStatus:[NSString stringWithFormat:@"Retrieving resource %u of %lu (%@)", ( res.current + 1 ), ( res.content.count + 1 ), [NSString stringPrettyBytes:bytes]] forCell:cell];
             }
         }
         

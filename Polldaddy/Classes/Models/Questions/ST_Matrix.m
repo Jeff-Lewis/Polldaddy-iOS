@@ -50,7 +50,7 @@
 		opt = [TBXML childElementNamed:@"option" parentElement:node];
 		
 		while ( opt ) {
-			key = [NSNumber numberWithInt:[[TBXML valueOfAttributeNamed:@"oID" forElement:opt] integerValue]];
+			key = [NSNumber numberWithLong:[[TBXML valueOfAttributeNamed:@"oID" forElement:opt] integerValue]];
 
 			element = [[MatrixElement alloc] initWithId:key andTitle:[[TBXML textForElement:opt] stringByDecodingHTMLEntities]];
 
@@ -70,7 +70,7 @@
 	return self;
 }
 
-- (NSString *)rowForId:(unsigned int)rowId {
+- (NSString *)rowForId:(unsigned long)rowId {
 	for ( MatrixElement *element in rows ) {
 		if ( element.oID == rowId )
 			return element.title;
@@ -78,7 +78,7 @@
 	return nil;
 }
 
-- (NSString *)columnForId:(unsigned int)colId {
+- (NSString *)columnForId:(unsigned long)colId {
 	for ( MatrixElement *element in columns ) {
 		if ( element.oID == colId )
 			return element.title;
@@ -86,7 +86,7 @@
 	return nil;
 }
 
-- (unsigned int)columnIDForPos:(unsigned int)col {
+- (unsigned long)columnIDForPos:(unsigned long)col {
 	unsigned int step = 0;
 	
 	for ( NSString *key in columns ) {
@@ -99,7 +99,7 @@
 	return 0;
 }
 
-- (unsigned int)rowIDForPos:(unsigned int)row {
+- (unsigned long)rowIDForPos:(unsigned long)row {
 	unsigned int step = 0;
 
 	for ( NSString *key in rows ) {
@@ -130,7 +130,7 @@
 		[answerText appendFormat:@"\ncol %d=%@", element.oID, element.title];
 	}
 	
-	NSString *text = [NSString stringWithFormat:@"%@\nType=%d%@", [super description], choiceType, answerText];
+	NSString *text = [NSString stringWithFormat:@"%@\nType=%ld%@", [super description], choiceType, answerText];
 	return text;
 }
 

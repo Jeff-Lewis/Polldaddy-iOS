@@ -20,6 +20,6 @@
 - (Answer *) initWithXML:(TBXMLElement *)node;
 - (NSString *) summaryForQuizQuestion:(ST_MultiChoice *)question;
 - (NSString *) summaryForQuestion:(Question *)question;
-- (BOOL) wasSelected:(unsigned int)oID;
+- (BOOL) wasSelected:(unsigned long)oID;
 
 @end

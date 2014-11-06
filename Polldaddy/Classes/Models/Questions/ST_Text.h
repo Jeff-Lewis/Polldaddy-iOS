@@ -9,8 +9,8 @@
 #import "Question.h"
 
 @interface ST_Text: Question {
-	int size;
-	int fieldType;
+	long size;
+	long fieldType;
 }
 
 - (Question *) initWithXML:(TBXMLElement *)qnode andType:(int)qType andPage:(unsigned int)thePage;

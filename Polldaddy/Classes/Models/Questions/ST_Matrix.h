@@ -20,7 +20,7 @@
 @end
 
 @interface ST_Matrix : Question {
-	int       choiceType;
+	long       choiceType;
 	
 	NSMutableArray *rows;
 	NSMutableArray *columns;
@@ -33,9 +33,9 @@
 - (BOOL) isSingleChoice;
 
 // Return a rowID or colID given a position within the array
-- (unsigned int)columnIDForPos:(unsigned int)col;
-- (unsigned int)rowIDForPos:(unsigned int)row;
-- (NSString *)rowForId:(unsigned int)rowId;
-- (NSString *)columnForId:(unsigned int)colId;
+- (unsigned long)columnIDForPos:(unsigned long)col;
+- (unsigned long)rowIDForPos:(unsigned long)row;
+- (NSString *)rowForId:(unsigned long)rowId;
+- (NSString *)columnForId:(unsigned long)colId;
 
 @end
