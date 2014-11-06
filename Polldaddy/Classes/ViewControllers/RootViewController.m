@@ -14,40 +14,62 @@
 
 UIInterfaceOrientation gAppOrientation;
 
+@interface RootViewController() {
+    UIImageView                     *splashView;
+    UISplitViewController           *splitViewController;
+    SurveysFullScreenViewController *surveysFullScreenViewController;
+    QuestionsViewController         *questionsViewController;
+    ResponseViewController          *responseViewController;
+    UIImageView						*background;
+    UIImageView						*panel;
+    
+    NSInteger lastButton;
+    
+    NSMutableArray *displayedViewControllers;
+    
+    Reachability *internetReachable;
+    Reachability *hostReachable;
+}
+
+@end
+
 @implementation RootViewController
-@synthesize displayedViewControllers, signInView, splitViewController, questionsViewController, surveysFullScreenViewController,background,panel, lastButton;
+@synthesize displayedViewControllers, splitViewController, questionsViewController, surveysFullScreenViewController,background,panel, lastButton;
 
 #pragma mark -
 #pragma mark initialization and view setup methods
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-  [super viewDidLoad];
+    [super viewDidLoad];
 	
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 	[[self view] setFrame:CGRectMake(0, 20, 768, 1004)];
 	displayedViewControllers = [[NSMutableArray alloc] init];
 
-	if ( [PolldaddyAPI hasValidAccount] == TRUE ) {
+	if ([PolldaddyAPI hasValidAccount]) {
 		surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
 		[[self view] addSubview:[surveysFullScreenViewController view]];
 		[displayedViewControllers addObject:surveysFullScreenViewController];
 	}
-	else {
-		signInView = [[SignInViewController alloc] init];
-		[[self view] addSubview:[signInView view]];		
-		[displayedViewControllers addObject:signInView];
-		[signInView selectField];
-		[signInView addObserver:self forKeyPath:@"loggedIn" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:NULL];	
-	}
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-	if ( [keyPath  isEqual: @"loggedIn"] ) {
-		[signInView removeObserver:self forKeyPath:@"loggedIn"];
-		[self showSurveys];		
-	}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self showSurveys]; //TODO - is this needed here?
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (![PolldaddyAPI hasValidAccount]) {
+        SignInViewController * signInViewController = [[SignInViewController alloc] init];
+        [self presentViewController:signInViewController animated:NO completion:nil];
+    }
+}
+
 
 -(UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -56,16 +78,8 @@ UIInterfaceOrientation gAppOrientation;
 #pragma mark -
 #pragma mark autorotation and transition methods
 
--(BOOL)shouldAutorotate {
-    BOOL shouldAutorotate = YES;
-    
-    if ( signInView != nil ) {
-        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-            shouldAutorotate = NO;
-        }
-    }
-    
-    return shouldAutorotate;
+-(BOOL)shouldAutorotate {    
+    return YES;
 }
 
 -(NSUInteger)supportedInterfaceOrientations {
@@ -146,30 +160,16 @@ UIInterfaceOrientation gAppOrientation;
 		responseViewController = nil;
 	}
 	
-	// Remove the sign-in screen if it still exists
-	if ( signInView ) {
-		surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
-		[displayedViewControllers addObject:surveysFullScreenViewController];
+	// TODO: Does this need to be added here?
+    surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
+    [displayedViewControllers addObject:surveysFullScreenViewController];
 		
-		[[self view] insertSubview:[surveysFullScreenViewController view] belowSubview:signInView.view];
-		
-		if([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft){
-			[self willAnimateRotationToInterfaceOrientation:[[UIDevice currentDevice] orientation] duration:1.0];
-		}
-		
-		// Remove the sign-in screen
-		[signInView viewWillDisappear:YES];	
-		[displayedViewControllers removeObjectAtIndex:[displayedViewControllers indexOfObject:signInView]];
-		signInView = nil;
-	}
-	else {
-		if ( UIDeviceOrientationIsPortrait( self.interfaceOrientation ) )
-			[surveysFullScreenViewController swapInListView:UIInterfaceOrientationPortrait];
-		else
-			[surveysFullScreenViewController swapInListView:UIInterfaceOrientationLandscapeLeft];
+    if ( UIDeviceOrientationIsPortrait( self.interfaceOrientation ) )
+        [surveysFullScreenViewController swapInListView:UIInterfaceOrientationPortrait];
+    else
+        [surveysFullScreenViewController swapInListView:UIInterfaceOrientationLandscapeLeft];
 
-		[surveysFullScreenViewController.surveysListTable reloadData];
-	}
+    [surveysFullScreenViewController.surveysListTable reloadData];
 }
 
 
@@ -332,16 +332,8 @@ UIInterfaceOrientation gAppOrientation;
 - (void) showSignInAfterLogOut{
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 
-	signInView = [[SignInViewController alloc] init];
-	[[self view] addSubview:[signInView view]];	
-	[signInView selectField];
-	[signInView addObserver:self forKeyPath:@"loggedIn" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:NULL];	
-	[displayedViewControllers addObject:signInView];
-	[signInView willAnimateRotationToInterfaceOrientation:[[UIDevice currentDevice] orientation] duration:1.0];
-	[[surveysFullScreenViewController view] removeFromSuperview];
-	[displayedViewControllers removeObject:surveysFullScreenViewController];
-	
-	surveysFullScreenViewController = nil;
+    SignInViewController * signInViewController = [[SignInViewController alloc] init];
+    [self presentViewController:signInViewController animated:YES completion:nil];
 }
 
 

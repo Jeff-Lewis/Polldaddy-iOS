@@ -27,11 +27,6 @@
 		BE1633B31A0976A500A234C8 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633861A0976A500A234C8 /* button.png */; };
 		BE1633B41A0976A500A234C8 /* clear-20.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633871A0976A500A234C8 /* clear-20.png */; };
 		BE1633B51A0976A500A234C8 /* clear-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633881A0976A500A234C8 /* clear-32.png */; };
-		BE1633B81A0976A500A234C8 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = BE16338B1A0976A500A234C8 /* Default-Landscape.png */; };
-		BE1633B91A0976A500A234C8 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = BE16338C1A0976A500A234C8 /* Default-Portrait.png */; };
-		BE1633BA1A0976A500A234C8 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BE16338D1A0976A500A234C8 /* Icon-72.png */; };
-		BE1633BB1A0976A500A234C8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE16338E1A0976A500A234C8 /* Icon.png */; };
-		BE1633BC1A0976A500A234C8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE16338F1A0976A500A234C8 /* Icon@2x.png */; };
 		BE1633BD1A0976A500A234C8 /* IsSelected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633901A0976A500A234C8 /* IsSelected-iPhone.png */; };
 		BE1633BE1A0976A500A234C8 /* IsSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633911A0976A500A234C8 /* IsSelected.png */; };
 		BE1633BF1A0976A500A234C8 /* log-out-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633921A0976A500A234C8 /* log-out-iPhone.png */; };
@@ -39,7 +34,6 @@
 		BE1633C11A0976A500A234C8 /* log-out-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633941A0976A500A234C8 /* log-out-selected.png */; };
 		BE1633C21A0976A500A234C8 /* log-out.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633951A0976A500A234C8 /* log-out.png */; };
 		BE1633C31A0976A500A234C8 /* login-panel.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633961A0976A500A234C8 /* login-panel.png */; };
-		BE1633C41A0976A500A234C8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633971A0976A500A234C8 /* logo.png */; };
 		BE1633C51A0976A500A234C8 /* NotSelected-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633981A0976A500A234C8 /* NotSelected-iPhone.png */; };
 		BE1633C61A0976A500A234C8 /* NotSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633991A0976A500A234C8 /* NotSelected.png */; };
 		BE1633C71A0976A500A234C8 /* online-iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE16339A1A0976A500A234C8 /* online-iPhone.png */; };
@@ -60,7 +54,7 @@
 		BE1633D61A0976A500A234C8 /* surveys-list.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1633A91A0976A500A234C8 /* surveys-list.png */; };
 		BE1633D71A0976A500A234C8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE1633AA1A0976A500A234C8 /* Settings.bundle */; };
 		BE1633DA1A0976A500A234C8 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633AF1A0976A500A234C8 /* NSDataAdditions.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		BE1633DB1A0976A500A234C8 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633B11A0976A500A234C8 /* TBXML.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		BE1633DB1A0976A500A234C8 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633B11A0976A500A234C8 /* TBXML.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BE1633E61A09770C00A234C8 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633DF1A09770C00A234C8 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BE1633E71A09770C00A234C8 /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E11A09770C00A234C8 /* GTMNSString+XML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BE1633E81A09770C00A234C8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1633E31A09770C00A234C8 /* NSString+HTML.m */; };
@@ -223,11 +217,6 @@
 		BE1633861A0976A500A234C8 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		BE1633871A0976A500A234C8 /* clear-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-20.png"; sourceTree = "<group>"; };
 		BE1633881A0976A500A234C8 /* clear-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-32.png"; sourceTree = "<group>"; };
-		BE16338B1A0976A500A234C8 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
-		BE16338C1A0976A500A234C8 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
-		BE16338D1A0976A500A234C8 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
-		BE16338E1A0976A500A234C8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		BE16338F1A0976A500A234C8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		BE1633901A0976A500A234C8 /* IsSelected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IsSelected-iPhone.png"; sourceTree = "<group>"; };
 		BE1633911A0976A500A234C8 /* IsSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IsSelected.png; sourceTree = "<group>"; };
 		BE1633921A0976A500A234C8 /* log-out-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log-out-iPhone.png"; sourceTree = "<group>"; };
@@ -235,7 +224,6 @@
 		BE1633941A0976A500A234C8 /* log-out-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log-out-selected.png"; sourceTree = "<group>"; };
 		BE1633951A0976A500A234C8 /* log-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "log-out.png"; sourceTree = "<group>"; };
 		BE1633961A0976A500A234C8 /* login-panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-panel.png"; sourceTree = "<group>"; };
-		BE1633971A0976A500A234C8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		BE1633981A0976A500A234C8 /* NotSelected-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotSelected-iPhone.png"; sourceTree = "<group>"; };
 		BE1633991A0976A500A234C8 /* NotSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSelected.png; sourceTree = "<group>"; };
 		BE16339A1A0976A500A234C8 /* online-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online-iPhone.png"; sourceTree = "<group>"; };
@@ -570,11 +558,6 @@
 				BE1633861A0976A500A234C8 /* button.png */,
 				BE1633871A0976A500A234C8 /* clear-20.png */,
 				BE1633881A0976A500A234C8 /* clear-32.png */,
-				BE16338B1A0976A500A234C8 /* Default-Landscape.png */,
-				BE16338C1A0976A500A234C8 /* Default-Portrait.png */,
-				BE16338D1A0976A500A234C8 /* Icon-72.png */,
-				BE16338E1A0976A500A234C8 /* Icon.png */,
-				BE16338F1A0976A500A234C8 /* Icon@2x.png */,
 				BE1633901A0976A500A234C8 /* IsSelected-iPhone.png */,
 				BE1633911A0976A500A234C8 /* IsSelected.png */,
 				BE1633921A0976A500A234C8 /* log-out-iPhone.png */,
@@ -582,7 +565,6 @@
 				BE1633941A0976A500A234C8 /* log-out-selected.png */,
 				BE1633951A0976A500A234C8 /* log-out.png */,
 				BE1633961A0976A500A234C8 /* login-panel.png */,
-				BE1633971A0976A500A234C8 /* logo.png */,
 				BE1633981A0976A500A234C8 /* NotSelected-iPhone.png */,
 				BE1633991A0976A500A234C8 /* NotSelected.png */,
 				BE16339A1A0976A500A234C8 /* online-iPhone.png */,
@@ -760,25 +742,25 @@
 			isa = PBXGroup;
 			children = (
 				BE1634631A097C3300A234C8 /* Questions */,
-				BE16349D1A097DC300A234C8 /* LiveSurveySelectionViewController-iPhone.xib */,
-				BE16349E1A097DC300A234C8 /* LiveSurveySelectionViewController.h */,
-				BE16349F1A097DC300A234C8 /* LiveSurveySelectionViewController.m */,
-				BE1634A01A097DC300A234C8 /* LiveSurveySelectionViewController.xib */,
-				BE1634A11A097DC300A234C8 /* QuestionsViewController-iPhone.xib */,
-				BE1634A21A097DC300A234C8 /* QuestionsViewController.h */,
-				BE1634A31A097DC300A234C8 /* QuestionsViewController.m */,
-				BE1634A41A097DC300A234C8 /* QuestionsViewController.xib */,
-				BE1634A51A097DC300A234C8 /* ResponseViewController-iPhone.xib */,
-				BE1634A61A097DC300A234C8 /* ResponseViewController.h */,
-				BE1634A71A097DC300A234C8 /* ResponseViewController.m */,
-				BE1634A81A097DC300A234C8 /* ResponseViewController.xib */,
 				BE1634A91A097DC300A234C8 /* RootViewController.h */,
 				BE1634AA1A097DC300A234C8 /* RootViewController.m */,
 				BE1634AB1A097DC300A234C8 /* RootViewController.xib */,
-				BE1634AC1A097DC300A234C8 /* SignInViewController-iPhone.xib */,
 				BE1634AD1A097DC300A234C8 /* SignInViewController.h */,
 				BE1634AE1A097DC300A234C8 /* SignInViewController.m */,
 				BE1634AF1A097DC300A234C8 /* SignInViewController.xib */,
+				BE1634AC1A097DC300A234C8 /* SignInViewController-iPhone.xib */,
+				BE16349E1A097DC300A234C8 /* LiveSurveySelectionViewController.h */,
+				BE16349F1A097DC300A234C8 /* LiveSurveySelectionViewController.m */,
+				BE1634A01A097DC300A234C8 /* LiveSurveySelectionViewController.xib */,
+				BE16349D1A097DC300A234C8 /* LiveSurveySelectionViewController-iPhone.xib */,
+				BE1634A21A097DC300A234C8 /* QuestionsViewController.h */,
+				BE1634A31A097DC300A234C8 /* QuestionsViewController.m */,
+				BE1634A41A097DC300A234C8 /* QuestionsViewController.xib */,
+				BE1634A11A097DC300A234C8 /* QuestionsViewController-iPhone.xib */,
+				BE1634A61A097DC300A234C8 /* ResponseViewController.h */,
+				BE1634A71A097DC300A234C8 /* ResponseViewController.m */,
+				BE1634A81A097DC300A234C8 /* ResponseViewController.xib */,
+				BE1634A51A097DC300A234C8 /* ResponseViewController-iPhone.xib */,
 				BE1634B01A097DC300A234C8 /* SurveysFullScreenView-iPhone.xib */,
 				BE1634B11A097DC300A234C8 /* SurveysFullScreenViewController.h */,
 				BE1634B21A097DC300A234C8 /* SurveysFullScreenViewController.m */,
@@ -942,11 +924,9 @@
 				BE1634B91A097DC300A234C8 /* QuestionsViewController.xib in Resources */,
 				BE16326E1A09757400A234C8 /* Images.xcassets in Resources */,
 				BE1634C11A097DC300A234C8 /* SignInViewController.xib in Resources */,
-				BE1633BC1A0976A500A234C8 /* Icon@2x.png in Resources */,
 				BE1634F41A097F8C00A234C8 /* survey.js in Resources */,
 				BE1633B51A0976A500A234C8 /* clear-32.png in Resources */,
 				BE1633D01A0976A500A234C8 /* sign-in-supergraphic.png in Resources */,
-				BE1633C41A0976A500A234C8 /* logo.png in Resources */,
 				BE1633D61A0976A500A234C8 /* surveys-list.png in Resources */,
 				BE16337A1A09767600A234C8 /* SurveyInfoViewController.xib in Resources */,
 				BE16340E1A09794E00A234C8 /* PDButton.xib in Resources */,
@@ -955,14 +935,12 @@
 				BE1634111A09794E00A234C8 /* ProgressView.xib in Resources */,
 				BE1633D31A0976A500A234C8 /* surveys-list-iPhone.png in Resources */,
 				BE1633D41A0976A500A234C8 /* surveys-list-wide-iPhone.png in Resources */,
-				BE1633BA1A0976A500A234C8 /* Icon-72.png in Resources */,
 				BE1634F01A097F8C00A234C8 /* jquery.mobile.js in Resources */,
 				BE1633D21A0976A500A234C8 /* surveys-bg.png in Resources */,
 				BE1634BE1A097DC300A234C8 /* RootViewController.xib in Resources */,
 				BE1633C01A0976A500A234C8 /* log-out-selected-iPhone.png in Resources */,
 				BE1633CE1A0976A500A234C8 /* question-panel-tall.png in Resources */,
 				BE1634BF1A097DC300A234C8 /* SignInViewController-iPhone.xib in Resources */,
-				BE1633BB1A0976A500A234C8 /* Icon.png in Resources */,
 				BE1633B31A0976A500A234C8 /* button.png in Resources */,
 				BE1634EE1A097F8C00A234C8 /* iphone.css in Resources */,
 				BE1634F31A097F8C00A234C8 /* shared.css in Resources */,
@@ -980,10 +958,8 @@
 				BE1634EF1A097F8C00A234C8 /* jquery.js in Resources */,
 				BE1633B41A0976A500A234C8 /* clear-20.png in Resources */,
 				BE1633BE1A0976A500A234C8 /* IsSelected.png in Resources */,
-				BE1633B81A0976A500A234C8 /* Default-Landscape.png in Resources */,
 				BE1633C21A0976A500A234C8 /* log-out.png in Resources */,
 				BE1633CA1A0976A500A234C8 /* online.png in Resources */,
-				BE1633B91A0976A500A234C8 /* Default-Portrait.png in Resources */,
 				BE1634BA1A097DC300A234C8 /* ResponseViewController-iPhone.xib in Resources */,
 				BE1634BC1A097DC300A234C8 /* ResponseViewController.xib in Resources */,
 				BE1633BF1A0976A500A234C8 /* log-out-iPhone.png in Resources */,

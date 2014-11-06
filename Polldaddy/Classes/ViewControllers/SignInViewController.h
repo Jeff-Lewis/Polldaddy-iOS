@@ -13,7 +13,6 @@
 
 
 @interface SignInViewController : UIViewController {
-	UIImageView					*backgroundImage;
 	UIImageView					*logoImage;
 	UIView						*signInForm;
 	UITextField					*username;
@@ -37,7 +36,6 @@
 
 - (IBAction) signUpForPolldaddy;
 - (IBAction) signInClicked;
-- (void) selectField;
 - (void) loginSuccess;
 
 @end

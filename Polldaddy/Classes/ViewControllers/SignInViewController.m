@@ -15,16 +15,39 @@
 @synthesize backgroundImage,signInForm,logoImage,username,password,signInButton,loggedIn,activtyIndicator,api;
 
 -(id)init{
-	self = [super init];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-		self = [self initWithNibName:@"SignInViewController" bundle:nil];
+		self = [super initWithNibName:@"SignInViewController" bundle:nil];
 	else 
-		self = [self initWithNibName:@"SignInViewController-iPhone" bundle:nil];
+		self = [super initWithNibName:@"SignInViewController-iPhone" bundle:nil];
 	
-	[self setLoggedIn:0];
+    if(self != nil) {
+        //Initialization
+        [self setLoggedIn:0];
+    }
 
 	return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Hook up data entry
+    [username addTarget:self action:@selector(readField:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [password addTarget:self action:@selector(readField:) forControlEvents:UIControlEventEditingDidEndOnExit];
+    
+    [activtyIndicator stopAnimating];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,35 +86,32 @@
 - (void) loginSuccess{
 	[self setLoggedIn:1];
 	NSLog(@"Login Success!");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
-	
-	NSLog(@"rotating signin");
-	
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+-(void)viewWillLayoutSubviews
+{
+    //Laying out sign in
+    NSLog(@"viewWillLayoutSubviews in SignInViewController");
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         if ( UIDeviceOrientationIsPortrait( [[UIApplication sharedApplication] statusBarOrientation] ) ) {
-			// portrait view
-			[[self view] setFrame:CGRectMake(0, 0, 768, 1004)];
-			
-			logoImage.frame = CGRectMake(9, 122, logoImage.frame.size.width, logoImage.frame.size.height);
-			signInForm.frame = CGRectMake(89, 253, signInForm.frame.size.width, signInForm.frame.size.height);
-			backgroundImage.frame = CGRectMake(0, 0, 1024, 1004);
-		}
-		else {
-			// landscape view
-			[[self view] setFrame:CGRectMake(0, 0, 1024, 748)];
-			
-			logoImage.frame = CGRectMake(9, 150, logoImage.frame.size.width, logoImage.frame.size.height);
-			signInForm.frame = CGRectMake(425, 10, signInForm.frame.size.width, signInForm.frame.size.height);
-			backgroundImage.frame = CGRectMake(0, 0, 1024, 1024);
-		}
-	}
-}
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)selectField{
-	[super viewDidLoad];
+            // portrait view
+            [[self view] setFrame:CGRectMake(0, 0, 768, 1024)];
+            
+            logoImage.frame = CGRectMake(9, 142, logoImage.frame.size.width, logoImage.frame.size.height);
+            signInForm.frame = CGRectMake(89, 273, signInForm.frame.size.width, signInForm.frame.size.height);
+        }
+        else {
+            // landscape view
+            [[self view] setFrame:CGRectMake(0, 0, 1024, 768)];
+            
+            logoImage.frame = CGRectMake(9, 170, logoImage.frame.size.width, logoImage.frame.size.height);
+            signInForm.frame = CGRectMake(425, 30, signInForm.frame.size.width, signInForm.frame.size.height);
+        }
+    }
+    
+    [super viewWillLayoutSubviews];
 }
 
 -(BOOL)shouldAutorotate {
@@ -100,14 +120,6 @@
 
 -(NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
-}
-
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 - (IBAction) signUpForPolldaddy{
@@ -144,16 +156,6 @@
 		[password becomeFirstResponder];
 	else
 		[self signInClicked];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-	// Hook up data entry
-	[username addTarget:self action:@selector(readField:) forControlEvents:UIControlEventEditingDidEndOnExit];     
-	[password addTarget:self action:@selector(readField:) forControlEvents:UIControlEventEditingDidEndOnExit];     
-
-    [activtyIndicator stopAnimating];
 }
 
 @end

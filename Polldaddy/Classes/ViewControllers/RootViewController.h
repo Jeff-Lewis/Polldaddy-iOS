@@ -15,27 +15,12 @@
 @class QuestionsViewController, ResponseViewController;
 
 @interface RootViewController : UIViewController <UIActionSheetDelegate>{
-	UIImageView                     *splashView;
-	UISplitViewController           *splitViewController;
-	SurveysFullScreenViewController *surveysFullScreenViewController;
-	QuestionsViewController         *questionsViewController;
-  ResponseViewController          *responseViewController;
-	SignInViewController            *signInView;
-	UIImageView						*background; 
-	UIImageView						*panel; 
-	
-	NSInteger lastButton;
-	
-	NSMutableArray *displayedViewControllers;
-	
-	Reachability *internetReachable;
-	Reachability *hostReachable;
+
 }
 
-@property (nonatomic, strong) IBOutlet SignInViewController            *signInView;
-@property (nonatomic, strong) IBOutlet SurveysFullScreenViewController *surveysFullScreenViewController;
-@property (nonatomic, strong) IBOutlet UISplitViewController           *splitViewController;
-@property (nonatomic, strong) IBOutlet QuestionsViewController         *questionsViewController;
+@property (nonatomic, strong) SurveysFullScreenViewController *surveysFullScreenViewController;
+@property (nonatomic, strong) UISplitViewController           *splitViewController;
+@property (nonatomic, strong) QuestionsViewController         *questionsViewController;
 @property (nonatomic, strong) UIImageView *background;
 @property (nonatomic, strong) UIImageView *panel;
 @property (nonatomic,readonly) NSInteger lastButton;
