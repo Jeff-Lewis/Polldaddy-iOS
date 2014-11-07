@@ -462,7 +462,7 @@
 		// Use this to get screen dimensions
 		UI_Question *uiQuestion = [[UI_Question alloc] init];
 		
-		[[self view] setFrame:CGRectMake(20, 20, [uiQuestion getMaxWidth], [uiQuestion getMaxHeight])];
+		[[self view] setFrame:CGRectMake(0.0, 20.0, [uiQuestion getMaxWidth], [uiQuestion getMaxHeight])];
 
 		// Display first question
 		[self displayQuestion:start withNewField:YES];
@@ -494,7 +494,7 @@
 		UI_Question *uiQuestion = [[UI_Question alloc] init];
 		
 		// Change the dimensions of the page according to orientation. Is there an automatic way of doing this?
-		[[self view] setFrame:CGRectMake(0, 0, [uiQuestion getMaxWidth], [uiQuestion getMaxHeight])];
+		[[self view] setFrame:CGRectMake(0.0, 20.0, [uiQuestion getMaxWidth], [uiQuestion getMaxHeight])];
 		
 		// Redisplay the question in the new orientation. Note that we dont add a new question - we want to reposition the existing one
 		[self displayQuestion:currentQnum withNewField:NO];
