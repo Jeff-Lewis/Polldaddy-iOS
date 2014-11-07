@@ -48,8 +48,6 @@
 #import "UI_PhoneNumber.h"
 #import "UI_Number.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation QuestionsViewController
 
 @synthesize surveyButton, cancelButton, questionDetails, loading;
@@ -399,13 +397,13 @@ extern UIInterfaceOrientation gAppOrientation;
 		[surveyButton setTitle:[NSString stringWithFormat:@"%@ »", [pack getPhrase:PHRASE_STARTOVER]] forState:UIControlStateNormal];
 		
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-			if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+			if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 				[surveyButton setFrame:CGRectMake(355, 653, 340, [Constants buttonHeight])];
 			else
 				[surveyButton setFrame:CGRectMake(220, 910, 340, [Constants buttonHeight])];
 		}
 		else {
-			if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+			if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 				[surveyButton setFrame:CGRectMake( ( [uiQ getMaxWidth] - 130 ) / 2, [uiQ getMaxHeight] - 62, 130, [Constants buttonHeight] )];
 			else
 				[surveyButton setFrame:CGRectMake( ( [uiQ getMaxWidth] - 130 ) / 2, [uiQ getMaxHeight] - 70, 130, [Constants buttonHeight] )];

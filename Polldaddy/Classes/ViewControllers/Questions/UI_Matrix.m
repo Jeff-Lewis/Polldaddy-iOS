@@ -13,8 +13,6 @@
 #import "Constants.h"
 #import "Language.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation UI_Matrix
 
 @synthesize question;
@@ -288,7 +286,7 @@ extern UIInterfaceOrientation gAppOrientation;
 			height = [self getMaxFrameHeight] - originPoint.y - 50;
 	}
 	else {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) ) {
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) ) {
 			if ( height > [self getMaxFrameHeight] - originPoint.y - 55)
 				height = [self getMaxFrameHeight] - originPoint.y - 55;
 		}
@@ -452,7 +450,7 @@ extern UIInterfaceOrientation gAppOrientation;
 	scroller.contentSize = CGSizeMake( [self getMatrixWidth], [self getMatrixHeight] );
 	[scroller flashScrollIndicators];
     
-    [self willAnimateRotationToInterfaceOrientation:gAppOrientation duration:0.1];
+    [self willAnimateRotationToInterfaceOrientation:[Utility currentInterfaceOrientation] duration:0.1];
 }
 
 -(BOOL)shouldAutorotate {

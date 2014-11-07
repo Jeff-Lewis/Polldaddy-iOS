@@ -16,8 +16,6 @@
 #import "Language.h"
 #import "GTMNSString+XML.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation UI_TextMulti
 
 @synthesize question;
@@ -124,7 +122,7 @@ extern UIInterfaceOrientation gAppOrientation;
 
 	[[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&_keyboardEndFrame];
 
-	if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+	if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 		keyboardHeight = _keyboardEndFrame.size.width;
 	else
 		keyboardHeight = _keyboardEndFrame.size.height;

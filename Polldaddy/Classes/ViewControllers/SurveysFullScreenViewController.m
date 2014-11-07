@@ -17,8 +17,6 @@
 #import "ProgressView.h"
 #import "PolldaddyAppDelegate.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 
 @interface AutoSyncer : NSOperation {
 }
@@ -569,7 +567,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 				liveSurveysView = [[LiveSurveySelectionViewController alloc] initWithNibName:@"LiveSurveySelectionViewController" bundle:nil];
 				[[liveSurveysView liveTable] setFrame:CGRectMake([[liveSurveysView liveTable] frame].origin.x, [[liveSurveysView liveTable] frame].origin.y, [[liveSurveysView liveTable] frame].size.width, 790) ];
 				
-				if ( UIDeviceOrientationIsLandscape( gAppOrientation ) ) {
+				if ( UIDeviceOrientationIsLandscape( [Utility currentInterfaceOrientation] ) ) {
 					[[liveSurveysView view] setFrame:CGRectMake(33, 125, 950, 620)];
 					[[liveSurveysView saveSelectionsButton] setFrame:CGRectMake(180, 500, [[liveSurveysView saveSelectionsButton] frame].size.width, [[liveSurveysView saveSelectionsButton] frame].size.height)];
 				} else {
@@ -581,7 +579,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 				liveSurveysView = [[LiveSurveySelectionViewController alloc] initWithNibName:@"LiveSurveySelectionViewController-iPhone" bundle:nil];
 				[[liveSurveysView liveTable] setFrame:CGRectMake([[liveSurveysView liveTable] frame].origin.x, [[liveSurveysView liveTable] frame].origin.y, [[liveSurveysView liveTable] frame].size.width, 400) ];
 				
-				if ( UIDeviceOrientationIsLandscape( gAppOrientation ) ) {
+				if ( UIDeviceOrientationIsLandscape( [Utility currentInterfaceOrientation] ) ) {
 					[[liveSurveysView view] setFrame:CGRectMake(15, 60, 460, 220)];
 					[[liveSurveysView saveSelectionsButton] setFrame:CGRectMake(100, 175, [[liveSurveysView saveSelectionsButton] frame].size.width, [[liveSurveysView saveSelectionsButton] frame].size.height)];
 				} else {
@@ -649,7 +647,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 	// Update the list
 	if ( total > 0 ) {
 		[self loadOfflineSurveys];
-		[self swapInListView:gAppOrientation];
+		[self swapInListView:[Utility currentInterfaceOrientation]];
 	}
 }
 

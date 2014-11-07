@@ -12,8 +12,6 @@
 #import "PolldaddyAPI.h"
 #import "Survey.h"
 
-UIInterfaceOrientation gAppOrientation;
-
 @interface RootViewController() {
     UIImageView                     *splashView;
     UISplitViewController           *splitViewController;

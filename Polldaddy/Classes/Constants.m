@@ -8,8 +8,6 @@
 
 #import "Constants.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation Constants
 
 + (boolean_t)isIpad {

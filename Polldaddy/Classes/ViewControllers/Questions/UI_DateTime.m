@@ -16,8 +16,6 @@
 
 @implementation UI_DateTime
 
-extern UIInterfaceOrientation gAppOrientation;
-
 - initWithQuestion:(ST_DateTime *)theQuestion andPack:(Language *)thePack;{
 	self = [super init];
 	

@@ -22,8 +22,6 @@
 
 @synthesize respondentTitle, startLabel, endLabel, nextButton, prevButton, cancelButton, deleteButton, scroller, started, ended;
 
-extern UIInterfaceOrientation gAppOrientation;
-
 -(id)initWithController:(RootViewController *)root {
 	self = [super init];
 

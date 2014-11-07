@@ -12,8 +12,6 @@
 
 @implementation DatePickerController
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @synthesize datePicker, delegate;
 
 - (id)initWithType:(unsigned long)type {
@@ -29,13 +27,13 @@ extern UIInterfaceOrientation gAppOrientation;
 	
 
 	if ( [Constants isIpad] ) {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 			return CGRectMake( 0, 820, width, 215 );
 		
 		return CGRectMake( 0, 565, width, 215 );
 	}
 	else {
-	 if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+	 if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 		 return CGRectMake( 0, 215, width, 216 );
 
 	 return CGRectMake( 0, 110, width, 160 );
@@ -48,13 +46,13 @@ extern UIInterfaceOrientation gAppOrientation;
 	
 	
 	if ( [Constants isIpad] ) {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 			return CGRectMake( 0, 790, width, 30 );
 		
 		return CGRectMake( 0, 535, width, 30 );
 	}
 	else {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 			return CGRectMake( 0, 430, width, 30 );
 		
 		return CGRectMake( 0, 270, width, 30 );

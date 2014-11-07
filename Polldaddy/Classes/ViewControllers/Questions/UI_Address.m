@@ -15,8 +15,6 @@
 #import "Language.h"
 #import "GTMNSString+XML.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation UI_Address
 
 @synthesize question;
@@ -125,14 +123,14 @@ extern UIInterfaceOrientation gAppOrientation;
 
 - (CGRect) getFieldSize:(unsigned int) field {
 	// If on the iphone and in landscape mode then the labels are next to the fields
-	if ( [Constants isIphone] && ( gAppOrientation == UIInterfaceOrientationLandscapeLeft || gAppOrientation == UIInterfaceOrientationLandscapeRight ) )
+	if ( [Constants isIphone] && ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) )
 		return CGRectMake( 100, (field * [Constants textEditHeight] ) + ( field * [Constants labelBottomPadding] ), [self getMaxFrameWidth] * ( [Constants isIpad] ? 0.8 : 1 ) - 100, [Constants textEditHeight] );
 
 	return CGRectMake( 0, ( ( field * [Constants textEditHeight] ) + ( field * [Constants labelBottomPadding] ) ) * 2, [self getMaxFrameWidth] * ( [Constants isIpad] ? 0.8 : 1 ), [Constants textEditHeight] );
 }
 
 - (CGRect) getLabelSize:(unsigned int) field {
-	if ( [Constants isIphone] && ( gAppOrientation == UIInterfaceOrientationLandscapeLeft || gAppOrientation == UIInterfaceOrientationLandscapeRight ) )
+	if ( [Constants isIphone] && ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) )
 		return CGRectMake( 0, field * [Constants textEditHeight] + ( field * [Constants labelBottomPadding] ), 100, [Constants textEditHeight] );
 
 	return CGRectMake( 0, ( ( field * [Constants textEditHeight] ) + ( field * [Constants labelBottomPadding] ) ) * 2 + ( [Constants textEditHeight] + [Constants labelBottomPadding] ), [self getMaxFrameWidth], [Constants textEditHeight] );

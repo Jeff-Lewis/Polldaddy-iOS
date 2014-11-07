@@ -17,8 +17,6 @@
 #import "stdlib.h"
 #import "GTMNSString+XML.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation UI_MultiChoice
 
 @synthesize question;
@@ -144,12 +142,12 @@ extern UIInterfaceOrientation gAppOrientation;
 
 - (CGRect) getToolbarRect {
 	if ( [Constants isIpad] ) {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
             return CGRectMake(0, [self getMaxHeight] - 264 - 60, [self getMaxWidth], 40);
         return CGRectMake(0, [self getMaxHeight] - 350 - 60, [self getMaxWidth], 40);
     }
 	else {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
             return CGRectMake(0, 205, [self getMaxWidth], 40);
         return CGRectMake(0, 100, [self getMaxWidth], 40);
     }

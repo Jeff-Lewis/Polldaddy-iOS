@@ -12,8 +12,6 @@
 #import "Language.h"
 #import "NSString+HTML.h"
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation UI_Question
 
 @synthesize pack;
@@ -119,13 +117,13 @@ extern UIInterfaceOrientation gAppOrientation;
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[cancelButton setFrame:CGRectMake( 40, [self getMaxHeight] - 80 - 25, 120, 40 )];
 
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 			[surveyButton setFrame:CGRectMake(760, 653, 230, [Constants buttonHeight])];
 		else
 			[surveyButton setFrame:CGRectMake(500, 910, 230, [Constants buttonHeight])];
 	}
 	else {
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight ) {
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) {
 			[cancelButton setFrame:CGRectMake( 30, [self getMaxHeight] - 62, 100, [Constants buttonHeight] )];
 			[surveyButton setFrame:CGRectMake( 320, [self getMaxHeight] - 62, 130, [Constants buttonHeight] )];
 		}

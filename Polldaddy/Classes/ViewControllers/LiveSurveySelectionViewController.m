@@ -24,8 +24,6 @@ NSComparisonResult compareAZCell( MultiSelectCellController *element1, MultiSele
 	return [element1.label caseInsensitiveCompare:element2.label];	
 }
 
-extern UIInterfaceOrientation gAppOrientation;
-
 @implementation LiveSurveySelectionViewController
 
 
@@ -39,7 +37,7 @@ extern UIInterfaceOrientation gAppOrientation;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	[self willAnimateRotationToInterfaceOrientation:gAppOrientation duration:0];
+	[self willAnimateRotationToInterfaceOrientation:[Utility currentInterfaceOrientation] duration:0];
 
 	[liveTable setEditing:NO];
 	[liveTable setAllowsSelectionDuringEditing:NO];
