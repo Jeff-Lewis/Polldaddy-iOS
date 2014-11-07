@@ -400,7 +400,7 @@
 			if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 				[surveyButton setFrame:CGRectMake(355, 653, 340, [Constants buttonHeight])];
 			else
-				[surveyButton setFrame:CGRectMake(220, 910, 340, [Constants buttonHeight])];
+				[surveyButton setFrame:CGRectMake(220, 890, 340, [Constants buttonHeight])];
 		}
 		else {
 			if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )

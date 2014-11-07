@@ -115,12 +115,14 @@
 	[surveyButton setTitle:[NSString stringWithFormat:@"%@ »", [pack getPhrase:PHRASE_CONTINUE]] forState:UIControlStateNormal];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[cancelButton setFrame:CGRectMake( 40, [self getMaxHeight] - 80 - 25, 120, 40 )];
-
-		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
+		
+        if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) {
 			[surveyButton setFrame:CGRectMake(760, 653, 230, [Constants buttonHeight])];
-		else
-			[surveyButton setFrame:CGRectMake(500, 910, 230, [Constants buttonHeight])];
+            [cancelButton setFrame:CGRectMake( 40, [self getMaxHeight] - 80 - 20, 120, 40 )];
+        } else {
+			[surveyButton setFrame:CGRectMake(500, 890, 230, [Constants buttonHeight])];
+            [cancelButton setFrame:CGRectMake( 40, [self getMaxHeight] - 80 - 25 - 20, 120, 40 )];
+        }
 	}
 	else {
 		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) {
