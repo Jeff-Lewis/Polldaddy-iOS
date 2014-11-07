@@ -156,6 +156,7 @@
 		BEC232131A0D2D2300856925 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC232101A0D2D2300856925 /* ProgressView.m */; };
 		BEC232141A0D2D2300856925 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC232111A0D2D2300856925 /* ProgressView.xib */; };
 		BEC232151A0D2D2300856925 /* ProgressViewIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC232121A0D2D2300856925 /* ProgressViewIpad.xib */; };
+		BEC232181A0D3B3E00856925 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC232171A0D3B3E00856925 /* Utility.m */; };
 		DE24D8AA11AB04CF00142C35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE24D8A911AB04CF00142C35 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -427,6 +428,8 @@
 		BEC232101A0D2D2300856925 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		BEC232111A0D2D2300856925 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		BEC232121A0D2D2300856925 /* ProgressViewIpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressViewIpad.xib; sourceTree = "<group>"; };
+		BEC232161A0D3B3E00856925 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		BEC232171A0D3B3E00856925 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		DE24D8A911AB04CF00142C35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -542,6 +545,8 @@
 				BE1632931A09767600A234C8 /* Configuration.m */,
 				BE1633FA1A09787400A234C8 /* Constants.h */,
 				BE1632941A09767600A234C8 /* Constants.m */,
+				BEC232161A0D3B3E00856925 /* Utility.h */,
+				BEC232171A0D3B3E00856925 /* Utility.m */,
 				BE1634C51A097E4D00A234C8 /* API */,
 				BE1634621A097C3300A234C8 /* ViewControllers */,
 				BE1634141A097BA600A234C8 /* Models */,
@@ -1096,6 +1101,7 @@
 				BE16347E1A097C3300A234C8 /* UI_EmailAddress.m in Sources */,
 				BE16344B1A097BA600A234C8 /* AN_EmailAddress.m in Sources */,
 				BE1634841A097C3300A234C8 /* UI_Question.m in Sources */,
+				BEC232181A0D3B3E00856925 /* Utility.m in Sources */,
 				BE1634861A097C3300A234C8 /* UI_TextMulti.m in Sources */,
 				BE16340F1A09794E00A234C8 /* PDButtonBlue.m in Sources */,
 				BE1634831A097C3300A234C8 /* UI_PageHeader.m in Sources */,

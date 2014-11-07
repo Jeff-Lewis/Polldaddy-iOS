@@ -246,12 +246,12 @@ extern UIInterfaceOrientation gAppOrientation;
 - (CGFloat) getMaxWidth {
 	// There must be a better way to do this...
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 			return [Constants iPadHeight];
 		return [Constants iPadWidth];
 	}
 	else {
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 			return 480.0;
 		return 320.0;
 	}
@@ -260,12 +260,12 @@ extern UIInterfaceOrientation gAppOrientation;
 - (CGFloat) getMaxHeight {
 	// There must be a better way to do this...
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 			return [Constants iPadWidth];
 		return [Constants iPadHeight];
 	}
 	else {
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight )
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 			return 320.0;
 		return 480.0;
 	}

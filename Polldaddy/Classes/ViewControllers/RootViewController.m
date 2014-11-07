@@ -114,13 +114,13 @@ UIInterfaceOrientation gAppOrientation;
 		if ( UIDeviceOrientationIsPortrait( self.interfaceOrientation ) )
 			[panel setFrame:CGRectMake(0, 10, 768, 1004)];
 		else
-			[panel setFrame:CGRectMake(0, 0, 1024, 748)];
+			[panel setFrame:CGRectMake(0, 20, 1024, 748)];
 	}
 	else {
 		if ( UIDeviceOrientationIsPortrait( self.interfaceOrientation ) )
-			[panel setFrame:CGRectMake(0, 0, 320, 460)];
+			[panel setFrame:CGRectMake(0, 20, 320, 460)];
 		else
-			[panel setFrame:CGRectMake(0, 0, 480, 300)];
+			[panel setFrame:CGRectMake(0, 20, 480, 300)];
 	}
 }
 

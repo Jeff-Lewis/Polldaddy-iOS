@@ -30,7 +30,7 @@
 	
 	UIScrollView *scroller;
 	
-	unsigned int currentResponsePos, weirdOffset;
+	unsigned int currentResponsePos;
 }
 
 @property (nonatomic, strong) IBOutlet UILabel  *respondentTitle, *startLabel, *endLabel, *started, *ended;

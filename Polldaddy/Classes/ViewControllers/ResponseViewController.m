@@ -185,7 +185,7 @@ extern UIInterfaceOrientation gAppOrientation;
 		}
 		
 		// Set scroller dimensions
-		unsigned int offsetHeight = ended.frame.origin.y + ended.frame.size.height + ( [Constants labelBottomPadding] * 2 ) + weirdOffset;
+		unsigned int offsetHeight = ended.frame.origin.y + ended.frame.size.height + ( [Constants labelBottomPadding] * 2 );
 
 		[scroller setFrame:CGRectMake( scroller.frame.origin.x, offsetHeight, [uiQ getMaxFrameWidth] + [Constants innerFrameXOffset], [uiQ getMaxHeight] - offsetHeight - 9 - [Constants questionToolbarHeight] )];
 
@@ -193,33 +193,41 @@ extern UIInterfaceOrientation gAppOrientation;
 		scroller.contentSize = CGSizeMake( [uiQ getMaxFrameWidth], offset.y );
 		[scroller flashScrollIndicators];
 		
+        UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+        
+        NSLog(@"ResponseViewController frame: %@", NSStringFromCGRect(self.view.frame));
+        
 		// Display buttons in appropriate places
 		if ( [Constants isIpad] ) {
-			if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight ) {
-				[prevButton setFrame:CGRectMake(33, 650, 200, 62)];
-				[cancelButton setFrame:CGRectMake(470, 650, 98, 62)];
-				[nextButton setFrame:CGRectMake(790, 650, 200, 62)];
-				[deleteButton setFrame:CGRectMake(920, 71, 72, 37)];
+            if ( UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
+				self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+                [prevButton setFrame:CGRectMake(33, 670, 200, 62)];
+				[cancelButton setFrame:CGRectMake(470, 670, 98, 62)];
+				[nextButton setFrame:CGRectMake(790, 670, 200, 62)];
+				[deleteButton setFrame:CGRectMake(920, 91, 72, 37)];
 			}
 			else {
-				[prevButton setFrame:CGRectMake(33, 906, 200, 62)];
+				self.view.frame = CGRectMake(0.0, 0.0, 768.0, 1024.0);
+                [prevButton setFrame:CGRectMake(33, 906, 200, 62)];
 				[cancelButton setFrame:CGRectMake(336, 906, 98, 62)];
 				[nextButton setFrame:CGRectMake(537, 906, 200, 62)];
 				[deleteButton setFrame:CGRectMake(665, 71, 72, 37)];
 			}
 		}
 		else {
-			if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight ) {
-				[prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 61 + weirdOffset, 80, [Constants buttonHeight])];
-				[cancelButton setFrame:CGRectMake(200, [uiQ getMaxHeight] - 61 + weirdOffset, 80, [Constants buttonHeight])];
-				[nextButton setFrame:CGRectMake(380, [uiQ getMaxHeight] - 61 + weirdOffset, 80, [Constants buttonHeight])];
-				[deleteButton setFrame:CGRectMake(400, 42, 60, 24)];
+			if ( UIInterfaceOrientationIsLandscape(interfaceOrientation) ) {
+                self.view.frame = CGRectMake(0.0, 0.0, 480.0, 320.0);
+                [prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+				[cancelButton setFrame:CGRectMake(200, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+				[nextButton setFrame:CGRectMake(380, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+				[deleteButton setFrame:CGRectMake(400, 62, 60, 24)];
 			}
 			else {
-				[prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 70 + weirdOffset, 80, [Constants buttonHeight])];
-				[cancelButton setFrame:CGRectMake(120, [uiQ getMaxHeight] - 70 + weirdOffset, 80, [Constants buttonHeight])];
-				[nextButton setFrame:CGRectMake(220, [uiQ getMaxHeight] - 70 + weirdOffset, 80, [Constants buttonHeight])];
-				[deleteButton setFrame:CGRectMake(240, 42, 60, 24)];
+                self.view.frame = CGRectMake(0.0, 0.0, 320.0, 480.0);
+                [prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
+				[cancelButton setFrame:CGRectMake(120, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
+				[nextButton setFrame:CGRectMake(220, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
+				[deleteButton setFrame:CGRectMake(240, 62, 60, 24)];
 			}
 		}
 
@@ -236,16 +244,14 @@ extern UIInterfaceOrientation gAppOrientation;
     [super viewDidLoad];
     
     if ( survey ) {
-		weirdOffset = 0;
-		
-		if ( gAppOrientation == UIDeviceOrientationLandscapeLeft || gAppOrientation == UIDeviceOrientationLandscapeRight ) {
+        
+		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) {
 			UI_Question *uiQ = [[UI_Question alloc] init];
 
 			[self.view setFrame:CGRectMake(0, 0, [uiQ getMaxWidth], [uiQ getMaxHeight])];
 		}
 
 		[self displayAnswers];
-		weirdOffset = 0;
 	}
 }
 

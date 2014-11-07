@@ -36,12 +36,12 @@ extern UIInterfaceOrientation gAppOrientation;
 
 + (float_t)toolbarButtonYPos {
 	if ( [Constants isIpad] ) {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 			return 910;
 		return 653;
 	}
 	else {
-		if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+		if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 			return 410;
 		return 258;
 	}
@@ -80,7 +80,7 @@ extern UIInterfaceOrientation gAppOrientation;
 	if ( [Constants isIpad] )
 		return 127;
 
-	if ( UIInterfaceOrientationIsPortrait( gAppOrientation ) )
+	if ( UIInterfaceOrientationIsPortrait( [Utility currentInterfaceOrientation] ) )
 		return 84;
 	return 70;
 }
