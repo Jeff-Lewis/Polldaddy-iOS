@@ -17,6 +17,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+*.DS_Store
+
 # Configuration.plist - ignore the Configuration.plist file which will contain the API keys.  This should be added
 # when first loading the project with the format from Configuration-example.plist
 Resources/Configuration.plist
