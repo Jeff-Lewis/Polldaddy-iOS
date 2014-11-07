@@ -69,9 +69,6 @@
 		BE16340D1A09794E00A234C8 /* PDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634021A09794E00A234C8 /* PDButton.m */; };
 		BE16340E1A09794E00A234C8 /* PDButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1634031A09794E00A234C8 /* PDButton.xib */; };
 		BE16340F1A09794E00A234C8 /* PDButtonBlue.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634051A09794E00A234C8 /* PDButtonBlue.m */; };
-		BE1634101A09794E00A234C8 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634071A09794E00A234C8 /* ProgressView.m */; };
-		BE1634111A09794E00A234C8 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1634081A09794E00A234C8 /* ProgressView.xib */; };
-		BE1634121A09794E00A234C8 /* ProgressViewIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE1634091A09794E00A234C8 /* ProgressViewIpad.xib */; };
 		BE1634131A09794E00A234C8 /* UIView+FindFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = BE16340A1A09794E00A234C8 /* UIView+FindFirstResponder.m */; };
 		BE1634491A097BA600A234C8 /* AN_Address.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634171A097BA600A234C8 /* AN_Address.m */; };
 		BE16344A1A097BA600A234C8 /* AN_DateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1634191A097BA600A234C8 /* AN_DateTime.m */; };
@@ -156,6 +153,9 @@
 		BE1634FA1A0980A800A234C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE1634F81A0980A800A234C8 /* Localizable.strings */; };
 		BE1634FD1A09813F00A234C8 /* Configuration-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE1634FB1A09813F00A234C8 /* Configuration-sample.plist */; };
 		BE1634FE1A09813F00A234C8 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE1634FC1A09813F00A234C8 /* Configuration.plist */; };
+		BEC232131A0D2D2300856925 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC232101A0D2D2300856925 /* ProgressView.m */; };
+		BEC232141A0D2D2300856925 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC232111A0D2D2300856925 /* ProgressView.xib */; };
+		BEC232151A0D2D2300856925 /* ProgressViewIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC232121A0D2D2300856925 /* ProgressViewIpad.xib */; };
 		DE24D8AA11AB04CF00142C35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE24D8A911AB04CF00142C35 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -278,10 +278,6 @@
 		BE1634031A09794E00A234C8 /* PDButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PDButton.xib; sourceTree = "<group>"; };
 		BE1634041A09794E00A234C8 /* PDButtonBlue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDButtonBlue.h; sourceTree = "<group>"; };
 		BE1634051A09794E00A234C8 /* PDButtonBlue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDButtonBlue.m; sourceTree = "<group>"; };
-		BE1634061A09794E00A234C8 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
-		BE1634071A09794E00A234C8 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
-		BE1634081A09794E00A234C8 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
-		BE1634091A09794E00A234C8 /* ProgressViewIpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressViewIpad.xib; sourceTree = "<group>"; };
 		BE16340A1A09794E00A234C8 /* UIView+FindFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FindFirstResponder.m"; sourceTree = "<group>"; };
 		BE1634161A097BA600A234C8 /* AN_Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AN_Address.h; sourceTree = "<group>"; };
 		BE1634171A097BA600A234C8 /* AN_Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AN_Address.m; sourceTree = "<group>"; };
@@ -427,6 +423,10 @@
 		BE1634F91A0980A800A234C8 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BE1634FB1A09813F00A234C8 /* Configuration-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Configuration-sample.plist"; sourceTree = "<group>"; };
 		BE1634FC1A09813F00A234C8 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		BEC2320F1A0D2D2300856925 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		BEC232101A0D2D2300856925 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		BEC232111A0D2D2300856925 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
+		BEC232121A0D2D2300856925 /* ProgressViewIpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressViewIpad.xib; sourceTree = "<group>"; };
 		DE24D8A911AB04CF00142C35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -644,10 +644,6 @@
 				BE1634031A09794E00A234C8 /* PDButton.xib */,
 				BE1634041A09794E00A234C8 /* PDButtonBlue.h */,
 				BE1634051A09794E00A234C8 /* PDButtonBlue.m */,
-				BE1634061A09794E00A234C8 /* ProgressView.h */,
-				BE1634071A09794E00A234C8 /* ProgressView.m */,
-				BE1634081A09794E00A234C8 /* ProgressView.xib */,
-				BE1634091A09794E00A234C8 /* ProgressViewIpad.xib */,
 				BE16340A1A09794E00A234C8 /* UIView+FindFirstResponder.m */,
 			);
 			path = Views;
@@ -765,6 +761,10 @@
 				BE1634B21A097DC300A234C8 /* SurveysFullScreenViewController.m */,
 				BE1634B31A097DC300A234C8 /* SurveysFullScreenViewController.xib */,
 				BE1634B01A097DC300A234C8 /* SurveysFullScreenView-iPhone.xib */,
+				BEC2320F1A0D2D2300856925 /* ProgressView.h */,
+				BEC232101A0D2D2300856925 /* ProgressView.m */,
+				BEC232111A0D2D2300856925 /* ProgressView.xib */,
+				BEC232121A0D2D2300856925 /* ProgressViewIpad.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -929,10 +929,10 @@
 				BE1633D01A0976A500A234C8 /* sign-in-supergraphic.png in Resources */,
 				BE1633D61A0976A500A234C8 /* surveys-list.png in Resources */,
 				BE16337A1A09767600A234C8 /* SurveyInfoViewController.xib in Resources */,
+				BEC232151A0D2D2300856925 /* ProgressViewIpad.xib in Resources */,
 				BE16340E1A09794E00A234C8 /* PDButton.xib in Resources */,
 				BE1634FE1A09813F00A234C8 /* Configuration.plist in Resources */,
 				BE1633CB1A0976A500A234C8 /* photo-20.png in Resources */,
-				BE1634111A09794E00A234C8 /* ProgressView.xib in Resources */,
 				BE1633D31A0976A500A234C8 /* surveys-list-iPhone.png in Resources */,
 				BE1633D41A0976A500A234C8 /* surveys-list-wide-iPhone.png in Resources */,
 				BE1634F01A097F8C00A234C8 /* jquery.mobile.js in Resources */,
@@ -963,11 +963,11 @@
 				BE1634BA1A097DC300A234C8 /* ResponseViewController-iPhone.xib in Resources */,
 				BE1634BC1A097DC300A234C8 /* ResponseViewController.xib in Resources */,
 				BE1633BF1A0976A500A234C8 /* log-out-iPhone.png in Resources */,
-				BE1634121A09794E00A234C8 /* ProgressViewIpad.xib in Resources */,
 				BE1634F21A097F8C00A234C8 /* phone.js in Resources */,
 				BE1634FD1A09813F00A234C8 /* Configuration-sample.plist in Resources */,
 				BE1632741A09757400A234C8 /* MainWindow.xib in Resources */,
 				BE1633D51A0976A500A234C8 /* surveys-list-wide.png in Resources */,
+				BEC232141A0D2D2300856925 /* ProgressView.xib in Resources */,
 				BE1633CC1A0976A500A234C8 /* photo-32.png in Resources */,
 				BE1634FA1A0980A800A234C8 /* Localizable.strings in Resources */,
 				BE1633CF1A0976A500A234C8 /* question-panel-wide.png in Resources */,
@@ -1060,6 +1060,7 @@
 				BE16344D1A097BA600A234C8 /* AN_Matrix.m in Sources */,
 				BE1634931A097C7E00A234C8 /* UI_QuizResults.m in Sources */,
 				BE16348F1A097C7200A234C8 /* UI_FileUpload.m in Sources */,
+				BEC232131A0D2D2300856925 /* ProgressView.m in Sources */,
 				BE1634851A097C3300A234C8 /* UI_Text.m in Sources */,
 				BE1634DD1A097EB200A234C8 /* Question.m in Sources */,
 				BE1634E01A097EB200A234C8 /* Survey.m in Sources */,
@@ -1097,7 +1098,6 @@
 				BE1634841A097C3300A234C8 /* UI_Question.m in Sources */,
 				BE1634861A097C3300A234C8 /* UI_TextMulti.m in Sources */,
 				BE16340F1A09794E00A234C8 /* PDButtonBlue.m in Sources */,
-				BE1634101A09794E00A234C8 /* ProgressView.m in Sources */,
 				BE1634831A097C3300A234C8 /* UI_PageHeader.m in Sources */,
 				BE1633E81A09770C00A234C8 /* NSString+HTML.m in Sources */,
 				BE16349A1A097D1400A234C8 /* DatePickerPopup.m in Sources */,
