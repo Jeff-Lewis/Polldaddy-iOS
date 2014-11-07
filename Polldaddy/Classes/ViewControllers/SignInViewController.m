@@ -10,9 +10,11 @@
 #import "PolldaddyAppDelegate.h"
 #import "PolldaddyAPI.h"
 
+NSString * const kDidSignInNotification = @"DidSignInNotification";
+
 @implementation SignInViewController
 
-@synthesize backgroundImage,signInForm,logoImage,username,password,signInButton,loggedIn,activtyIndicator,api;
+@synthesize backgroundImage,signInForm,logoImage,username,password,signInButton,activtyIndicator,api;
 
 -(id)init{
 	
@@ -23,7 +25,6 @@
 	
     if(self != nil) {
         //Initialization
-        [self setLoggedIn:0];
     }
 
 	return self;
@@ -84,8 +85,14 @@
 }
 
 - (void) loginSuccess{
-	[self setLoggedIn:1];
-	NSLog(@"Login Success!");
+	//[self setLoggedIn:1];
+    
+    //Post a notification about the sign in
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidSignInNotification object:nil];
+	
+    NSLog(@"Login Success!");
+    
+    //Dismiss the view controller on success
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

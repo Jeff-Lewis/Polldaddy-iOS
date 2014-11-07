@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PolldaddyAPI.h"
 
+extern NSString * const kDidSignInNotification;
 
 @interface SignInViewController : UIViewController {
 	UIImageView					*logoImage;
@@ -18,7 +19,6 @@
 	UITextField					*username;
 	UITextField					*password;
 	PDButton					*signInButton;
-	int							loggedIn;
 	UIActivityIndicatorView		*activtyIndicator;
 	PolldaddyAPI				*api;
 }
@@ -31,8 +31,6 @@
 @property (nonatomic, strong) IBOutlet PDButton *signInButton;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activtyIndicator;
 @property (nonatomic, strong) PolldaddyAPI *api;
-
-@property int loggedIn;
 
 - (IBAction) signUpForPolldaddy;
 - (IBAction) signInClicked;

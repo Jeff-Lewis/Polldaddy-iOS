@@ -47,6 +47,8 @@ UIInterfaceOrientation gAppOrientation;
 	[[self view] setFrame:CGRectMake(0, 20, 768, 1004)];
 	displayedViewControllers = [[NSMutableArray alloc] init];
 
+    [self registerForNotifications];
+    
 	if ([PolldaddyAPI hasValidAccount]) {
 		surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
 		[[self view] addSubview:[surveysFullScreenViewController view]];
@@ -54,10 +56,26 @@ UIInterfaceOrientation gAppOrientation;
 	}
 }
 
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kDidSignInNotification object:nil];
+}
+
+-(void)registerForNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSignIn) name:kDidSignInNotification object:nil];
+}
+
+-(void)didSignIn
+{
+    [self showSurveys];     //Show surveys now that the user is logged in
+}
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self showSurveys]; //TODO - is this needed here?
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -160,9 +178,12 @@ UIInterfaceOrientation gAppOrientation;
 		responseViewController = nil;
 	}
 	
-	// TODO: Does this need to be added here?
-    surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
-    [displayedViewControllers addObject:surveysFullScreenViewController];
+	// Add the surveys full screen view controller
+    if(surveysFullScreenViewController == nil) {
+        surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
+        [[self view] addSubview:[surveysFullScreenViewController view]];
+        [displayedViewControllers addObject:surveysFullScreenViewController];
+    }
 		
     if ( UIDeviceOrientationIsPortrait( self.interfaceOrientation ) )
         [surveysFullScreenViewController swapInListView:UIInterfaceOrientationPortrait];
