@@ -281,16 +281,16 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 		if ( interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ) {
 			
 			// if the interface is rotating to portrait mode, set the frame to the correct dimensions
-			[[self view] setFrame:CGRectMake(0, 0, 768, 1004)];
+			[[self view] setFrame:CGRectMake(0, 0, 768, 1024)];
 			
 			// set the various item locations
-			background.frame = CGRectMake(0, -20, 1024, 1024);
-			header.frame = CGRectMake(71, 31, 336, 75);
-			panel.frame = CGRectMake(46, 179, 676, 762);
-			surveysListTable.frame = CGRectMake(72, 250, 623, 657);
-			loadMore.frame = CGRectMake(563, 34, [loadMore frame].size.width, [loadMore frame].size.height);
-			logOut.frame = CGRectMake(645, 34, [loadMore frame].size.width, [loadMore frame].size.height);
-			version.frame = CGRectMake( 20, 963, 144, 21);
+			background.frame = CGRectMake(0, 0, 1024, 1024);
+			header.frame = CGRectMake(71, 51, 336, 75);
+			panel.frame = CGRectMake(46, 199, 676, 762);
+			surveysListTable.frame = CGRectMake(72, 270, 623, 657);
+			loadMore.frame = CGRectMake(563, 54, [loadMore frame].size.width, [loadMore frame].size.height);
+			logOut.frame = CGRectMake(645, 54, [loadMore frame].size.width, [loadMore frame].size.height);
+			version.frame = CGRectMake( 20, 983, 144, 21);
 
 			// use the tall background image
 			[panel setImage:[self getPanelImageTall]];
@@ -299,16 +299,16 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 			
 			// if the interface is rotating to landscape mode, set the frames appropriately
 			
-			[[self view] setFrame:CGRectMake(0, 0, 1024, 748)];
+			[[self view] setFrame:CGRectMake(0, 0, 1024, 768)];
 			
 			// set the various item locations
-			background.frame = CGRectMake(0, -80, 1024, 1024);
-			header.frame = CGRectMake(51, 0, 300, 75);
-			panel.frame = CGRectMake(16, 100, 991, 637);
-			surveysListTable.frame = CGRectMake(45, 158, 933, 530);
-			loadMore.frame = CGRectMake(833, 5, [loadMore frame].size.width, [loadMore frame].size.height);
-			logOut.frame = CGRectMake(923, 5, [loadMore frame].size.width, [loadMore frame].size.height);
-			version.frame = CGRectMake( 20, 718, 144, 21);
+			background.frame = CGRectMake(0, -60, 1024, 1024);
+			header.frame = CGRectMake(51, 20, 300, 75);
+			panel.frame = CGRectMake(16, 120, 991, 637);
+			surveysListTable.frame = CGRectMake(45, 178, 933, 530);
+			loadMore.frame = CGRectMake(833, 25, [loadMore frame].size.width, [loadMore frame].size.height);
+			logOut.frame = CGRectMake(923, 25, [loadMore frame].size.width, [loadMore frame].size.height);
+			version.frame = CGRectMake( 20, 738, 144, 21);
 
 			// use the wider background image
 			[panel setImage:[self getPanelImageWide]];
@@ -320,14 +320,14 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 			[[self view] setFrame:CGRectMake(0, 0, 320, 480)];
 			
 			// set the various item locations
-			background.frame = CGRectMake( 0, -8, 320, 468 );
-			header.frame     = CGRectMake( 20, 11, 236, 40 );
-			panel.frame      = CGRectMake( 5, 66, 309, 382 );
-			loadMore.frame   = CGRectMake( 224, 0, [loadMore frame].size.width, [loadMore frame].size.height );
-			logOut.frame     = CGRectMake( 272, 0, [loadMore frame].size.width, [loadMore frame].size.height );
-			version.frame    = CGRectMake( 14, 438, 144, 21 );
+			background.frame = CGRectMake( 0, 0, 320, 480 );
+			header.frame     = CGRectMake( 20, 31, 236, 40 );
+			panel.frame      = CGRectMake( 5, 86, 309, 382 );
+			loadMore.frame   = CGRectMake( 224, 20, [loadMore frame].size.width, [loadMore frame].size.height );
+			logOut.frame     = CGRectMake( 272, 20, [loadMore frame].size.width, [loadMore frame].size.height );
+			version.frame    = CGRectMake( 14, 458, 144, 21 );
 			
-			surveysListTable.frame = CGRectMake( 20, 94, 280, 330 );
+			surveysListTable.frame = CGRectMake( 20, 114, 280, 330 );
 
 			// use the tall background image
 			[panel setImage:[self getPanelImageTall]];
@@ -342,7 +342,7 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 			panel.frame      = CGRectMake( 5, 55, 480 - 5, 240 );
 			loadMore.frame   = CGRectMake( 390, -5, [loadMore frame].size.width, [loadMore frame].size.height );
 			logOut.frame     = CGRectMake( 430, -5, [loadMore frame].size.width, [loadMore frame].size.height );
-			version.frame    = CGRectMake( 20, 282, 144, 21 );
+			version.frame    = CGRectMake( 20, 292, 144, 21 );
 
 			surveysListTable.frame = CGRectMake( 22, 80, 430, 190 );
 			
@@ -419,16 +419,16 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 		if (UIInterfaceOrientationIsPortrait(orientation)) {
 			panel_y = 180;
 			table_y = 250;
-			header_y = 31;
+			header_y = 51;
 			loadMore_y = 34;
 			logout_y = 34;
 		} else {
 			// if we're rotating to landscape view	
 			panel_y = 100;
 			table_y = 158;
-			header_y = 0;
-			loadMore_y = 11;
-			logout_y = 12;
+			header_y = 20;
+			loadMore_y = 31;
+			logout_y = 32;
 		}
 	}
 	else {

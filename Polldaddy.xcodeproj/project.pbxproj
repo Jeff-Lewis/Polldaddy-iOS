@@ -761,10 +761,10 @@
 				BE1634A71A097DC300A234C8 /* ResponseViewController.m */,
 				BE1634A81A097DC300A234C8 /* ResponseViewController.xib */,
 				BE1634A51A097DC300A234C8 /* ResponseViewController-iPhone.xib */,
-				BE1634B01A097DC300A234C8 /* SurveysFullScreenView-iPhone.xib */,
 				BE1634B11A097DC300A234C8 /* SurveysFullScreenViewController.h */,
 				BE1634B21A097DC300A234C8 /* SurveysFullScreenViewController.m */,
 				BE1634B31A097DC300A234C8 /* SurveysFullScreenViewController.xib */,
+				BE1634B01A097DC300A234C8 /* SurveysFullScreenView-iPhone.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
