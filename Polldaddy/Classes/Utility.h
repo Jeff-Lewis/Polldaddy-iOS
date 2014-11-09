@@ -11,5 +11,6 @@
 @interface Utility : NSObject
 
 + (UIInterfaceOrientation)currentInterfaceOrientation;
++ (CGFloat)deviceHeight;
 
 @end

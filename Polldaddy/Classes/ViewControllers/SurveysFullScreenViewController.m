@@ -315,34 +315,34 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 	else {
 		if ( interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ) {
 			// if the interface is rotating to portrait mode, set the frame to the correct dimensions
-			[[self view] setFrame:CGRectMake(0, 0, 320, 480)];
+			[[self view] setFrame:CGRectMake(0, 0, 320, [Utility deviceHeight])];
 			
 			// set the various item locations
-			background.frame = CGRectMake( 0, 0, 320, 480 );
+			background.frame = CGRectMake( 0, 0, 320, [Utility deviceHeight] );
 			header.frame     = CGRectMake( 20, 31, 236, 40 );
-			panel.frame      = CGRectMake( 5, 86, 309, 382 );
+			panel.frame      = CGRectMake( 5, 86, 309, [Utility deviceHeight] - 86 - 12 );
 			loadMore.frame   = CGRectMake( 224, 20, [loadMore frame].size.width, [loadMore frame].size.height );
 			logOut.frame     = CGRectMake( 272, 20, [loadMore frame].size.width, [loadMore frame].size.height );
-			version.frame    = CGRectMake( 14, 458, 144, 21 );
+			version.frame    = CGRectMake( 14, [Utility deviceHeight] - 22, 144, 21 );
 			
-			surveysListTable.frame = CGRectMake( 20, 114, 280, 330 );
+			surveysListTable.frame = CGRectMake( 20, 114, 280, [Utility deviceHeight] - 114 - 36 );
 
 			// use the tall background image
 			[panel setImage:[self getPanelImageTall]];
 		}
 		else {
 			// if the interface is rotating to landscape mode, set the frames appropriately
-			[[self view] setFrame:CGRectMake( 0, 0, 480, 320 )];
+			[[self view] setFrame:CGRectMake( 0, 0, [Utility deviceHeight], 320 )];
 			
 			// set the various item locations
-			background.frame = CGRectMake( 0, 0, 480, 320 );
+			background.frame = CGRectMake( 0, 0, [Utility deviceHeight], 320 );
 			header.frame     = CGRectMake( 10, 10, 300, 35 );
-			panel.frame      = CGRectMake( 5, 55, 480 - 5, 240 );
-			loadMore.frame   = CGRectMake( 390, -5, [loadMore frame].size.width, [loadMore frame].size.height );
-			logOut.frame     = CGRectMake( 430, -5, [loadMore frame].size.width, [loadMore frame].size.height );
+			panel.frame      = CGRectMake( 5, 55, [Utility deviceHeight] - 5, 240 );
+			loadMore.frame   = CGRectMake( [Utility deviceHeight] - 90, -5, [loadMore frame].size.width, [loadMore frame].size.height );
+			logOut.frame     = CGRectMake( [Utility deviceHeight] - 50, -5, [loadMore frame].size.width, [loadMore frame].size.height );
 			version.frame    = CGRectMake( 20, 292, 144, 21 );
 
-			surveysListTable.frame = CGRectMake( 22, 80, 430, 190 );
+			surveysListTable.frame = CGRectMake( 22, 80, [Utility deviceHeight] - 50, 190 );
 			
 			[panel setImage:[self getPanelImageWide]];
 		}
