@@ -145,6 +145,10 @@
 	return 2;
 }
 
++ (UIColor*)polldaddyRed {
+    return [UIColor colorWithRed:196.0/255.0 green:57.0/255.0 blue:50.0/255.0 alpha:1.0];
+}
+
 @end
 
 

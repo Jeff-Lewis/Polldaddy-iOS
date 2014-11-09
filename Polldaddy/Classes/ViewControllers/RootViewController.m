@@ -11,6 +11,7 @@
 #import "ResponseViewController.h"
 #import "PolldaddyAPI.h"
 #import "Survey.h"
+#import "Constants.h"
 
 @interface RootViewController() {
     UIImageView                     *splashView;
@@ -51,7 +52,9 @@
 		surveysFullScreenViewController = [[SurveysFullScreenViewController alloc] initWithController:self];
 		[[self view] addSubview:[surveysFullScreenViewController view]];
 		[displayedViewControllers addObject:surveysFullScreenViewController];
-	}
+    } else {
+        self.view.backgroundColor = [Constants polldaddyRed];
+    }
 }
 
 -(void)dealloc
@@ -158,7 +161,9 @@
 }
 
 - (void) showSurveys {
-	if ( questionsViewController || responseViewController ) {
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    if ( questionsViewController || responseViewController ) {
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 		[UIView setAnimationDuration:0.25];

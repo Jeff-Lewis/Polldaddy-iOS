@@ -31,6 +31,7 @@
 + (float_t)matrixColPadding;
 + (boolean_t)isIpad;
 + (boolean_t)isIphone;
++ (UIColor*)polldaddyRed;
 @end
 
 // this macro takes an RGB value and converts it to a UIColor
