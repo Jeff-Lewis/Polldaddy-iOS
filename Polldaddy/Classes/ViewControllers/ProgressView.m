@@ -13,9 +13,46 @@
 #import "Response.h"
 #import "PDDatabase.h"
 
+@interface ProgressView() <PolldaddyApiStatus> {
+    UIProgressView *progress;
+    UIActivityIndicatorView *loading;
+    UILabel *outOf;
+    UILabel *size;
+    UILabel *syncTitle;
+    UIButton *button;
+    
+    UIView *containerView;
+    
+    unsigned long total;
+    unsigned long surveyID;
+    unsigned long lastResponseID;
+    BOOL finished;
+    
+    PolldaddyAPI2 *api;
+    
+    unsigned long responsesProcessed;
+    unsigned long responsesSent;
+    
+    NSMutableArray *purgeList;
+    
+    id <SyncStatus> delegate;
+}
+
+@property (nonatomic, strong) IBOutlet UIProgressView *progress;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *loading;
+@property (nonatomic, strong) IBOutlet UILabel *outOf;
+@property (nonatomic, strong) IBOutlet UILabel *size;
+@property (nonatomic, strong) IBOutlet UILabel *syncTitle;
+@property (nonatomic, strong) IBOutlet UIButton *button;
+@property (nonatomic, strong) IBOutlet UIView *containerView;
+
+- (IBAction) buttonPressed:(id) sender;
+
+@end
+
 @implementation ProgressView
 
-@synthesize progress, loading, outOf, size, grouper, button, syncTitle, delegate;
+@synthesize progress, loading, outOf, size, containerView, button, syncTitle, delegate;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil andSurvey:(unsigned long)survey {
@@ -167,6 +204,26 @@
 	[PolldaddyAPI cacheSurvey:surveyID];
 	
 	[self nextSync];
+}
+
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    //Center the container view in the middle of the screen
+    
+    self.containerView.frame = CGRectMake((self.view.frame.size.width - self.containerView.frame.size.width)/2.0,
+                                          (self.view.frame.size.height - self.containerView.frame.size.height) / 2.0,
+                                          self.containerView.frame.size.width,
+                                          self.containerView.frame.size.height);
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
 }
 
 /*
