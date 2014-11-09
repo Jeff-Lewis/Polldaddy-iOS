@@ -29,6 +29,8 @@
     Reachability *hostReachable;
 }
 
+@property (nonatomic, assign) BOOL isFirstLoad;
+
 @end
 
 @implementation RootViewController
@@ -44,6 +46,8 @@
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 	[[self view] setFrame:CGRectMake(0, 20, 768, 1004)];
 	displayedViewControllers = [[NSMutableArray alloc] init];
+    
+    self.isFirstLoad = YES;
 
     [self registerForNotifications];
     
@@ -74,6 +78,13 @@
 {
     [super viewWillAppear:animated];
     
+    if(self.isFirstLoad) {
+        self.isFirstLoad = NO;
+        //TODO: This needs to be refactored when View Controller's views are no longer
+        //added as subviews of the RootViewController
+        UIInterfaceOrientation interfaceOrientation = [Utility currentInterfaceOrientation];
+        [self setupViewsForOrientation:interfaceOrientation duration:0.0];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -123,16 +134,25 @@
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
-	unsigned int i;
-	for (i=0; i<[displayedViewControllers count]; i++) {
-		
-		UIViewController *thisViewController = [displayedViewControllers objectAtIndex:i];
-			
-		[thisViewController willAnimateRotationToInterfaceOrientation:interfaceOrientation duration:duration];
-	}
-	
-	if ( panel )
-		[self setBackgroundImages];
+    
+    NSLog(@"willAnimateRotationToInterfaceOrientation in RootViewController");
+    
+    [self setupViewsForOrientation:interfaceOrientation duration:duration];
+}
+
+//TODO: This needs to be refactored when view controller's views are no longer added as subviews of RootViewController.
+-(void)setupViewsForOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+{
+    unsigned int i;
+    for (i=0; i<[displayedViewControllers count]; i++) {
+        
+        UIViewController *thisViewController = [displayedViewControllers objectAtIndex:i];
+        
+        [thisViewController willAnimateRotationToInterfaceOrientation:interfaceOrientation duration:duration];
+    }
+    
+    if ( panel )
+        [self setBackgroundImages];
 }
 
 #pragma mark -
