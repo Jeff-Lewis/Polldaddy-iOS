@@ -55,6 +55,12 @@ NSString * const kDidSignInNotification = @"DidSignInNotification";
 	[super viewWillAppear:animated];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [username becomeFirstResponder];
+}
+
 - (void)startSignin {	
 	NSLog(@"Login attempt... %@", [username text] );
 	
