@@ -182,54 +182,54 @@
 			}
 		}
 		
-		// Set scroller dimensions
-		unsigned int offsetHeight = ended.frame.origin.y + ended.frame.size.height + ( [Constants labelBottomPadding] * 2 );
-
-		[scroller setFrame:CGRectMake( scroller.frame.origin.x, offsetHeight, [uiQ getMaxFrameWidth] + [Constants innerFrameXOffset], [uiQ getMaxHeight] - offsetHeight - 9 - [Constants questionToolbarHeight] )];
-
-		// Set scroller internal height
-		scroller.contentSize = CGSizeMake( [uiQ getMaxFrameWidth], offset.y );
-		[scroller flashScrollIndicators];
-		
         UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
         
         NSLog(@"ResponseViewController frame: %@", NSStringFromCGRect(self.view.frame));
         
-		// Display buttons in appropriate places
-		if ( [Constants isIpad] ) {
+        // Display buttons in appropriate places
+        if ( [Constants isIpad] ) {
             if ( UIInterfaceOrientationIsLandscape(interfaceOrientation)) {
-				self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+                self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
                 [prevButton setFrame:CGRectMake(33, 670, 200, 62)];
-				[cancelButton setFrame:CGRectMake(470, 670, 98, 62)];
-				[nextButton setFrame:CGRectMake(790, 670, 200, 62)];
-				[deleteButton setFrame:CGRectMake(920, 91, 72, 37)];
-			}
-			else {
-				self.view.frame = CGRectMake(0.0, 0.0, 768.0, 1024.0);
+                [cancelButton setFrame:CGRectMake(470, 670, 98, 62)];
+                [nextButton setFrame:CGRectMake(790, 670, 200, 62)];
+                [deleteButton setFrame:CGRectMake(920, 91, 72, 37)];
+            }
+            else {
+                self.view.frame = CGRectMake(0.0, 0.0, 768.0, 1024.0);
                 [prevButton setFrame:CGRectMake(33, 906, 200, 62)];
-				[cancelButton setFrame:CGRectMake(336, 906, 98, 62)];
-				[nextButton setFrame:CGRectMake(537, 906, 200, 62)];
-				[deleteButton setFrame:CGRectMake(665, 71, 72, 37)];
-			}
-		}
-		else {
-			if ( UIInterfaceOrientationIsLandscape(interfaceOrientation) ) {
+                [cancelButton setFrame:CGRectMake(336, 906, 98, 62)];
+                [nextButton setFrame:CGRectMake(537, 906, 200, 62)];
+                [deleteButton setFrame:CGRectMake(665, 71, 72, 37)];
+            }
+        }
+        else {
+            if ( UIInterfaceOrientationIsLandscape(interfaceOrientation) ) {
                 self.view.frame = CGRectMake(0.0, 0.0, [Utility deviceHeight], 320.0);
                 [prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
-				[cancelButton setFrame:CGRectMake(200, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
-				[nextButton setFrame:CGRectMake(380, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
-				[deleteButton setFrame:CGRectMake(400, 62, 60, 24)];
-			}
-			else {
+                [cancelButton setFrame:CGRectMake(200, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+                [nextButton setFrame:CGRectMake(380, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+                [deleteButton setFrame:CGRectMake(400, 62, 60, 24)];
+            }
+            else {
                 self.view.frame = CGRectMake(0.0, 0.0, 320.0, [Utility deviceHeight]);
                 [prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
-				[cancelButton setFrame:CGRectMake(120, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
-				[nextButton setFrame:CGRectMake(220, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
-				[deleteButton setFrame:CGRectMake(240, 62, 60, 24)];
-			}
-		}
+                [cancelButton setFrame:CGRectMake(120, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
+                [nextButton setFrame:CGRectMake(220, [uiQ getMaxHeight] - 50, 80, [Constants buttonHeight])];
+                [deleteButton setFrame:CGRectMake(240, 62, 60, 24)];
+            }
+        }
+        
+		// Set scroller dimensions
+		unsigned int offsetHeight = ended.frame.origin.y + ended.frame.size.height + ( [Constants labelBottomPadding] * 2 );
 
-		// Release stuff
+		[scroller setFrame:CGRectMake( scroller.frame.origin.x, offsetHeight, [uiQ getMaxFrameWidth], [uiQ getMaxHeight] - offsetHeight - 9 - [Constants questionToolbarHeight] )];
+        
+        NSLog(@"scroller frame: %@", NSStringFromCGRect(scroller.frame));
+
+		// Set scroller internal height
+		scroller.contentSize = CGSizeMake( [uiQ getMaxFrameWidth], offset.y );
+		[scroller flashScrollIndicators];
 	}
 	
 }
