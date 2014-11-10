@@ -127,7 +127,7 @@
 	else {
 		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) ) {
 			[cancelButton setFrame:CGRectMake( 30, [self getMaxHeight] - 62, 100, [Constants buttonHeight] )];
-			[surveyButton setFrame:CGRectMake( 320, [self getMaxHeight] - 62, 130, [Constants buttonHeight] )];
+			[surveyButton setFrame:CGRectMake( [Utility deviceHeight] - 160, [self getMaxHeight] - 62, 130, [Constants buttonHeight] )];
 		}
 		else {
 			[cancelButton setFrame:CGRectMake( 20, [self getMaxHeight] - 70, 100, [Constants buttonHeight] )];
@@ -238,7 +238,7 @@
 	}
 	else {
 		if ( orientation == UIDeviceOrientationLandscapeLeft || orientation == UIDeviceOrientationLandscapeRight )
-			return 480.0;
+			return [Utility deviceHeight];
 		return 320.0;
 	}
 }
@@ -252,7 +252,7 @@
 	}
 	else {
 		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
-			return 480.0;
+			return [Utility deviceHeight];
 		return 320.0;
 	}
 }
@@ -267,7 +267,7 @@
 	else {
 		if ( UIInterfaceOrientationIsLandscape([Utility currentInterfaceOrientation]) )
 			return 320.0;
-		return 480.0;
+		return [Utility deviceHeight];
 	}
 }
 
