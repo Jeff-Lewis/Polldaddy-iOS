@@ -433,9 +433,9 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 		if (UIInterfaceOrientationIsPortrait(orientation)) {
 			panel_y = 86;
 			table_y = 114;
-			header_y = 11;
-			loadMore_y = 0;
-			logout_y = 0;
+			header_y = 31;
+			loadMore_y = 20;
+			logout_y = 20;
 		} else {
 			// if we're rotating to landscape view	
 			panel_y = 55;
