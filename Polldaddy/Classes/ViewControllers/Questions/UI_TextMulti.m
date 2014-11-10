@@ -111,9 +111,9 @@
 		}
 		
 		if ( [Constants isIpad] )
-			[toolbar setFrame:CGRectMake(0, [self getMaxHeight] - keyboardHeight - 50, [self getMaxWidth], 30)];
+			[toolbar setFrame:CGRectMake(0, [self getMaxHeight] - keyboardHeight - 30, [self getMaxWidth], 30)];
 		else
-			[toolbar setFrame:CGRectMake(0, [self getMaxHeight] - keyboardHeight - 50, [self getMaxWidth], 30)];		
+			[toolbar setFrame:CGRectMake(0, [self getMaxHeight] - keyboardHeight - 30, [self getMaxWidth], 30)];
 	}
 }
 
