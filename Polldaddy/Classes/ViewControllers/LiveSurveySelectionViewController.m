@@ -114,14 +114,15 @@ NSComparisonResult compareAZCell( MultiSelectCellController *element1, MultiSele
 	}
 	else {
 		if ( interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown ) {
-			[self.view setFrame:CGRectMake(10, 70, 300, 368)];
-			[saveSelectionsButton setFrame:CGRectMake(20, 317, saveSelectionsButton.frame.size.width, saveSelectionsButton.frame.size.height)];
+			[self.view setFrame:CGRectMake(10, 90, 300, [Utility deviceHeight] - 112)];
+			[saveSelectionsButton setFrame:CGRectMake(20, [Utility deviceHeight] - 163, saveSelectionsButton.frame.size.width, saveSelectionsButton.frame.size.height)];
 		}
 		else {
 			// if the interface is rotating to landscape mode, set the frames appropriately
 
-			[self.view setFrame:CGRectMake(15, 60, 460, 220)];
-			[saveSelectionsButton setFrame:CGRectMake(100, 175, saveSelectionsButton.frame.size.width, saveSelectionsButton.frame.size.height)];
+			[self.view setFrame:CGRectMake(15, 60, [Utility deviceHeight] - 25, 220)];
+            CGFloat saveButtonX = (self.liveTable.frame.size.width - saveSelectionsButton.frame.size.width) / 2.0;
+			[saveSelectionsButton setFrame:CGRectMake(saveButtonX, 175, saveSelectionsButton.frame.size.width, saveSelectionsButton.frame.size.height)];
 		}	
 	}
 }

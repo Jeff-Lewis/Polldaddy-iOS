@@ -577,14 +577,16 @@ NSComparisonResult compareAZSurvey( SurveyListObject *element1, SurveyListObject
 			}
 			else {
 				liveSurveysView = [[LiveSurveySelectionViewController alloc] initWithNibName:@"LiveSurveySelectionViewController-iPhone" bundle:nil];
-				[[liveSurveysView liveTable] setFrame:CGRectMake([[liveSurveysView liveTable] frame].origin.x, [[liveSurveysView liveTable] frame].origin.y, [[liveSurveysView liveTable] frame].size.width, 400) ];
+                UITableView * liveTable = [liveSurveysView liveTable];
+                liveTable.frame = CGRectMake(liveTable.frame.origin.x, liveTable.frame.origin.y, liveTable.frame.size.width, [Utility deviceHeight] - 80);
 				
 				if ( UIDeviceOrientationIsLandscape( [Utility currentInterfaceOrientation] ) ) {
-					[[liveSurveysView view] setFrame:CGRectMake(15, 60, 460, 220)];
-					[[liveSurveysView saveSelectionsButton] setFrame:CGRectMake(100, 175, [[liveSurveysView saveSelectionsButton] frame].size.width, [[liveSurveysView saveSelectionsButton] frame].size.height)];
+                    liveSurveysView.view.frame = CGRectMake(15, 60, [Utility deviceHeight] - 25, 220);
+                    CGFloat saveButtonX = (liveSurveysView.view.frame.size.width - liveSurveysView.saveSelectionsButton.frame.size.width) / 2.0;
+                    liveSurveysView.saveSelectionsButton.frame = CGRectMake(saveButtonX, 175, liveSurveysView.saveSelectionsButton.frame.size.width, liveSurveysView.saveSelectionsButton.frame.size.height);
 				} else {
-					[[liveSurveysView view] setFrame:CGRectMake(10, 70, 300, 368)];
-					[[liveSurveysView saveSelectionsButton] setFrame:CGRectMake(20, 317, [[liveSurveysView saveSelectionsButton] frame].size.width, [[liveSurveysView saveSelectionsButton] frame].size.height)];
+                    liveSurveysView.view.frame = CGRectMake(10, 90, 300, [Utility deviceHeight] - 112);
+                    liveSurveysView.saveSelectionsButton.frame = CGRectMake(20, [Utility deviceHeight] - 163, liveSurveysView.saveSelectionsButton.frame.size.width, liveSurveysView.saveSelectionsButton.frame.size.height);
 				}
 			}
 			
