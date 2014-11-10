@@ -207,9 +207,9 @@
             if ( UIInterfaceOrientationIsLandscape(interfaceOrientation) ) {
                 self.view.frame = CGRectMake(0.0, 0.0, [Utility deviceHeight], 320.0);
                 [prevButton setFrame:CGRectMake( 20, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
-                [cancelButton setFrame:CGRectMake(200, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
-                [nextButton setFrame:CGRectMake(380, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
-                [deleteButton setFrame:CGRectMake(400, 62, 60, 24)];
+                [cancelButton setFrame:CGRectMake(([Utility deviceHeight] - 80) / 2.0, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+                [nextButton setFrame:CGRectMake([Utility deviceHeight] - 100, [uiQ getMaxHeight] - 41, 80, [Constants buttonHeight])];
+                [deleteButton setFrame:CGRectMake([Utility deviceHeight] - 80, 62, 60, 24)];
             }
             else {
                 self.view.frame = CGRectMake(0.0, 0.0, 320.0, [Utility deviceHeight]);
