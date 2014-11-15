@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'Polldaddy' target in the 'Polldaddy' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import "Utility.h"
+#endif

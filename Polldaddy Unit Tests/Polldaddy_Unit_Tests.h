@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface Polldaddy_Unit_Tests : SenTestCase
+@interface Polldaddy_Unit_Tests : XCTestCase
 
 @end
