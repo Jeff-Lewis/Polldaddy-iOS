@@ -10,6 +10,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		288E1FF78C01C01FD1821E77 /* libPods-Polldaddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D7BB5B477F20CAAD8268E5 /* libPods-Polldaddy.a */; };
 		5217A40A14C87F9300927D26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		5217A40B14C87F9300927D26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		5217A41114C87F9300927D26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5217A40F14C87F9300927D26 /* InfoPlist.strings */; };
@@ -196,6 +197,7 @@
 		1D6058910D05DD3D006BFB54 /* Polldaddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Polldaddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		297178B4B8AC2F35D618B86D /* Pods-Polldaddy.ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.ad hoc.xcconfig"; sourceTree = "<group>"; };
 		5217A40714C87F9300927D26 /* Polldaddy Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Polldaddy Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5217A40E14C87F9300927D26 /* Polldaddy Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Polldaddy Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		5217A41014C87F9300927D26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -206,6 +208,8 @@
 		52FD2D8F12E8904E000E4E7F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6324996F11AC080900F625DE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		85AA722D1A1735960019747D /* Polldaddy-Internal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Polldaddy-Internal-Info.plist"; sourceTree = "<group>"; };
+		A4D89EAB46A32D8E18C65252 /* Pods-Polldaddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.debug.xcconfig"; sourceTree = "<group>"; };
+		B5D4F302A9E9C20F4B9DCBD1 /* Pods-Polldaddy.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.distribution.xcconfig"; sourceTree = "<group>"; };
 		B8C55EF411B16300003207E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BE1632631A09757400A234C8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BE1632681A09757400A234C8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -431,7 +435,10 @@
 		BEC232121A0D2D2300856925 /* ProgressViewIpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressViewIpad.xib; sourceTree = "<group>"; };
 		BEC232161A0D3B3E00856925 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		BEC232171A0D3B3E00856925 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		C3F8EF182B6162B96845C929 /* Pods-Polldaddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.release.xcconfig"; sourceTree = "<group>"; };
 		DE24D8A911AB04CF00142C35 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E6D7BB5B477F20CAAD8268E5 /* libPods-Polldaddy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Polldaddy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA96AC85F7292234936B967 /* Pods-Polldaddy.release-internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.release-internal.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.release-internal.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +454,7 @@
 				6324997011AC080900F625DE /* libsqlite3.0.dylib in Frameworks */,
 				B8C55EF511B16300003207E2 /* SystemConfiguration.framework in Frameworks */,
 				52FD2D9012E8904E000E4E7F /* OpenGLES.framework in Frameworks */,
+				288E1FF78C01C01FD1821E77 /* libPods-Polldaddy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +486,7 @@
 				5217A40C14C87F9300927D26 /* Polldaddy Unit Tests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				5EA5371C6EB3C41FEDA939F0 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -493,6 +502,7 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				6324996F11AC080900F625DE /* libsqlite3.0.dylib */,
 				B8C55EF411B16300003207E2 /* SystemConfiguration.framework */,
+				E6D7BB5B477F20CAAD8268E5 /* libPods-Polldaddy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -515,6 +525,18 @@
 				5217A41514C87F9300927D26 /* Polldaddy Unit Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EA5371C6EB3C41FEDA939F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4D89EAB46A32D8E18C65252 /* Pods-Polldaddy.debug.xcconfig */,
+				B5D4F302A9E9C20F4B9DCBD1 /* Pods-Polldaddy.distribution.xcconfig */,
+				C3F8EF182B6162B96845C929 /* Pods-Polldaddy.release.xcconfig */,
+				FFA96AC85F7292234936B967 /* Pods-Polldaddy.release-internal.xcconfig */,
+				297178B4B8AC2F35D618B86D /* Pods-Polldaddy.ad hoc.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BE1632621A09757400A234C8 /* Polldaddy */ = {
@@ -852,12 +874,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Polldaddy" */;
 			buildPhases = (
+				400A1F3E51C68CD578205452 /* Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				522C8D8E1265FE12000A4D03 /* Increment Build Number */,
 				522F957912F3289A00F5898B /* CopyFiles */,
 				522F958712F3290800F5898B /* CopyFiles */,
+				989D5020EB244D7328E0D47F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -995,6 +1019,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		400A1F3E51C68CD578205452 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5217A40514C87F9300927D26 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1021,6 +1060,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Polldaddy/Polldaddy-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" Polldaddy/Polldaddy-Info.plist";
+		};
+		989D5020EB244D7328E0D47F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1154,6 +1208,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4D89EAB46A32D8E18C65252 /* Pods-Polldaddy.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1190,6 +1245,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3F8EF182B6162B96845C929 /* Pods-Polldaddy.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1228,8 +1284,8 @@
 		5217A3FE14C84B3B00927D26 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-        ARCHS = "$(ARCHS_STANDARD)";
-        "ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Godley (VM6CD92UW6)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1367,6 +1423,7 @@
 		};
 		528DC6B414CEA85F001ED9D2 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 297178B4B8AC2F35D618B86D /* Pods-Polldaddy.ad hoc.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1446,6 +1503,7 @@
 		};
 		85AA722B1A1735250019747D /* Release-Internal */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFA96AC85F7292234936B967 /* Pods-Polldaddy.release-internal.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -1460,6 +1518,16 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"BITHOCKEY_VERSION=\"@\\\"3.6.1\\\"\"",
+					"BITHOCKEY_C_VERSION=\"\\\"3.6.1\\\"\"",
+					"BITHOCKEY_BUILD=\"@\\\"34\\\"\"",
+					"BITHOCKEY_C_BUILD=\"\\\"34\\\"\"",
+					INTERNAL_BUILD,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -1590,6 +1658,7 @@
 		};
 		DE826EB911B988FB0068C35A /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D4F302A9E9C20F4B9DCBD1 /* Pods-Polldaddy.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";

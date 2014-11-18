@@ -1,1 +1,10 @@
+PODS:
+  - HockeySDK (3.6.1)
+
+DEPENDENCIES:
+  - HockeySDK (~> 3.6.0)
+
+SPEC CHECKSUMS:
+  HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
+
 COCOAPODS: 0.34.4

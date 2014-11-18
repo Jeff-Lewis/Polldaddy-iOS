@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>HockeyAppId</key>
+	<string>YOUR-HOCKEY-APP-ID</string>
 	<key>PollDaddyAPI</key>
 	<dict>
 		<key>PolldaddyAPIKey</key>

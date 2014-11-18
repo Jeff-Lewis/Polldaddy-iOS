@@ -4,7 +4,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Polldaddy' do
-
+  pod 'HockeySDK', '~>3.6.0'
 end
 
 target 'Polldaddy Unit Tests' do
