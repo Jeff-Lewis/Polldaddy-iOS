@@ -30,6 +30,19 @@
   return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL returnValue = NO;
+
+    if ([[BITHockeyManager sharedHockeyManager].authenticator handleOpenURL:url
+                                                          sourceApplication:sourceApplication
+                                                                 annotation:annotation]) {
+        returnValue = YES;
+    }
+    
+    return returnValue;
+}
+
 
 - (void)configureHockeySDK
 {
