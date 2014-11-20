@@ -26,8 +26,8 @@
     [self.window makeKeyAndVisible];
     
     [self configureHockeySDK];
-
-  return YES;
+    
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -59,12 +59,9 @@
     } else {
         hockeyAppId = configuration[@"HockeyAppId"];
     }
-    
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:hockeyAppId
                                                            delegate:self];
-    [[BITHockeyManager sharedHockeyManager].authenticator setIdentificationType:BITAuthenticatorIdentificationTypeDevice];
     [[BITHockeyManager sharedHockeyManager] startManager];
-    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation];
 }
 
 @end

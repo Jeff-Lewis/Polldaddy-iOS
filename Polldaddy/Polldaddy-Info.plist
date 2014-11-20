@@ -20,8 +20,19 @@
 	<string>1.7</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>net.hockeyapp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>haa8559b9bdf4a5d987c9eabc3d1f9e79a</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>4210</string>
+	<string>4262</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
