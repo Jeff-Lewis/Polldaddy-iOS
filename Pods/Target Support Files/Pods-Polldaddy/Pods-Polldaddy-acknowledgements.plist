@@ -146,6 +146,17 @@ SFHFKeychainUtils is licensed as follows:
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>All text and design is copyright © 2014 Lookback AB
+
+All rights reserved. Terms of use as defined at http://lookback.io applies.
+</string>
+			<key>Title</key>
+			<string>Lookback</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright 2013 Mixpanel, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
