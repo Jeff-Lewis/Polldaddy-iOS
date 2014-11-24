@@ -10,6 +10,10 @@
 #import <HockeySDK/HockeySDK.h>
 #import <Mixpanel/Mixpanel.h>
 
+#ifdef LOOKBACK_ENABLED
+#import <Lookback/Lookback.h>
+#endif
+
 @interface PolldaddyAppDelegate() <BITHockeyManagerDelegate>
 
 @end
@@ -28,6 +32,7 @@
     
     [self configureHockeySDK];
     [self configureMixpanel];
+    [self configureLookback];
     
     return YES;
 }
@@ -76,6 +81,22 @@
     
     [Mixpanel sharedInstanceWithToken:mixpanelAPIToken];
     [[Mixpanel sharedInstance] registerSuperProperties:@{ @"platform" : @"iOS"}];
+}
+
+- (void)configureLookback
+{
+#ifdef LOOKBACK_ENABLED
+    NSString *lookbackToken = [self retrieveConfigurationValue:@"LookbackAPIToken"];
+    if (lookbackToken == nil) {
+        return;
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        [Lookback setupWithAppToken:lookbackToken];
+        [Lookback lookback].shakeToRecord = YES;
+        [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:LookbackCameraEnabledSettingsKey];
+    });
+#endif
 }
 
 - (id)retrieveConfigurationValue:(NSString *)key

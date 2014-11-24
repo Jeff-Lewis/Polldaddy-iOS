@@ -5,7 +5,9 @@
 	<key>HockeyAppId</key>
 	<string>YOUR-HOCKEY-APP-ID</string>
 	<key>MixpanelAPIToken</key>
-	<string>ENTER-KEY-HERE</string>
+	<string>ENTER-TOKEN-HERE</string>
+	<key>LookbackAPIToken</key>
+	<string>ENTER-TOKEN-HERE</string>
 	<key>PollDaddyAPI</key>
 	<dict>
 		<key>PolldaddyAPIKey</key>

@@ -1527,6 +1527,7 @@
 					"BITHOCKEY_BUILD=\"@\\\"34\\\"\"",
 					"BITHOCKEY_C_BUILD=\"\\\"34\\\"\"",
 					INTERNAL_BUILD,
+					LOOKBACK_ENABLED,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
