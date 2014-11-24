@@ -8,6 +8,7 @@
 
 #import "PolldaddyAppDelegate.h"
 #import <HockeySDK/HockeySDK.h>
+#import <Mixpanel/Mixpanel.h>
 
 @interface PolldaddyAppDelegate() <BITHockeyManagerDelegate>
 
@@ -26,6 +27,7 @@
     [self.window makeKeyAndVisible];
     
     [self configureHockeySDK];
+    [self configureMixpanel];
     
     return YES;
 }
@@ -43,6 +45,11 @@
     return returnValue;
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [[Mixpanel sharedInstance] track:@"Application Opened"];
+}
+
 
 - (void)configureHockeySDK
 {
@@ -50,18 +57,40 @@
     return;
 #endif
     
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
-    NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    NSString *hockeyAppId;
-    
-    if(configuration == nil) {
+    NSString *hockeyAppId = (NSString *)[self retrieveConfigurationValue:@"HockeyAppId"];
+    if (hockeyAppId == nil) {
         return;
-    } else {
-        hockeyAppId = configuration[@"HockeyAppId"];
     }
+    
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:hockeyAppId
                                                            delegate:self];
     [[BITHockeyManager sharedHockeyManager] startManager];
+}
+
+- (void)configureMixpanel
+{
+    NSString *mixpanelAPIToken = (NSString *)[self retrieveConfigurationValue:@"MixpanelAPIToken"];
+    if (mixpanelAPIToken == nil) {
+        return;
+    }
+    
+    [Mixpanel sharedInstanceWithToken:mixpanelAPIToken];
+    [[Mixpanel sharedInstance] registerSuperProperties:@{ @"platform" : @"iOS"}];
+}
+
+- (id)retrieveConfigurationValue:(NSString *)key
+{
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+    NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    id value;
+    
+    if(configuration == nil) {
+        return nil;
+    } else {
+        value = configuration[key];
+    }
+    
+    return value;
 }
 
 @end
