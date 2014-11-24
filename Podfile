@@ -6,7 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'Polldaddy' do
   pod 'HockeySDK', '~>3.6.0'
   pod 'Mixpanel', '~>2.5.0'
-  pod 'Lookback'
+  pod 'Lookback', :configurations => ['Release-Internal']
 end
 
 target 'Polldaddy Unit Tests' do
