@@ -129,6 +129,13 @@ SFHFKeychainUtils is licensed as follows:
     OTHER DEALINGS IN THE SOFTWARE.
 
 
+## Lookback
+
+All text and design is copyright © 2014 Lookback AB
+
+All rights reserved. Terms of use as defined at http://lookback.io applies.
+
+
 ## Mixpanel
 
 Copyright 2013 Mixpanel, Inc.

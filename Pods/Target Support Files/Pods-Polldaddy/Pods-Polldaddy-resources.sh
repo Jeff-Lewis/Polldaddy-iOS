@@ -43,7 +43,16 @@ install_resource()
       ;;
   esac
 }
-          install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png"
+          install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/GFSettings.storyboard"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-logo.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-logo@2x.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-recorder-logo.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-recorder-logo@2x.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-recorder-settings.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-recorder-settings@2x.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-recorder-status.png"
+                    install_resource "Lookback/lookback/HD/Lookback.framework/Versions/A/Resources/lookback-recorder-status@2x.png"
+                    install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft.png"
                     install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowLeft.imageset/MPArrowLeft@2x.png"
                     install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight.png"
                     install_resource "Mixpanel/Mixpanel/Media.xcassets/MPArrowRight.imageset/MPArrowRight@2x.png"

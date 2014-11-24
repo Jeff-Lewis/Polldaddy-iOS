@@ -1,13 +1,16 @@
 PODS:
   - HockeySDK (3.6.1)
+  - Lookback (0.6.5)
   - Mixpanel (2.5.4)
 
 DEPENDENCIES:
   - HockeySDK (~> 3.6.0)
+  - Lookback
   - Mixpanel (~> 2.5.0)
 
 SPEC CHECKSUMS:
   HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
+  Lookback: 59f217e51c1f2bcdf23d00522ef14b66be8557d1
   Mixpanel: 87167a0b0a74f11f0ee3787f291357494730617c
 
 COCOAPODS: 0.34.4

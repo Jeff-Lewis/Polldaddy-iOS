@@ -18,3 +18,13 @@
 #define COCOAPODS_VERSION_MINOR_Mixpanel 5
 #define COCOAPODS_VERSION_PATCH_Mixpanel 4
 
+// Release-Internal build configuration
+#ifdef RELEASE_INTERNAL
+
+  // Lookback
+  #define COCOAPODS_POD_AVAILABLE_Lookback
+  #define COCOAPODS_VERSION_MAJOR_Lookback 0
+  #define COCOAPODS_VERSION_MINOR_Lookback 6
+  #define COCOAPODS_VERSION_PATCH_Lookback 5
+
+#endif
