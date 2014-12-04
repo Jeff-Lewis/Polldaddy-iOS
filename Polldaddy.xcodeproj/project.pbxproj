@@ -887,6 +887,7 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				85C183741A30E2F10092EE76 /* Add Fabric to Project */,
+				85896BA01A31220300F441BE /* Add Fabric API Key to plist */,
 				522C8D8E1265FE12000A4D03 /* Increment Build Number */,
 				522F957912F3289A00F5898B /* CopyFiles */,
 				522F958712F3290800F5898B /* CopyFiles */,
@@ -1070,6 +1071,20 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Polldaddy/Polldaddy-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" Polldaddy/Polldaddy-Info.plist\nfi";
 		};
+		85896BA01A31220300F441BE /* Add Fabric API Key to plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Add Fabric API Key to plist";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "fabricApiKey=$(/usr/libexec/PlistBuddy -c \"Print FabricPlistKey\" Polldaddy/Configuration.plist)\n/usr/libexec/PlistBuddy -c \"Add Fabric dict\" Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:APIKey string \"$fabricApiKey\"' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits array' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits:0 dict' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits:0:KitInfo dict' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits:0:KitName string \"Crashlytics\"' Polldaddy/Polldaddy-Info.plist\n";
+		};
 		85C183741A30E2F10092EE76 /* Add Fabric to Project */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1082,7 +1097,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "fabricApiKey=$(/usr/libexec/PlistBuddy -c \"Print FabricApiKey\" Polldaddy/Configuration.plist)\n./Fabric.framework/run $fabricApiKey";
+			shellScript = "fabricCommandLineKey=$(/usr/libexec/PlistBuddy -c \"Print FabricCommandLineKey\" Polldaddy/Configuration.plist)\n./Fabric.framework/run $fabricCommandLineKey";
 		};
 		989D5020EB244D7328E0D47F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
