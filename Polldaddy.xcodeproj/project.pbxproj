@@ -18,6 +18,8 @@
 		52C7DADD11ABA8EE009F519C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C7DADC11ABA8EE009F519C /* libz.dylib */; };
 		52FD2D9012E8904E000E4E7F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FD2D8F12E8904E000E4E7F /* OpenGLES.framework */; };
 		6324997011AC080900F625DE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6324996F11AC080900F625DE /* libsqlite3.0.dylib */; };
+		85C183771A30E5360092EE76 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C183751A30E5360092EE76 /* Crashlytics.framework */; };
+		85C183781A30E5360092EE76 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C183761A30E5360092EE76 /* Fabric.framework */; };
 		B8C55EF511B16300003207E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C55EF411B16300003207E2 /* SystemConfiguration.framework */; };
 		BE16326E1A09757400A234C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1632631A09757400A234C8 /* Images.xcassets */; };
 		BE1632731A09757400A234C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1632681A09757400A234C8 /* main.m */; };
@@ -208,6 +210,8 @@
 		52FD2D8F12E8904E000E4E7F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6324996F11AC080900F625DE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		85AA722D1A1735960019747D /* Polldaddy-Internal-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Polldaddy-Internal-Info.plist"; sourceTree = "<group>"; };
+		85C183751A30E5360092EE76 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		85C183761A30E5360092EE76 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A4D89EAB46A32D8E18C65252 /* Pods-Polldaddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.debug.xcconfig"; sourceTree = "<group>"; };
 		B5D4F302A9E9C20F4B9DCBD1 /* Pods-Polldaddy.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Polldaddy.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-Polldaddy/Pods-Polldaddy.distribution.xcconfig"; sourceTree = "<group>"; };
 		B8C55EF411B16300003207E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -452,9 +456,11 @@
 				DE24D8AA11AB04CF00142C35 /* QuartzCore.framework in Frameworks */,
 				52C7DADD11ABA8EE009F519C /* libz.dylib in Frameworks */,
 				6324997011AC080900F625DE /* libsqlite3.0.dylib in Frameworks */,
+				85C183771A30E5360092EE76 /* Crashlytics.framework in Frameworks */,
 				B8C55EF511B16300003207E2 /* SystemConfiguration.framework in Frameworks */,
 				52FD2D9012E8904E000E4E7F /* OpenGLES.framework in Frameworks */,
 				288E1FF78C01C01FD1821E77 /* libPods-Polldaddy.a in Frameworks */,
+				85C183781A30E5360092EE76 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +500,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85C183751A30E5360092EE76 /* Crashlytics.framework */,
+				85C183761A30E5360092EE76 /* Fabric.framework */,
 				52FD2D8F12E8904E000E4E7F /* OpenGLES.framework */,
 				52C7DADC11ABA8EE009F519C /* libz.dylib */,
 				DE24D8A911AB04CF00142C35 /* QuartzCore.framework */,
@@ -878,6 +886,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				85C183741A30E2F10092EE76 /* Add Fabric to Project */,
 				522C8D8E1265FE12000A4D03 /* Increment Build Number */,
 				522F957912F3289A00F5898B /* CopyFiles */,
 				522F958712F3290800F5898B /* CopyFiles */,
@@ -1059,7 +1068,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Polldaddy/Polldaddy-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" Polldaddy/Polldaddy-Info.plist";
+			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Polldaddy/Polldaddy-Info.plist)\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" Polldaddy/Polldaddy-Info.plist\nfi";
+		};
+		85C183741A30E2F10092EE76 /* Add Fabric to Project */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Add Fabric to Project";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "fabricApiKey=$(/usr/libexec/PlistBuddy -c \"Print FabricApiKey\" Polldaddy/Configuration.plist)\n./Fabric.framework/run $fabricApiKey";
 		};
 		989D5020EB244D7328E0D47F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1220,6 +1243,10 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1258,6 +1285,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Automattic, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Automattic, Inc.";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1435,6 +1466,10 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Automattic, Inc.";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1516,6 +1551,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Automattic, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Automattic, Inc.";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Polldaddy/Polldaddy_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1671,6 +1710,10 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Automattic, Inc.";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

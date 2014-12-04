@@ -4,6 +4,8 @@
 <dict>
 	<key>HockeyAppId</key>
 	<string>YOUR-HOCKEY-APP-ID</string>
+	<key>FabricApiKey</key>
+	<string>ENTER KEY HERE</string>
 	<key>MixpanelAPIToken</key>
 	<string>ENTER-TOKEN-HERE</string>
 	<key>LookbackAPIToken</key>
