@@ -1083,7 +1083,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "fabricApiKey=$(/usr/libexec/PlistBuddy -c \"Print FabricPlistKey\" Polldaddy/Configuration.plist)\n/usr/libexec/PlistBuddy -c \"Add Fabric dict\" Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:APIKey string \"$fabricApiKey\"' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits array' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits:0 dict' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits:0:KitInfo dict' Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c 'Add :Fabric:Kits:0:KitName string \"Crashlytics\"' Polldaddy/Polldaddy-Info.plist\n";
+			shellScript = "fabricApiKey=$(/usr/libexec/PlistBuddy -c \"Print FabricPlistKey\" Polldaddy/Configuration.plist)\n/usr/libexec/PlistBuddy -c \"Add :Fabric:APIKey string \\\"$fabricApiKey\\\"\" Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c \"Add :Fabric:Kits array\" Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c \"Add :Fabric:Kits:0 dict\" Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c \"Add :Fabric:Kits:0:KitInfo dict\" Polldaddy/Polldaddy-Info.plist\n/usr/libexec/PlistBuddy -c \"Add :Fabric:Kits:0:KitName string \"Crashlytics\"\" Polldaddy/Polldaddy-Info.plist\n\n";
 		};
 		85C183741A30E2F10092EE76 /* Add Fabric to Project */ = {
 			isa = PBXShellScriptBuildPhase;
