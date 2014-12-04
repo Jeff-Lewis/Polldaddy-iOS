@@ -34,7 +34,7 @@
     [self configureHockeySDK];
     [self configureMixpanel];
     [self configureLookback];
-    [Fabric with:@[CrashlyticsKit]];
+    [self configureFabric];
     
     return YES;
 }
@@ -98,6 +98,13 @@
         [Lookback lookback].shakeToRecord = YES;
         [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:LookbackCameraEnabledSettingsKey];
     });
+#endif
+}
+
+- (void)configureFabric
+{
+#ifdef FABRIC_ENABLED
+    [Fabric with:@[CrashlyticsKit]];
 #endif
 }
 
