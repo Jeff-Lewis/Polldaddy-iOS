@@ -9,6 +9,8 @@
 #import "PolldaddyAppDelegate.h"
 #import <HockeySDK/HockeySDK.h>
 #import <Mixpanel/Mixpanel.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 #ifdef LOOKBACK_ENABLED
 #import <Lookback/Lookback.h>
@@ -24,7 +26,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
 	rootViewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
 	
     [self.window setRootViewController:rootViewController];
@@ -33,6 +34,7 @@
     [self configureHockeySDK];
     [self configureMixpanel];
     [self configureLookback];
+    [self configureFabric];
     
     return YES;
 }
@@ -96,6 +98,13 @@
         [Lookback lookback].shakeToRecord = YES;
         [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:LookbackCameraEnabledSettingsKey];
     });
+#endif
+}
+
+- (void)configureFabric
+{
+#ifdef FABRIC_ENABLED
+    [Fabric with:@[CrashlyticsKit]];
 #endif
 }
 
