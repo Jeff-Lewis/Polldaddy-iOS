@@ -252,7 +252,7 @@
 		BE1633A71A0976A500A234C8 /* surveys-list-wide-iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surveys-list-wide-iPhone.png"; sourceTree = "<group>"; };
 		BE1633A81A0976A500A234C8 /* surveys-list-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surveys-list-wide.png"; sourceTree = "<group>"; };
 		BE1633A91A0976A500A234C8 /* surveys-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surveys-list.png"; sourceTree = "<group>"; };
-		BE1633AA1A0976A500A234C8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BE1633AA1A0976A500A234C8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
 		BE1633AE1A0976A500A234C8 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		BE1633AF1A0976A500A234C8 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		BE1633B01A0976A500A234C8 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -1239,6 +1239,7 @@
 				BE1634F91A0980A800A234C8 /* English */,
 			);
 			name = Localizable.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
