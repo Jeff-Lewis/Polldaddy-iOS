@@ -133,12 +133,6 @@ NSString * const kDidSignInNotification = @"DidSignInNotification";
     return UIInterfaceOrientationMaskAll;
 }
 
-- (IBAction) signUpForPolldaddy{
-		
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://polldaddy.com/pricing/"]];
-
-}
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
