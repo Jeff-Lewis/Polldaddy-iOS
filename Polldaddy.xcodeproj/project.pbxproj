@@ -1097,7 +1097,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "fabricCommandLineKey=$(/usr/libexec/PlistBuddy -c \"Print FabricCommandLineKey\" Polldaddy/Configuration.plist)\n./Fabric.framework/run $fabricCommandLineKey";
+			shellScript = "fabricCommandLineKey=$(/usr/libexec/PlistBuddy -c \"Print FabricCommandLineKey\" Polldaddy/Configuration.plist)\nif [[ -n  \"$fabricCommandLineKey\"  ]]; then\n  ./Fabric.framework/run $fabricCommandLineKey\nfi\n";
 		};
 		989D5020EB244D7328E0D47F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
